@@ -1,0 +1,9 @@
+{% load base_tags %}
+
+{% if field_value != "-" %}
+  <time datetime="{{ field_value }}">
+    {{ field_value|datetime_format:"SHORT_DATE_FORMAT" }}
+  </time>
+{% else %}
+  -
+{% endif %}

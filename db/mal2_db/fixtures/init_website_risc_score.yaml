@@ -1,0 +1,44 @@
+- model: mal2_db.websiteriskscore
+  pk: 1
+  fields:
+    name_de: "niedrig"
+    name_en_GB: "low"
+    risk_score: "low"
+- model: mal2_db.websiteriskscore
+  pk: 2
+  fields:
+    name_de: "unterdurchschnittlich"
+    name_en_GB: "below average"
+    risk_score: "below average"
+- model: mal2_db.websiteriskscore
+  pk: 3
+  fields:
+    name_de: "hoch"
+    name_en_GB: "high"
+    risk_score: "high"
+- model: mal2_db.websiteriskscore
+  pk: 4
+  fields:
+    name_de: "unbekannt"
+    name_en_GB: "unknown"
+    risk_score: "unknown"
+- model: mal2_db.websiteriskscore
+  pk: 5
+  fields:
+    name_de: "sehr niedrig"
+    name_en_GB: "very low"
+    risk_score: "very low"
+- model: mal2_db.websiteriskscore
+  pk: 6
+  fields:
+    name_de: "sehr hoch"
+    name_en_GB: "very high"
+    risk_score: "very high"
+- model: mal2_db.websiteriskscore
+  pk: 7
+  fields:
+    name_de: "überdurchschnittlich"
+    name_en_GB: "above average"
+    risk_score: "above average"
+
+

@@ -1,0 +1,10 @@
+{% load base_tags i18n %}
+
+{% if field_value != "-" %}
+  <time datetime="{{ field_value }}">
+    {{ field_value|datetime_format:"SHORT_DATE_FORMAT" }} {% trans "at" %}
+    {{ field_value|datetime_format:"H:i:s" }}
+  </time>
+{% else %}
+  -
+{% endif %}

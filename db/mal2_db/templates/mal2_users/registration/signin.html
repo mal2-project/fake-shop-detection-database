@@ -1,0 +1,54 @@
+{% extends "mal2_users/base.html" %}
+
+{% load i18n static %}
+
+{% block title %}
+  {% trans "Sign in" %}
+{% endblock %}
+
+{% block card_header %}
+  {% trans "Sign in" %}
+{% endblock %}
+
+{% block card_body %}
+  <form action="{{ request.get_full_path }}" method="post" novalidate>
+    {% csrf_token %}
+
+    {% if form.non_field_errors %}
+      <div class="alert alert-dismissible alert-danger" role="alert">
+        {{ form.non_field_errors }}
+      </div>
+    {% elif request.user.is_authenticated %}
+      <p class="alert alert-dismissible alert-danger" role="alert">
+        {% blocktrans trimmed %}
+          You are authenticated as {{ username }}, but are not authorized to
+          access this page. Would you like to sign in to a different account?
+        {% endblocktrans %}
+      </p>
+    {% endif %}
+
+    {% include "form/snippet.html" %}
+
+    <div class="align-items-center flex-row-reverse row mt-1 sm-gutters">
+      <div class="col-auto ml-auto">
+        <button class="btn btn-secondary">{% trans "Sign in" %}</button>
+      </div>
+      <div class="col">
+        <ul class="list-unstyled mb-0">
+          {% if settings.CAN_SIGNUP %}
+            <li>
+              <a href="{% url "mal2_db:signup" %}">
+                  {% trans "Create account" %}
+              </a>
+            </li>
+          {% endif %}
+          <li>
+            <a href="{% url "mal2_db:password_reset" %}">
+              {% trans "Forgot password?" %}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </form>
+{% endblock %}

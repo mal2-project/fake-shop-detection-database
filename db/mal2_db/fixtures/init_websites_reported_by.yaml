@@ -1,0 +1,10 @@
+- model: mal2_db.websitereportedby
+  pk: 1
+  fields:
+    reporter_de: "E-Mail"
+    reporter_en_GB: "Email"
+- model: mal2_db.websitereportedby
+  pk: 2
+  fields:
+    reporter_de: "Browser-Plugin"
+    reporter_en_GB: "Browser plugin"

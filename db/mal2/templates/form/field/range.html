@@ -1,0 +1,11 @@
+{% load i18n %}
+
+<label class="label" for="{{ field.id_for_label }}">
+  {{ field.label }} <small>(<span data-range-value>{{ field.value }}</span>{% if field.field.widget.attrs.max %}/{{ field.field.widget.attrs.max }}{% endif %})</small>
+  {% include "form/field/required.html" %}
+</label>
+
+{{ field }}
+
+{% include "form/error_text.html" %}
+{% include "form/help_text.html" %}

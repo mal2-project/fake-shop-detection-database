@@ -1,0 +1,18 @@
+{% load i18n static %}
+
+<div aria-live="assertive" aria-atomic="true" class="toast" data-delay="10000" data-toast role="alert">
+  <div class="toast-content">
+    <div class="{% if success %}bg-dark{% else %}bg-danger{% endif %} text-white toast-header">
+      {{ title }}
+      <a aria-label="{% trans "Close" %}" class="close ml-auto" data-dismiss="toast" href="#">
+        <svg class="icon icon-sm icon-white" role="presentation">
+          <use xlink:href="{% static "img/sprite.symbol.svg" %}#close"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="{% if success %}bg-dark {% else %}bg-danger {% endif %} text-white toast-body">
+      {{ text }}
+    </div>
+  </div>
+</div>
+

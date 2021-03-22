@@ -1,0 +1,12 @@
+{% load static %}
+
+{% if website_type__id is not None %}
+  {% if website_type__id == 2 or website_type__id == 3 %}
+    <a class="d-block ml-auto" data-modal-link href="{{ href }}" title="{{ text }}">
+      <svg class="icon icon-dark" role="presentation">
+        <use xlink:href="{% static "img/sprite.symbol.svg" %}#text-box-search-outline"></use>
+      </svg>
+      <span class="sr-only">{{ text }}</span>
+    </a>
+  {% endif %}
+{% endif %}

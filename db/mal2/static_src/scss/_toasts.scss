@@ -1,0 +1,69 @@
+//------------------------------------------------------------------------------
+// TOASTS
+
+.toast-wrapper {
+  bottom: rem($spacer * 2);
+  position: fixed;
+  right: 0;
+  right: rem($grid-min-gutter-width / 2);
+  z-index: 2000;
+
+  @media (min-width: rem($break-sm)) {
+    right: calc(#{rem($grid-min-gutter-width)} + #{($grid-max-gutter-width - $grid-min-gutter-width) / 16} * (100vw - #{rem($break-sm)}) / (#{rem-unitless($break-xl)} - #{rem-unitless($break-sm)}));
+  }
+
+  @media (min-width: rem($break-xl)) {
+    right: rem($grid-max-gutter-width);
+  }
+}
+
+.toast {
+  @include font-size($toast-font-size);
+  max-width: rem($toast-max-width);
+  opacity: 0;
+  text-align: right;
+
+  &:not(:last-child) {
+    margin-bottom: rem($toast-padding-x);
+  }
+
+  &.showing {
+    opacity: 1;
+  }
+
+  &.show {
+    display: block;
+    opacity: 1;
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+.toast-content {
+  background-clip: padding-box;
+  background-color: $toast-background-color;
+  border: rem($toast-border-width) solid $toast-border-color;
+  border-radius: rem($border-radius);
+  box-shadow: 0 rem(8) rem(16) rgba($black, 0.15);
+  display: inline-flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+  text-align: left;
+}
+
+.toast-header {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: $toast-header-background-color;
+  border-bottom: rem($toast-border-width) solid $toast-header-border-color;
+  color: $toast-header-color;
+  display: flex;
+  padding: rem($toast-padding-y) rem($toast-padding-x);
+}
+
+.toast-body {
+  margin-left: auto;
+  padding: rem($toast-padding-x);
+}

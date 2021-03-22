@@ -1,0 +1,73 @@
+//------------------------------------------------------------------------------
+// FILE
+
+.custom-file {
+  display: inline-block;
+  height: $input-height;
+  margin-bottom: 0;
+  position: relative;
+  width: 100%;
+}
+
+.custom-file-input {
+  cursor: pointer;
+  height: $input-height;
+  margin: 0;
+  opacity: 0;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+  &:focus ~ .custom-file-label {
+    border-color: $input-border-focus;
+    box-shadow: $input-focus-box-shadow;
+  }
+
+  &:disabled ~ .custom-file-label {
+    background-color: $input-disabled-bg;
+  }
+
+  @each $lang, $value in $custom-file-text {
+    &:lang(#{$lang}) ~ .custom-file-label:after {
+      content: $value;
+    }
+  }
+
+  ~ .custom-file-label[data-browse]:after {
+    content: attr(data-browse);
+  }
+}
+
+.custom-file-label {
+  background-color: $input-bg;
+  border: rem($input-border-width) solid $input-border-color;
+  border-radius: rem($border-radius);
+  color: $input-color;
+  font-size: rem($input-font-size);
+  height: $input-height;
+  left: 0;
+  line-height: $input-line-height;
+  overflow: hidden;
+  padding: rem($input-padding-y) rem($input-padding-x);
+  position: absolute;
+  right: 0;
+  top: 0;
+  white-space: nowrap;
+  z-index: 1;
+
+  &:after {
+    background: $gray-200;
+    border-left: inherit;
+    border-radius: 0 rem($border-radius) rem($border-radius) 0;
+    bottom: 0;
+    color: $input-color;
+    display: block;
+    height: $input-height-inner;
+    line-height: $input-line-height;
+    padding: rem($input-padding-y) rem($input-padding-x);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3;
+  }
+}

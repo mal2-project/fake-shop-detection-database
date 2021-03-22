@@ -1,0 +1,20 @@
+{% for data in content %}
+  {% if forloop.first %}
+    <ul class="list-unstyled {% if allowed %} data-allowed="{{ allowed }}"{% endif %}">
+  {% endif %}
+
+  {% if data.is_dir %}
+    <li class="directory collapsed">
+      <a class="d-block rounded text-truncate" href="#" data-item="{{ data.absolute_path }}/">{{ data.file_name }}</a>
+    </li>
+  {% else %}
+    <li class="file{% if data.file_extension %} ext_{{ data.file_extension }}{% endif %}">
+      <a class="d-block rounded text-truncate" href="#" data-item="{{ data.absolute_path }}">{{ data.file_name }}</a>
+    </li>
+  {% endif %}
+
+  {% if forloop.last %}
+    </ul>
+  {% endif %}
+{% endfor %}
+

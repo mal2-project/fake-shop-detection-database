@@ -1,0 +1,54 @@
+{% load base_tags humanize %}
+
+{% if field_value == "unknown" %}
+  <div class="badge badge-risk-score-unknown">
+    <strong>
+      {{ website__risk_score__name }}
+      {{ risk_score__name }}
+    </strong>
+  </div>
+{% elif field_value == "very low" %}
+  <div class="badge badge-risk-score-very-low">
+    <strong>
+      {{ website__risk_score__name }}
+      {{ risk_score__name }}
+    </strong>
+  </div>
+{% elif field_value == "low" %}
+  <div class="badge badge-risk-score-low">
+    <strong>
+      {{ website__risk_score__name }}
+      {{ risk_score__name }}
+    </strong>
+  </div>
+{% elif field_value == "below average" %}
+  <div class="badge badge-risk-score-below-average">
+    <strong>
+      {{ website__risk_score__name }}
+      {{ risk_score__name }}
+    </strong>
+  </div>
+{% elif field_value == "above average" %}
+  <div class="badge badge-risk-score-above-average">
+    <strong>
+      {{ website__risk_score__name }}
+      {{ risk_score__name }}
+    </strong>
+  </div>
+{% elif field_value == "high" %}
+  <div class="badge badge-risk-score-high">
+    <strong>
+      {{ website__risk_score__name }}
+      {{ risk_score__name }}
+    </strong>
+  </div>
+{% elif field_value == "very high" %}
+  <div class="badge badge-risk-score-very-high">
+    <strong>
+      {{ website__risk_score__name }}
+      {{ risk_score__name }}
+    </strong>
+  </div>
+{% else %}
+  -
+{% endif %}

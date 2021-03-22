@@ -1,0 +1,63 @@
+{% load base_tags i18n static %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="{{ LANGUAGE_CODE }}">
+  <head>
+    <title>
+      {% block title %}{% endblock %} - mal2DB
+    </title>
+
+    <link href="{% static "css/main.min.css" %}" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="yes" name="mobile-web-app-capable">
+
+    {% include "favicons.html" %}
+    {% include "fonts.html" %}
+  </head>
+
+  <body class="bg-white">
+    {% block header %}
+      {% include "header.html" %}
+    {% endblock %}
+
+    {% block main %}
+    {% endblock %}
+
+    {% block footer %}
+      <footer class="fixed-bottom">
+        <div class="container-fluid container-max-fluid">
+          <span class="bg-dark d-inline-block text-white px-1 rounded-top">
+            <small>© <a class="text-white" href="https://www.x-net.at" target="_blank">X-NET {% now "Y" %}</a> | <strong>Version</strong> {{ settings.VERSION }}</small>
+          </span>
+        </div>
+      </footer>
+    {% endblock %}
+
+    {% block modal %}
+      <div id="modal_wrapper"></div>
+    {% endblock %}
+
+    {% block toaster %}
+      <div aria-atomic="true" aria-live="polite" class="toast-wrapper" id="toaster_wrapper" role="alert"></div>
+    {% endblock %}
+
+    <script defer src="{% static "js/jquery-3.4.1.min.js" %}"></script>
+    <script defer src="{% static "js/autosize.min.js" %}"></script>
+    <script defer src="{% static "js/bootstrap/bootstrap.bundle.min.js" %}"></script>
+    <script defer src="{% static "js/bootstrap/bs-custom-file-input.min.js" %}"></script>
+    <script defer src="{% static "js/debug/sentry.bundle.min.js" %}"></script>
+    <script defer src="{% static "js/tinymce/tinymce.min.js" %}"></script>
+    <script defer src="{% static "js/tinymce/jquery.tinymce.min.js" %}"></script>
+
+    <script defer src="{% url "javascript_catalog" %}"></script>
+
+    {% block javascript %}{% endblock %}
+
+    <script defer src="{% static "js/base.min.js" %}"></script>
+    <script defer src="{% static "js/main.min.js" %}"></script>
+  </body>
+</html>

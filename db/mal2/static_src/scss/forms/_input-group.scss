@@ -1,0 +1,70 @@
+//------------------------------------------------------------------------------
+// INPUT GROUP
+
+.input-group {
+  align-items: stretch;
+  display: flex;
+  position: relative;
+  width: 100%;
+
+  > .form-control {
+    flex: 1 1 0%;
+    margin-bottom: 0;
+    min-width: 0;
+    position: relative;
+  }
+
+  > .form-control:focus {
+    z-index: 3;
+  }
+
+  > .form-control {
+    &:not(:last-child) {
+      border-radius: rem($border-radius) 0 0 rem($border-radius);
+    }
+
+    &:not(:first-child) {
+      border-radius: 0 rem($border-radius) rem($border-radius) 0;
+    }
+  }
+}
+
+.input-group-prepend,
+.input-group-append {
+  display: flex;
+}
+
+.input-group-prepend {
+  margin-right: rem(-$input-border-width);
+}
+
+.input-group-append {
+  margin-left: rem(-$input-border-width);
+}
+
+.input-group-text {
+  align-items: center;
+  background-color: $input-group-addon-bg;
+  border: rem($border-width) solid $input-group-addon-border-color;
+  border-radius: rem($border-radius);
+  color: $input-group-addon-color;
+  display: flex;
+  font-size: rem($input-font-size);
+  line-height: $input-line-height;
+  margin-bottom: 0;
+  padding: rem($input-padding-y) rem($input-padding-x);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.input-group > .input-group-prepend > .input-group-text,
+.input-group > .input-group-append:not(:last-child) > .input-group-text,
+.input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
+  border-radius: rem($border-radius) 0 0 rem($border-radius);
+}
+
+.input-group > .input-group-append > .input-group-text,
+.input-group > .input-group-prepend:not(:first-child) > .input-group-text,
+.input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+  border-radius: 0 rem($border-radius) rem($border-radius) 0;
+}

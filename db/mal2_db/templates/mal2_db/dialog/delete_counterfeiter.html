@@ -1,0 +1,23 @@
+{% extends "dialog/base_form.html" %}
+
+{% load i18n %}
+
+{% block title %}
+  {% trans "Delete brand counterfeiter" %}
+{% endblock %}
+
+{% block content %}
+  {% blocktrans trimmed with website=instance %}
+    Do you want to delete the brand counterfeiter <strong>{{ website }}</strong>?
+  {% endblocktrans %}
+{% endblock %}
+
+{% block btn_class %} btn-danger{% endblock %}
+
+{% block cancel_btn_text %}
+  {% trans "No" %}
+{% endblock %}
+
+{% block btn_text %}
+  {% trans "Yes" %}
+{% endblock %}

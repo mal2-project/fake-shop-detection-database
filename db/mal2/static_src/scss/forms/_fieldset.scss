@@ -1,0 +1,26 @@
+//------------------------------------------------------------------------------
+// FIELDSET
+
+fieldset {
+  border: 0;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+legend {
+  @include font-size($legend-min-font-size, $legend-max-font-size);
+  color: inherit;
+  cursor: default !important; // stylelint-disable declaration-no-important
+  display: block;
+  line-height: inherit;
+  margin-bottom: rem($legend-margin-bottom);
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+  width: 100%;
+
+  &.label {
+    margin-bottom: 0;
+  }
+}

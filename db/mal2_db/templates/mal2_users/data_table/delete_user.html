@@ -1,0 +1,10 @@
+{% load static %}
+
+{% if request.user.id != id %}
+  <a class="d-block ml-auto" data-modal-link href="{{ href }}" title="{{ text }}">
+    <svg class="icon icon-danger" role="presentation">
+      <use xlink:href="{% static "img/sprite.symbol.svg" %}#delete"></use>
+    </svg>
+    <span class="sr-only">{{ text }}</span>
+  </a>
+{% endif %}

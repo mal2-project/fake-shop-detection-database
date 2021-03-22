@@ -1,0 +1,24 @@
+{% load i18n %}
+
+{% for item in form.steps_info.steps %}
+  {% if forloop.first %}
+    <nav>
+      <ul class="d-none d-md-flex mb-2 nav nav-tabs" role="tablist">
+  {% endif %}
+
+  <li class="text-uppercase nav-item">
+    <a aria-controls="{% if form.prefix %}{{ form.prefix }}-{% endif %}step-{{ forloop.counter }}"{% if forloop.first %} aria-selected="true"{% else %} aria-disabled="true" aria-selected="false"{% endif %} class="nav-link text-nowrap{% if forloop.first %} active{% else %} disabled{% endif %}" data-select data-validate href="#{% if form.prefix %}{{ form.prefix }}-{% endif %}step-{{ forloop.counter }}" id="{% if form.prefix %}{{ form.prefix }}-{% endif %}step-{{ forloop.counter }}-tab" role="tab"{% if not forloop.first %} tabindex="-1"{% endif %}>
+      {{ item.text }}
+    </a>
+  </li>
+
+  {% if forloop.last %}
+        <li class="text-uppercase nav-item">
+          <a aria-controls="{% if form.prefix %}{{ form.prefix }}-{% endif %}step-{{ form.steps_info.steps_counter|add:1 }}-tab" aria-disabled="true" aria-selected="false" class="nav-link disabled" data-select data-validate href="#{% if form.prefix %}{{ form.prefix }}-{% endif %}step-{{ form.steps_info.steps_counter|add:1 }}" id="{% if form.prefix %}{{ form.prefix }}-{% endif %}step-{{ form.steps_info.steps_counter|add:1 }}-tab" role="tab" tabindex="-1">
+            {% trans "Summary" %}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  {% endif %}
+{% endfor %}

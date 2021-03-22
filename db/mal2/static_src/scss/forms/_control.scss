@@ -1,0 +1,201 @@
+// stylelint-disable declaration-no-important
+
+
+// ------------------------------------------------------------------------------
+// HELPERS
+
+%custom-control {
+  background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='#{$gray-800}' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>"));
+  background-position: right rem(12) center;
+  background-repeat: no-repeat;
+  background-size: rem(8) rem(10);
+}
+
+
+//------------------------------------------------------------------------------
+// INPUT
+
+.form-control {
+  background-clip: padding-box;
+  background-color: $input-bg;
+  border: rem($border-width) solid $input-border-color;
+  border-radius: rem($border-radius);
+  color: $input-color;
+  display: block;
+  font-size: rem($input-font-size);
+  height: $input-height;
+  line-height: $input-line-height;
+  padding: rem($input-padding-y) rem($input-padding-x);
+  transition: border-color ease-in-out 150ms, box-shadow ease-in-out 150ms;
+  width: 100%;
+
+  &:focus {
+    background-color: $input-focus-bg;
+    border-color: $input-border-focus;
+    box-shadow: $input-focus-box-shadow;
+    color: $input-focus-color;
+    outline: 0;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: $input-disabled-bg;
+    opacity: 1;
+  }
+
+  &::placeholder {
+    color: $input-placeholder-color;
+    opacity: 1;
+  }
+}
+
+.form-control-plaintext {
+  background-color: transparent;
+  border: solid transparent;
+  color: $input-plaintext-color;
+  display: block;
+  font-size: rem($input-font-size);
+  height: $input-height;
+  line-height: $input-line-height;
+  line-height: $input-line-height;
+  margin-bottom: 0;
+  padding-bottom: rem($input-padding-y);
+  padding-top: rem($input-padding-y);
+  width: 100%;
+}
+
+
+//------------------------------------------------------------------------------
+// SELECT
+
+.custom-select {
+  @extend %custom-control;
+  appearance: none;
+  background-color: $input-bg;
+  border: rem($border-width) solid $input-border-color;
+  border-radius: rem($border-radius);
+  color: $input-color;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: rem($input-font-size);
+  height: $input-height;
+  line-height: $input-line-height;
+  margin: 0;
+  padding: rem($input-padding-y) rem($input-padding-x + $custom-select-indicator-padding) rem($input-padding-y) rem($input-padding-x);
+  text-transform: none;
+  transition: border-color ease-in-out 150ms, box-shadow ease-in-out 150ms;
+  vertical-align: middle;
+  width: 100%;
+  word-wrap: normal;
+
+  &:focus {
+    background-color: $input-focus-bg;
+    border-color: $input-border-focus;
+    box-shadow: $input-focus-box-shadow;
+    color: $input-focus-color;
+    outline: 0;
+
+    &::-ms-value {
+      background-color: $input-bg;
+      color: $input-color;
+    }
+  }
+
+  &:disabled {
+    background-color: $input-disabled-bg;
+    cursor: not-allowed;
+  }
+
+  &[readonly] {
+    background-color: $input-disabled-bg;
+    pointer-events: none;
+  }
+
+  &[multiple],
+  &[size]:not([size="1"]) {
+    background-image: none;
+    height: auto;
+    padding-right: rem($input-padding-x);
+
+    option {
+      margin: rem($spacer / 2) 0;
+    }
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+optgroup {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+
+//------------------------------------------------------------------------------
+// TINY MCE
+
+.mce-tinymce {
+  border: rem($border-width) solid $input-border-color !important;
+  border-radius: rem($border-radius);
+  overflow: hidden;
+  transition: border-color ease-in-out 150ms, box-shadow ease-in-out 150ms;
+
+  &.focus {
+    border-color: $input-border-focus !important;
+    box-shadow: $input-focus-box-shadow;
+  }
+
+  &.is-invalid {
+    border-color: $danger !important;
+
+    &.focus {
+      border-color: $danger !important;
+      box-shadow: 0 0 0 rem(3) rgba($danger, 0.25);
+    }
+
+    ~ .invalid-feedback {
+      display: block;
+    }
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// INLINE FORMS
+
+.form-inline {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+
+  label {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-right: rem($spacer);
+  }
+
+  .form-control {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+  }
+
+  .custom-select {
+    width: auto;
+  }
+
+  .custom-date {
+    min-width: inherit;
+  }
+}

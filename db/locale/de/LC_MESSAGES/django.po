@@ -1,0 +1,1600 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-02 06:57+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: mal2/constants/data_table.py:10 mal2/templates/data_table/boolean.html:7
+#: mal2_db/templates/mal2_db/dialog/delete_counterfeiter.html:22
+#: mal2_db/templates/mal2_db/dialog/delete_fake_shop.html:22
+#: mal2_db/templates/mal2_db/dialog/delete_website.html:22
+#: mal2_db/templates/mal2_db/pdf/details.rml:16
+#: mal2_db/templates/mal2_users/dialog/delete_user.html:22
+msgid "Yes"
+msgstr "Ja"
+
+#: mal2/constants/data_table.py:11 mal2/templates/data_table/boolean.html:12
+#: mal2_db/templates/mal2_db/dialog/delete_counterfeiter.html:18
+#: mal2_db/templates/mal2_db/dialog/delete_fake_shop.html:18
+#: mal2_db/templates/mal2_db/dialog/delete_website.html:18
+#: mal2_db/templates/mal2_db/pdf/details.rml:18
+#: mal2_db/templates/mal2_users/dialog/delete_user.html:18
+msgid "No"
+msgstr "Nein"
+
+#: mal2/forms/fields.py:96
+msgid "e.g. +43 12345678"
+msgstr "z. B. +43 12345678"
+
+#: mal2/forms/fields.py:128
+#, python-format
+msgid "The allowed format is <strong>%s</strong>."
+msgstr "Das unterstützte Format ist <strong>%s</strong>."
+
+#: mal2/forms/fields.py:134
+#, python-format
+msgid " and %s"
+msgstr " und %s"
+
+#: mal2/forms/fields.py:140
+#, python-format
+msgid "The allowed formats are %s."
+msgstr "Die unterstützten Formate sind %s."
+
+#: mal2/forms/fields.py:154
+msgid "This filetype is not supported!"
+msgstr "Dieser Dateityp wird nicht unterstützt!"
+
+#: mal2/forms/fields.py:161
+#, python-format
+msgid ""
+"Please keep filesize under %(max_upload_size)s. Current filesize is %(size)s."
+msgstr ""
+"Bitte Dateien mit weniger als %(max_upload_size)s hochladen. Die aktuelle "
+"Größe ist %(size)s."
+
+#: mal2/forms/forms.py:587
+#, python-format
+msgid "A maximum of %d entry is allowed!"
+msgid_plural "A maximum of %d entries are allowed!"
+msgstr[0] "Es ist naximal %d Eintrag erlaubt!"
+msgstr[1] "Es sind naximal %d Einträge erlaubt!"
+
+#: mal2/forms/forms.py:594
+#, python-format
+msgid "At least %d entry is required!"
+msgid_plural "At least %d entries are required!"
+msgstr[0] "Es wird mindestens %d Eintrag benötigt!"
+msgstr[1] "Es werden mindestens %d Eintäge benötigt!"
+
+#: mal2/forms/forms.py:618
+msgid "Duplicate entries were found!"
+msgstr "Es wurden doppelte Einträge gefunden!"
+
+#: mal2/forms/widgets.py:38
+msgid "clear"
+msgstr "löschen"
+
+#: mal2/forms/widgets.py:149
+msgid "Country code"
+msgstr "Ländervorwahl"
+
+#: mal2/forms/widgets.py:155
+msgid "Phone number"
+msgstr "Telefonnummer"
+
+#: mal2/models/base.py:27
+msgid "Created by"
+msgstr "Erstellt von"
+
+#: mal2/models/base.py:37
+msgid "Modified by"
+msgstr "Geändert von"
+
+#: mal2/models/base.py:65
+msgid "Created at"
+msgstr "Erstellt am"
+
+#: mal2/models/base.py:69
+msgid "Modified at"
+msgstr "Geändert am"
+
+#: mal2/settings/base.py:98
+msgid "German"
+msgstr "Deutsch"
+
+#: mal2/settings/base.py:99
+msgid "English"
+msgstr "Englisch"
+
+#: mal2/settings/base.py:321 mal2_db/models/base.py:251
+msgid "Websites"
+msgstr "Webseiten"
+
+#: mal2/settings/base.py:326 mal2/templates/data_table/filters_collapse.html:19
+#: mal2/templates/data_table/filters_columns.html:10
+msgid "All"
+msgstr "Alle"
+
+#: mal2/settings/base.py:333
+msgid "to check"
+msgstr "zu Überprüfen"
+
+#: mal2/settings/base.py:340
+msgid "no verification"
+msgstr "keine Überprüfung"
+
+#: mal2/settings/base.py:347
+msgid "checked - no fake"
+msgstr "Überprüft - Kein Fake"
+
+#: mal2/settings/base.py:354
+msgid "Unsure"
+msgstr "Unsicher"
+
+#: mal2/settings/base.py:361
+msgid "Disagreement"
+msgstr "Unstimmigkeiten"
+
+#: mal2/settings/base.py:368
+#, fuzzy
+#| msgid "Check website"
+msgid "other websites"
+msgstr "Webseite überprüfen"
+
+#: mal2/settings/base.py:375
+#, fuzzy
+#| msgid "Fake shops"
+msgid "online shops"
+msgstr "Fake-Shops"
+
+#: mal2/settings/base.py:385
+msgid "Database"
+msgstr "Datenbank"
+
+#: mal2/settings/base.py:390 mal2_db/models/base.py:661
+#: mal2_db/templates/mal2_db/data_table/fake_shop.html:6
+#: mal2_db/templates/mal2_db/data_table/fake_shop.html:10
+msgid "Fake shop"
+msgstr "Fake-Shop"
+
+#: mal2/settings/base.py:397
+msgid "Brand counterfeiters"
+msgstr "Markenfälscher"
+
+#: mal2/settings/base.py:407
+msgid "System control"
+msgstr "Systemkontrolle"
+
+#: mal2/settings/base.py:411
+msgid "User management"
+msgstr "Benutzerverwaltung"
+
+#: mal2/settings/base.py:425
+msgid "Django-Admin"
+msgstr "Django-Admin"
+
+#: mal2/settings/base.py:435
+msgid "API documentation"
+msgstr "API-Dokumentation"
+
+#: mal2/settings/base.py:449
+#: mal2_db/templates/mal2_users/registration/dialog/password_change.html:6
+#: mal2_db/templates/mal2_users/registration/email_verification.html:6
+#: mal2_db/templates/mal2_users/registration/password_reset_confirm.html:6
+#: mal2_db/templates/mal2_users/registration/password_reset_confirm.html:12
+#: mal2_db/templates/mal2_users/registration/password_reset_confirm.html:28
+msgid "Change password"
+msgstr "Kennwort ändern"
+
+#: mal2/settings/base.py:455
+msgid "Sign out"
+msgstr "Abmelden"
+
+#: mal2/templates/403.html:6 mal2/templates/403.html:12
+msgid "No Permission"
+msgstr "Keine Berechtigung"
+
+#: mal2/templates/403.html:15
+msgid "We're sorry, but you have not permission to view this page."
+msgstr "Es tut uns leid, aber Sie haben keine Berechtigung für diese Seite."
+
+#: mal2/templates/403.html:19
+msgid "Change user"
+msgstr "Benutzer wechseln"
+
+#: mal2/templates/404.html:6 mal2/templates/404.html:12
+msgid "Page not found"
+msgstr "Seite nicht gefunden"
+
+#: mal2/templates/404.html:15
+msgid "Looks like the page or file you where searching for has disappeared."
+msgstr "Sieht so aus, als wäre die gewünschte Seite oder Datei verschwunden."
+
+#: mal2/templates/500.html:6 mal2/templates/500.html:14
+msgid "Internal server error"
+msgstr "Interner Server Fehler"
+
+#: mal2/templates/500.html:16
+#, python-format
+msgid ""
+"<p> In order to fix this, we ask for your help:<br> Please take a screenshot "
+"of this page and send it to <a href=\"mailto:support-software@x-net.at?"
+"subject=%(subject)s Server error\">support-software@x-net.at</a>. </p>"
+msgstr ""
+
+#: mal2/templates/500.html:23
+msgid "Current date/time:"
+msgstr "Aktuelles Datum / Uhrzeit:"
+
+#: mal2/templates/alert.html:6 mal2/templates/alert/alert.html:7
+#: mal2/templates/dialog/base.html:10 mal2/templates/dialog/base_form.html:12
+#: mal2/templates/dialog/base_form_wizard.html:13
+#: mal2/templates/toaster/base.html:7
+msgid "Close"
+msgstr "Schließen"
+
+#: mal2/templates/base_email.html:18
+msgid ""
+"This is an automatically generated email, please do not reply to this "
+"message."
+msgstr ""
+
+#: mal2/templates/data_table/base.html:6 mal2/templates/data_table/base.html:19
+msgid "Data table"
+msgstr "Datentabelle"
+
+#: mal2/templates/data_table/clipboard.html:3
+msgid "Copied token to clipboard."
+msgstr "Token in die Zwischenablage kopiert."
+
+#: mal2/templates/data_table/clipboard.html:3
+msgid "Copy token to clipboard"
+msgstr "Token in Zwischenablage kopieren"
+
+#: mal2/templates/data_table/datetime.html:5
+msgid "at"
+msgstr "um"
+
+#: mal2/templates/data_table/export_csv_button.html:7
+msgid "Export CSV"
+msgstr "CSV exportieren"
+
+#: mal2/templates/data_table/filters_button.html:7
+msgid "Filters"
+msgstr "Filter"
+
+#: mal2/templates/data_table/filters_collapse.html:21
+#: mal2/templates/data_table/filters_columns.html:12
+msgid "All WITH"
+msgstr "Alle MIT"
+
+#: mal2/templates/data_table/filters_collapse.html:22
+#: mal2/templates/data_table/filters_columns.html:13
+msgid "NOT"
+msgstr "NICHT"
+
+#: mal2/templates/data_table/loader.html:5
+msgid "Please wait ..."
+msgstr ""
+
+#: mal2/templates/data_table/regex_filters_button.html:7
+#: mal2/templates/data_table/regex_filters_collapse.html:7
+msgid "Search filters"
+msgstr "Suchfilter"
+
+#: mal2/templates/data_table/regex_filters_info.html:4
+msgid "Search values are case insensitive"
+msgstr "Bei Suchwerten wird die Groß- und Kleinschreibung nicht berücksichtigt"
+
+#: mal2/templates/data_table/regex_filters_info.html:5
+msgid "Finds all entries that have saved ONE value"
+msgstr "Findet alle Einträge die EINEN Wert gespeichert haben"
+
+#: mal2/templates/data_table/regex_filters_info.html:6
+msgid "Finds all entries that have NO value saved"
+msgstr "Findet alle Einträge die KEINEN Wert gespeichert haben"
+
+#: mal2/templates/data_table/regex_filters_info.html:7
+#: mal2/templates/data_table/regex_filters_info.html:8
+#: mal2/templates/data_table/regex_filters_info.html:9
+#: mal2/templates/data_table/regex_filters_info.html:11
+#: mal2/templates/data_table/regex_filters_info.html:12
+#: mal2/templates/data_table/regex_filters_info.html:13
+msgid "Value"
+msgstr "Wert"
+
+#: mal2/templates/data_table/regex_filters_info.html:7
+msgid "Finds all entries that have NOT saved this value"
+msgstr "Findet alle Einträge die NICHT diesen Wert gespeichert haben"
+
+#: mal2/templates/data_table/regex_filters_info.html:8
+msgid "Finds all entries that have saved ONE of these values"
+msgstr "Findet alle Einträge die EINEN dieser Werte gespeichert haben"
+
+#: mal2/templates/data_table/regex_filters_info.html:9
+msgid "Finds all entries that have NOT saved any of these values"
+msgstr "Findet alle Einträge die KEINEN dieser Werte gespeichert haben"
+
+#: mal2/templates/data_table/regex_filters_info.html:10
+msgid "Start value"
+msgstr "Startwert"
+
+#: mal2/templates/data_table/regex_filters_info.html:10
+msgid "End value"
+msgstr "Endwert"
+
+#: mal2/templates/data_table/regex_filters_info.html:10
+msgid ""
+"Finds all entries that have values saved between a specific range [Start "
+"value - End value]. Only possible for number- and ID-fields."
+msgstr ""
+"Sucht alle Einträge, deren Werte zwischen einem bestimmten Bereich "
+"[Startwert - Endwert] gespeichert wurden. Nur für Nummern- und ID-Felder "
+"möglich."
+
+#: mal2/templates/data_table/regex_filters_info.html:11
+msgid "Finds all entries that starts with specific value"
+msgstr "Findet alle Einträge, die mit einem bestimmten Wert beginnen"
+
+#: mal2/templates/data_table/regex_filters_info.html:12
+msgid "Finds all entries that end with specific value"
+msgstr "Findet alle Einträge, die mit einem bestimmten Wert enden"
+
+#: mal2/templates/data_table/regex_filters_info.html:13
+msgid "Finds all entries that contains specific value"
+msgstr "Findet alle Einträge, die einen bestimmten Wert enthalten"
+
+#: mal2/templates/data_table/regex_filters_info.html:14
+msgid "Val?e"
+msgstr "We?t"
+
+#: mal2/templates/data_table/regex_filters_info.html:14
+msgid ""
+"Text and ? operator can be exchanged by one random character for example: "
+"\"ValUe\", \"ValOe\" or \"Val9e\" could be some results"
+msgstr ""
+"Text und der ? Operator kann durch ein zufälliges Zeichen ausgetauscht "
+"werden, zum Beispiel: „WeRt“, „WeOt“ oder „We9t“ können einige Ergebnisse "
+"sein"
+
+#: mal2/templates/data_table/regex_filters_info.html:15
+msgid "Val*e"
+msgstr "We*t"
+
+#: mal2/templates/data_table/regex_filters_info.html:15
+msgid ""
+"Text and * operator can be exchanged by any number of random character for "
+"example: \"Value\", \"Valuueueuue\" or \"Val e\" could be some results"
+msgstr ""
+"Text und der * Operator können durch eine beliebige Anzahl zufälliger "
+"Zeichen ausgetauscht werden, zum Beispiel: „Wert“, „Wertetet“ oder „Wer t“ "
+"können einige Ergebnisse sein"
+
+#: mal2/templates/data_table/reset_filters_button.html:7
+msgid "Reset filters"
+msgstr "Filter zurücksetzen"
+
+#: mal2/templates/data_table/table.html:52
+msgid "Last updated"
+msgstr "Letzte Aktualisierung"
+
+#: mal2/templates/data_table/table.html:52
+msgid "[seconds] second ago"
+msgstr "vor [seconds] Sekunde"
+
+#: mal2/templates/data_table/table.html:52
+msgid "[seconds] seconds ago"
+msgstr "vor [seconds] Sekunden"
+
+#: mal2/templates/dialog/base_form.html:28
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: mal2/templates/dialog/base_form.html:32
+#: mal2/templates/dialog/base_form_wizard.html:37
+msgid "Save"
+msgstr "Speichern"
+
+#: mal2/templates/form/field/file.html:19
+msgid "Choose file ..."
+msgstr "Datei wählen ..."
+
+#: mal2/templates/form/field/file.html:27
+msgid "Upload"
+msgstr "Hochladen"
+
+#: mal2/templates/form/field/file.html:39
+msgid "from"
+msgstr "von"
+
+#: mal2/templates/form/field/file.html:49
+msgid "Cancel file upload"
+msgstr "Hochladen abrechen"
+
+#: mal2/templates/form/field/required.html:3
+msgid "Required field"
+msgstr "Pflichtfeld"
+
+#: mal2/templates/form/formset/item.html:15 mal2_db/views/user.py:107
+msgid "Delete"
+msgstr "Löschen"
+
+#: mal2/templates/form/formset/snippet.html:17
+#: mal2_db/templates/mal2_users/dialog/add_user.html:12
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: mal2/templates/form/wizard/navigation.html:18
+msgid "Summary"
+msgstr "Zusammenfassung"
+
+#: mal2/templates/form/wizard/next_step.html:3
+#: mal2/templates/form/wizard/next_step.html:4
+msgid "Next step"
+msgstr "Nächster Schritt"
+
+#: mal2/templates/form/wizard/previous_step.html:3
+#: mal2/templates/form/wizard/previous_step.html:7
+msgid "Previous step"
+msgstr "Vorheriger Schritt"
+
+#: mal2/templates/form/wizard/steps.html:5
+#, python-format
+msgid "Step %(step)s"
+msgstr "Schritt %(step)s"
+
+#: mal2/templates/navbar/nav_item.html:11
+msgid "Current"
+msgstr "Aktuell"
+
+#: mal2/templates/navbar/navbar.html:18
+msgid "Toggle navigation"
+msgstr "Navigation umschalten"
+
+#: mal2/templates/pdf/footer.rml:8
+#, python-format
+msgid "Created on %(date)s by %(user)s"
+msgstr "Erstellt am %(date)s von %(user)s"
+
+#: mal2/urls.py:88
+#, python-format
+msgid "%(name)s Administration"
+msgstr "%(name)s Administration"
+
+#: mal2/views/edit.py:191
+#, python-format
+msgid "%(verbose_name)s \"%(name)s\" has been added!"
+msgstr "%(verbose_name)s \"%(name)s\" wurde hinzugefügt!"
+
+#: mal2/views/edit.py:209 mal2/views/edit.py:299
+#, python-format
+msgid "%(verbose_name)s does not exist!"
+msgstr "%(verbose_name)s existiert nicht!"
+
+#: mal2/views/edit.py:219
+#, python-format
+msgid "%(verbose_name)s \"%(name)s\" was deleted!"
+msgstr "%(verbose_name)s \"%(name)s\" wurde gelöscht!"
+
+#: mal2/views/edit.py:309
+#, python-format
+msgid "%(verbose_name)s \"%(name)s\" has been updated!"
+msgstr "%(verbose_name)s \"%(name)s\" wurde aktualisiert!"
+
+#: mal2/views/media.py:113
+msgid "File not found"
+msgstr "Datei nicht gefunden"
+
+#: mal2/views/media.py:218
+#, python-format
+msgid "Downloading %s"
+msgstr "Lade %s herunter"
+
+#: mal2/views/media.py:222
+msgid "Can't download file!"
+msgstr "Kann Datei nicht herunterladen!"
+
+#: mal2_db/forms/auth.py:101
+msgid "Confirm password"
+msgstr "Passwort ändern"
+
+#: mal2_db/forms/auth.py:118 mal2_db/forms/user.py:80 mal2_db/forms/user.py:162
+msgid "Contact details"
+msgstr "Kontaktdaten"
+
+#: mal2_db/forms/auth.py:125 mal2_db/forms/user.py:87 mal2_db/forms/user.py:169
+msgid "Access data"
+msgstr "Zugriffsdaten"
+
+#: mal2_db/forms/auth.py:168 mal2_db/forms/user.py:61 mal2_db/forms/user.py:145
+#: mal2_db/models/registration.py:33 mal2_db/views/user.py:118
+msgid "Email"
+msgstr "E-Mail"
+
+#: mal2_db/forms/auth.py:186 mal2_db/forms/auth.py:214
+#: mal2_db/forms/user.py:197
+msgid "New password"
+msgstr "Neues Passwort"
+
+#: mal2_db/forms/auth.py:187 mal2_db/forms/auth.py:215
+#: mal2_db/forms/user.py:198
+msgid "Confirm new password"
+msgstr "Neues Passwort bestätigen"
+
+#: mal2_db/forms/base.py:103 mal2_db/forms/base.py:400
+#: mal2_rest/validators/base.py:21
+msgid "URL already exists in the database!"
+msgstr "URL existiert bereits in der Datenbank!"
+
+#: mal2_db/forms/base.py:147 mal2_db/models/base.py:824
+msgid "Enter URLs for search results"
+msgstr "Geben Sie URLs für das Suchergebnis ein"
+
+#: mal2_db/forms/base.py:180 mal2_db/models/base.py:850
+msgid "Enter URLs for company names"
+msgstr "Geben Sie URLs für die Firmennamen ein"
+
+#: mal2_db/forms/base.py:213 mal2_db/models/base.py:876
+msgid "Enter URLs for website images"
+msgstr "Geben Sie URLs für die Webseiten-Bilder ein"
+
+#: mal2_db/forms/base.py:246 mal2_db/models/base.py:903
+msgid "Enter URLs that have the same website text"
+msgstr "Geben Sie URLs ein die den selben Webseiten-Texte haben"
+
+#: mal2_db/forms/base.py:279 mal2_db/models/base.py:929
+#: mal2_db/models/base.py:979
+msgid "Enter URLs for language examples"
+msgstr "Geben Sie URLs für die Sprachbeispiele ein"
+
+#: mal2_db/forms/base.py:312 mal2_db/forms/base.py:345
+#: mal2_db/models/base.py:954
+msgid "Enter URLs for product examples"
+msgstr "Geben Sie URLs für die Produktbeispiele ein"
+
+#: mal2_db/forms/base.py:521 mal2_db/views/base.py:1163
+#: mal2_db/views/base.py:1423
+msgid "Search"
+msgstr "Suche"
+
+#: mal2_db/forms/base.py:527 mal2_db/views/base.py:1164
+#: mal2_db/views/base.py:1434
+msgid "Price comparison"
+msgstr "Preisvergleich"
+
+#: mal2_db/forms/base.py:537 mal2_db/views/base.py:1165
+#: mal2_db/views/base.py:1444
+msgid "Payment method"
+msgstr "Zahlungsmethode"
+
+#: mal2_db/forms/base.py:546 mal2_db/forms/base.py:621
+#: mal2_db/views/base.py:1453 mal2_db/views/base.py:1548
+msgid "Evaluation"
+msgstr "Einschätzung"
+
+#: mal2_db/forms/base.py:551 mal2_db/views/base.py:1458
+msgid "Database queries"
+msgstr "Datenbankabfragen"
+
+#: mal2_db/forms/base.py:562 mal2_db/models/base.py:460
+#: mal2_db/views/base.py:1167 mal2_db/views/base.py:1469
+msgid "VAT"
+msgstr "UID"
+
+#: mal2_db/forms/base.py:569 mal2_db/views/base.py:1168
+#: mal2_db/views/base.py:1476 mal2_db/views/base.py:1646
+msgid "Domain"
+msgstr "Domain"
+
+#: mal2_db/forms/base.py:579 mal2_db/models/base.py:849
+#: mal2_db/views/base.py:1486
+msgid "Company name"
+msgstr "Firmenname"
+
+#: mal2_db/forms/base.py:584 mal2_db/views/base.py:1169
+#: mal2_db/views/base.py:1496
+msgid "Images"
+msgstr "Bilder"
+
+#: mal2_db/forms/base.py:591 mal2_db/views/base.py:1170
+#: mal2_db/views/base.py:1508
+msgid "Text"
+msgstr "Text"
+
+#: mal2_db/forms/base.py:599 mal2_db/forms/base.py:692
+#: mal2_db/views/base.py:1521 mal2_db/views/base.py:1648
+#: mal2_db/views/base.py:1867
+msgid "Language"
+msgstr "Sprache"
+
+#: mal2_db/forms/base.py:604 mal2_db/views/base.py:1531
+msgid "General conditions of contract"
+msgstr "AGB"
+
+#: mal2_db/forms/base.py:610 mal2_db/views/base.py:1537
+msgid "Label/seal"
+msgstr "Gütezeichen/Siegel"
+
+#: mal2_db/forms/base.py:675 mal2_db/views/base.py:1845
+msgid "Products"
+msgstr "Produkte"
+
+#: mal2_db/forms/base.py:681 mal2_db/views/base.py:1856
+msgid "Contact and Imprint"
+msgstr "Kontakt und Impressum"
+
+#: mal2_db/forms/user.py:19 mal2_db/forms/user.py:120
+msgid "Groups"
+msgstr "Gruppen"
+
+#: mal2_db/forms/user.py:95
+msgid "Access status"
+msgstr "Zugangsstatus"
+
+#: mal2_db/models/base.py:34 mal2_db/views/base.py:209
+#: mal2_db/views/base.py:405 mal2_db/views/base.py:1954
+#: mal2_db/views/base.py:2117 mal2_db/views/base.py:2281
+msgid "Category"
+msgstr "Kategorie"
+
+#: mal2_db/models/base.py:39 mal2_db/models/base.py:97
+#: mal2_db/models/base.py:246
+msgid "Website category"
+msgstr "Webseiten-Kategorie"
+
+#: mal2_db/models/base.py:40
+msgid "Website categories"
+msgstr "Webseiten-Kategorien"
+
+#: mal2_db/models/base.py:49 mal2_db/models/base.py:325
+msgid "Name"
+msgstr "Name"
+
+#: mal2_db/models/base.py:54 mal2_db/models/base.py:207
+#: mal2_db/views/base.py:204 mal2_db/views/base.py:400
+#: mal2_db/views/base.py:572 mal2_db/views/base.py:726
+#: mal2_db/views/base.py:906 mal2_db/views/base.py:1172
+#: mal2_db/views/base.py:1645 mal2_db/views/base.py:1950
+#: mal2_db/views/base.py:2113 mal2_db/views/base.py:2277
+msgid "Risk score"
+msgstr "Risiko-Score"
+
+#: mal2_db/models/base.py:59
+msgid "Website risk score"
+msgstr "Webseite-Risikobewertung"
+
+#: mal2_db/models/base.py:60
+msgid "Website risk scores"
+msgstr "Webseite-Risikobewertungen"
+
+#: mal2_db/models/base.py:69
+msgid "Reporter"
+msgstr "Melder"
+
+#: mal2_db/models/base.py:74
+msgid "Website reported by"
+msgstr "Webseite gemeldet von"
+
+#: mal2_db/models/base.py:75
+msgid "Websites reported by"
+msgstr "Webseiten gemeldet von"
+
+#: mal2_db/models/base.py:84
+msgid "Ordering index"
+msgstr "Anordnungs-Index"
+
+#: mal2_db/models/base.py:89 mal2_db/views/base.py:208
+#: mal2_db/views/base.py:404
+msgid "Type"
+msgstr "Typ"
+
+#: mal2_db/models/base.py:102 mal2_db/models/base.py:231
+msgid "Website type"
+msgstr "Webseiten-Typ"
+
+#: mal2_db/models/base.py:103
+msgid "Website types"
+msgstr "Webseiten-Typen"
+
+#: mal2_db/models/base.py:193
+msgid "Enter url of the reviewing website"
+msgstr "Geben Sie die URL der überprüfenden Webseite ein"
+
+#: mal2_db/models/base.py:199 mal2_db/models/base.py:286
+#: mal2_db/models/base.py:684 mal2_db/models/base.py:813
+#: mal2_db/models/base.py:839 mal2_db/models/base.py:865
+#: mal2_db/models/base.py:892 mal2_db/models/base.py:918
+#: mal2_db/models/base.py:943 mal2_db/models/base.py:968
+msgid "URL"
+msgstr "URL"
+
+#: mal2_db/models/base.py:215 mal2_db/views/base.py:205
+#: mal2_db/views/base.py:401 mal2_db/views/base.py:573
+#: mal2_db/views/base.py:727 mal2_db/views/base.py:907
+#: mal2_db/views/base.py:1951 mal2_db/views/base.py:2114
+#: mal2_db/views/base.py:2278
+msgid "Reported by"
+msgstr "Gemeldet von"
+
+#: mal2_db/models/base.py:223 mal2_db/views/base.py:207
+#: mal2_db/views/base.py:403 mal2_db/views/base.py:575
+#: mal2_db/views/base.py:729 mal2_db/views/base.py:909
+#: mal2_db/views/base.py:1953 mal2_db/views/base.py:2116
+#: mal2_db/views/base.py:2280
+msgid "Assigned to"
+msgstr "Zugeteilt an"
+
+#: mal2_db/models/base.py:250
+msgid "Website"
+msgstr "Webseite"
+
+#: mal2_db/models/base.py:282 mal2_db/models/base.py:680
+msgid "Enter url of the reviewing online shop"
+msgstr "Geben Sie die Domain des überprüfenden Onlineshops ein"
+
+#: mal2_db/models/base.py:291 mal2_db/models/base.py:516
+#: mal2_db/models/base.py:656 mal2_db/models/base.py:715
+#: mal2_db/models/base.py:780 mal2_db/models/base.py:792
+msgid ""
+"Do not tick if no or uncertain assessment.<br><strong>There are more checks "
+"necessary if not checked!</strong>"
+msgstr ""
+"Nicht anhaken wenn keine oder unsichere Einschätzung.<br><strong>Es sind "
+"weitere Überprüfungen notwendig wenn nicht angehakt!</strong>"
+
+#: mal2_db/models/base.py:292 mal2_db/models/base.py:517
+#: mal2_db/models/base.py:657
+msgid "Assessment: is certainly a fake shop?"
+msgstr "Einschätzung: ist sicher ein Fake Shop?"
+
+#: mal2_db/models/base.py:297 mal2_db/models/base.py:771
+msgid "Enter the URL of the imprint"
+msgstr "URL des Impressum eintragen"
+
+#: mal2_db/models/base.py:301 mal2_db/models/base.py:775
+#: mal2_db/views/base.py:1647
+msgid "Imprint"
+msgstr "Impressum"
+
+#: mal2_db/models/base.py:307
+msgid "Entered search term on google.at"
+msgstr "Eingegebener Suchbegriff auf google.at"
+
+#: mal2_db/models/base.py:310 mal2_db/models/base.py:418
+msgid "Search term"
+msgstr "Suchbegriff"
+
+#: mal2_db/models/base.py:315 mal2_db/models/base.py:364
+#: mal2_db/models/base.py:407 mal2_db/models/base.py:449
+#: mal2_db/models/base.py:473 mal2_db/models/base.py:510
+#: mal2_db/models/base.py:544 mal2_db/models/base.py:575
+#: mal2_db/models/base.py:608
+msgid ""
+"Do not tick if there is no or uncertain <strong>suspicion of fraud</strong>"
+msgstr ""
+"Nicht anhaken wenn kein oder unsicherer <strong>Betrugsverdacht</strong>"
+
+#: mal2_db/models/base.py:316
+msgid "Suspected fraud (search)"
+msgstr "Betrugsverdacht (Suche)"
+
+#: mal2_db/models/base.py:322
+msgid "Enter the name of the product"
+msgstr "Name des Produktes eingeben"
+
+#: mal2_db/models/base.py:330
+msgid "Enter the URL of the product page"
+msgstr "URL der Produktseite eingeben"
+
+#: mal2_db/models/base.py:334
+msgid "Product page"
+msgstr "Produktseite"
+
+#: mal2_db/models/base.py:339
+msgid "Reason of the product selection eg. offer, sale, ..."
+msgstr "Auswahl des Produktes begründen zB. Angebot, Sale, ..."
+
+#: mal2_db/models/base.py:342
+msgid "Reason of product selection"
+msgstr "Begründung der Produktauswahl"
+
+#: mal2_db/models/base.py:347
+msgid "Enter the URL of the geizhals.eu search"
+msgstr "URL der geizhals.eu Suche eingeben"
+
+#: mal2_db/models/base.py:351
+msgid "Price comparison on geizhals.eu"
+msgstr "Preisvergleich auf geizhals.eu"
+
+#: mal2_db/models/base.py:356
+msgid "Short explanation why the price is suspicious"
+msgstr "Kurze Begründung warum der Preis verdächtig ist"
+
+#: mal2_db/models/base.py:359
+msgid "Reason of suspected fraud"
+msgstr "Begründung des Betrugsverdacht"
+
+#: mal2_db/models/base.py:365
+msgid "Suspected fraud (price comparison)"
+msgstr "Betrugsverdacht (Preisvergleich)"
+
+#: mal2_db/models/base.py:372
+msgid "Enter the URL of the terms of payment"
+msgstr "URL der Zahlungsbedingungen eingeben"
+
+#: mal2_db/models/base.py:376
+msgid "Terms of payment"
+msgstr "Zahlungsbedingungen"
+
+#: mal2_db/models/base.py:381
+msgid "Enter the URL of the checkout page"
+msgstr "URL der Checkout-Seite eingeben"
+
+#: mal2_db/models/base.py:385
+msgid "Checkout page (address)"
+msgstr "Checkout-Seite (Adresse)"
+
+#: mal2_db/models/base.py:390
+msgid "Enter the URL of the payment method selection"
+msgstr "URL der Zahlungsmethoden-Auswahl eingeben"
+
+#: mal2_db/models/base.py:394
+msgid "Checkout page (payment method)"
+msgstr "Checkout-Seite (Zahlungsmethode)"
+
+#: mal2_db/models/base.py:399
+msgid "Enter assessment of payment method"
+msgstr "Einschätzung der Zahlungsmethode eingeben"
+
+#: mal2_db/models/base.py:402
+msgid "Assessment of the payment method"
+msgstr "Einschätzung der Zahlungsmethode"
+
+#: mal2_db/models/base.py:408
+msgid "Suspected fraud (payment method)"
+msgstr "Betrugsverdacht (Zahlungsmethode)"
+
+#: mal2_db/models/base.py:415
+msgid "Used search term in the databases"
+msgstr "Verwendeter Suchbegriff in den Datenbanken"
+
+#: mal2_db/models/base.py:423 mal2_db/models/base.py:429
+#: mal2_db/models/base.py:435 mal2_db/models/base.py:623
+#: mal2_db/models/base.py:629 mal2_db/models/base.py:635
+msgid "Database:"
+msgstr "Datenbank:"
+
+#: mal2_db/models/base.py:424
+msgid "WKO checked"
+msgstr "WKO überprüft"
+
+#: mal2_db/models/base.py:430
+msgid "handelsregister.de checked"
+msgstr "handelsregister.de überprüft"
+
+#: mal2_db/models/base.py:436
+msgid "justice.europa.eu checked"
+msgstr "justice.europa.eu überprüft"
+
+#: mal2_db/models/base.py:441
+msgid "Enter assessment for company inquiry"
+msgstr "Einschätzung zur Firmenabfrage eingeben"
+
+#: mal2_db/models/base.py:444
+msgid "Result of the review"
+msgstr "Ergebnis der Überprüfung"
+
+#: mal2_db/models/base.py:450
+msgid "Suspected fraud (company data)"
+msgstr "Betrugsverdacht (Firmendaten)"
+
+#: mal2_db/models/base.py:457
+msgid "Check VAT on"
+msgstr "UID überprüfen auf"
+
+#: mal2_db/models/base.py:465
+msgid "Enter assessment for VAT review"
+msgstr "Einschätzung zur UID-Überprüfung"
+
+#: mal2_db/models/base.py:468
+msgid "Result of the VAT review"
+msgstr "Ergebnis der UID-Überprüfung"
+
+#: mal2_db/models/base.py:474
+msgid "Suspected fraud (VAT)"
+msgstr "Betrugsverdacht (UID)"
+
+#: mal2_db/models/base.py:481
+msgid "Enter URL of the domain query e.g."
+msgstr "URL der Domainabfrage eingeben"
+
+#: mal2_db/models/base.py:485
+msgid "Domain WHOIS"
+msgstr "Domain WHOIS"
+
+#: mal2_db/models/base.py:490
+msgid "Date of domain registration is less than a month"
+msgstr "Datum der Domainregistrierung ist kleiner als ein Monat"
+
+#: mal2_db/models/base.py:495
+msgid ""
+"URL of the website if a founding date was specified that does not match the "
+"domain registration"
+msgstr ""
+"URL der Webseite wenn ein Gründungsdatum angegeben wurde das nicht zur "
+"Domainregistierung passt"
+
+#: mal2_db/models/base.py:499
+msgid "Contradiction with information on the website"
+msgstr "Widerspruch mit Angabe auf der Webseite"
+
+#: mal2_db/models/base.py:504
+msgid ""
+"Check if the anonymization service / entry is not suitable for the imprint"
+msgstr ""
+"Anhaken wenn der Anonymisierungsdienst/Eintrag nicht passend zum Impressum "
+"ist"
+
+#: mal2_db/models/base.py:505
+msgid "Domain registrar"
+msgstr "Domain-Registrar"
+
+#: mal2_db/models/base.py:511
+msgid "Suspected fraud (domain)"
+msgstr "Betrugsverdacht (Domain)"
+
+#: mal2_db/models/base.py:524
+msgid "If different company names exist, there is a suspicion of fraud"
+msgstr ""
+"Wenn unterschiedliche Firmennamen vorhanden sind besteht ein Betrugsverdacht"
+
+#: mal2_db/models/base.py:525
+msgid "Specify different company names"
+msgstr "Unterschiedliche Firmennamen angeben"
+
+#: mal2_db/models/base.py:532 mal2_db/models/base.py:552
+msgid "If not copyable then there is a suspicion of fraud"
+msgstr "Wenn nicht kopierbar dann besteht ein Betrugsverdacht"
+
+#: mal2_db/models/base.py:533
+msgid "Can not copy images on web page"
+msgstr "Bilder auf der Webseite können nicht kopiert werden"
+
+#: mal2_db/models/base.py:538
+msgid "Apply reverse image search on:"
+msgstr "Umgekehrte Bildersuche anwenden auf:"
+
+#: mal2_db/models/base.py:539
+msgid "Image copied from other website"
+msgstr "Bild wurde von anderer Webseite kopiert"
+
+#: mal2_db/models/base.py:545
+msgid "Suspected fraud (images)"
+msgstr "Betrugsverdacht (Bilder)"
+
+#: mal2_db/models/base.py:553
+msgid "Can not copy text on web page"
+msgstr "Text auf der Webseite kann nicht kopiert werden"
+
+#: mal2_db/models/base.py:558
+msgid "URL of the checked website text"
+msgstr "URL des überprüften Webseiten-Textes"
+
+#: mal2_db/models/base.py:562 mal2_db/models/base.py:902
+msgid "Website text"
+msgstr "Webseiten-Text"
+
+#: mal2_db/models/base.py:569
+msgid "Enter text section and search on"
+msgstr "Textausschnitt eingeben und suchen auf"
+
+#: mal2_db/models/base.py:570
+msgid "Text clipping"
+msgstr "Textausschnitt"
+
+#: mal2_db/models/base.py:576
+msgid "Suspected fraud (website text)"
+msgstr "Betrugsverdacht (Webseiten-Text)"
+
+#: mal2_db/models/base.py:583
+msgid "If changing languages exist, there is a suspicion of fraud"
+msgstr "Wenn wechselnde Sprachen vorhanden sind besteht ein Betrugsverdacht"
+
+#: mal2_db/models/base.py:584
+msgid "Changing languages available"
+msgstr "Wechselnde Sprachen vorhanden"
+
+#: mal2_db/models/base.py:591 mal2_db/models/base.py:756
+msgid "URL to the terms and conditions"
+msgstr "URL zu den AGB"
+
+#: mal2_db/models/base.py:595 mal2_db/models/base.py:760
+msgid "Terms and conditions of contract"
+msgstr "AGB"
+
+#: mal2_db/models/base.py:600
+msgid "If very short terms exist, there is a suspicion of fraud"
+msgstr "Wenn sehr kurze AGB vorhanden sind besteht ein Betrugsverdacht"
+
+#: mal2_db/models/base.py:601
+msgid "Very short terms"
+msgstr "Sehr kurze AGB"
+
+#: mal2_db/models/base.py:609
+msgid "Suspected fraud (quality mark)"
+msgstr "Betrugsverdacht (Gütezeichen)"
+
+#: mal2_db/models/base.py:614
+msgid "URL of the used quality mark"
+msgstr "URL des verwendeten Gütezeichen"
+
+#: mal2_db/models/base.py:618
+msgid "Quality mark image"
+msgstr "Gütezeichen-Bild"
+
+#: mal2_db/models/base.py:624
+msgid "guetezeichen.at checked"
+msgstr "guetezeichen.at  überprüft"
+
+#: mal2_db/models/base.py:630
+msgid "EHI-seal checked"
+msgstr "EHI-Siegel überprüft"
+
+#: mal2_db/models/base.py:636
+msgid "Trusted shops checked"
+msgstr "Trusted Shops überprüft"
+
+#: mal2_db/models/base.py:641
+msgid "If invented quality marks are available, there is a suspicion of fraud"
+msgstr "Wenn erfundene Gütezeichen vorhanden sind besteht ein Betrugsverdacht"
+
+#: mal2_db/models/base.py:642
+msgid "Fictitious quality marks available"
+msgstr "Erfundene Gütezeichen vorhanden"
+
+#: mal2_db/models/base.py:647
+msgid "URL of the used fictitious quality mark"
+msgstr "URL des verwendeten erfundenen Gütezeichen"
+
+#: mal2_db/models/base.py:651
+msgid "Fictitious quality mark"
+msgstr "Erfundene Gütezeichen"
+
+#: mal2_db/models/base.py:662
+msgid "Fake shops"
+msgstr "Fake-Shops"
+
+#: mal2_db/models/base.py:691
+msgid "Does the domain fit for the advertised products?"
+msgstr "Passt der Domainname zu den angebotenen Produkten?"
+
+#: mal2_db/models/base.py:692
+msgid "Domainname plausible"
+msgstr "Domainname plausibel"
+
+#: mal2_db/models/base.py:697
+msgid "Do all products have a discount?"
+msgstr "Sind alle angebotenen Produkte rabattiert?"
+
+#: mal2_db/models/base.py:698
+msgid "Discount"
+msgstr "Rabbate"
+
+#: mal2_db/models/base.py:703
+msgid "Check if no https"
+msgstr "Haken, wenn kein https"
+
+#: mal2_db/models/base.py:704
+msgid "No SSL"
+msgstr "kein SSL"
+
+#: mal2_db/models/base.py:709
+msgid "Is a wide variety of currency options offered?"
+msgstr "Stehen zahlreiche Währungen im Kopf der Seite zur Auswahl?"
+
+#: mal2_db/models/base.py:710
+msgid "Currency selection"
+msgstr "Währungsauswahl?"
+
+#: mal2_db/models/base.py:716
+msgid "Domain assessment: is certainly a  brand counterfeiter?"
+msgstr "Domain-Einschätzung: ist sicher ein Markenfälscher?"
+
+#: mal2_db/models/base.py:723
+msgid "Are <strong> all </strong> in stock?"
+msgstr "Sind <strong> alle </strong> Produkte lagernd?"
+
+#: mal2_db/models/base.py:724
+msgid "Products in stock"
+msgstr "Produkte lagernd"
+
+#: mal2_db/models/base.py:729
+msgid "Only product title no description?"
+msgstr "nur Produktezeichnung in Überschrift, keine weiteren Beschreibungen"
+
+#: mal2_db/models/base.py:730
+msgid "No product description"
+msgstr "keine Produktbeschreibung"
+
+#: mal2_db/models/base.py:735
+msgid "Url of the contact or term and conditions url"
+msgstr "URL zu den AGB"
+
+#: mal2_db/models/base.py:739
+msgid "Contact url"
+msgstr "URL Kontakt"
+
+#: mal2_db/models/base.py:744
+msgid ""
+"Mail address from an standard provider or no mail at all? (Gmail, Yahoo, "
+"hotmail etc."
+msgstr ""
+"E-Mail-Adresse bei Standardanbieter oder keine Mailadresse? (z.B. gmail, "
+"yahoo, hotmail,...)"
+
+#: mal2_db/models/base.py:745
+msgid "Contact mail address"
+msgstr "Kontakt Mail"
+
+#: mal2_db/models/base.py:750
+msgid "No imprint url only a contact form"
+msgstr "Keine Impressumsangaben - nur Kontaktformular"
+
+#: mal2_db/models/base.py:751
+msgid "No imprint url"
+msgstr "Keine Impressumsangaben"
+
+#: mal2_db/models/base.py:765
+msgid "bad translation, foreign language, no terms and conditions content"
+msgstr ""
+"z. B. belangloser Text, schlecht übersetzt, keine AGB-Inhalte, fremde Sprache"
+
+#: mal2_db/models/base.py:766
+msgid "no terms and conditions"
+msgstr "keine AGB"
+
+#: mal2_db/models/base.py:781 mal2_db/models/base.py:793
+msgid "Imprint assessment: is certainly a brand counterfeiter?"
+msgstr "Impressum-Einschätzung: ist sicher ein Markenfälscher?"
+
+#: mal2_db/models/base.py:786
+msgid "Language is changing between the sites of the homepage"
+msgstr "Sprache wechselt innerhalb der Webseite"
+
+#: mal2_db/models/base.py:787
+msgid "Switching language"
+msgstr "Wechselnde Sprachen"
+
+#: mal2_db/models/base.py:797
+msgid "Counterfeits DB"
+msgstr "Markenfälscher DB"
+
+#: mal2_db/models/base.py:798
+msgid "Counterfeits DBS"
+msgstr "Markenfälscher DBs"
+
+#: mal2_db/models/base.py:823
+msgid "Search result"
+msgstr "Suchergebnis"
+
+#: mal2_db/models/base.py:875
+msgid "Website image"
+msgstr "Webseiten-Bild"
+
+#: mal2_db/models/base.py:888
+msgid "URL of the checked text"
+msgstr "URL des überprüften Text"
+
+#: mal2_db/models/base.py:928
+msgid "Language example"
+msgstr "Sprachbeispiel"
+
+#: mal2_db/models/base.py:953
+msgid "Product example"
+msgstr "Beispiel Produkt URL"
+
+#: mal2_db/models/base.py:978
+msgid "Language url"
+msgstr "Sprachen url"
+
+#: mal2_db/models/registration.py:22
+msgid "First name"
+msgstr "Vorname"
+
+#: mal2_db/models/registration.py:28
+msgid "Last name"
+msgstr "Nachname"
+
+#: mal2_db/models/registration.py:38
+msgid "User"
+msgstr "Benutzer"
+
+#: mal2_db/models/registration.py:39
+#: mal2_db/templates/mal2_users/data_table/users.html:6
+#: mal2_db/templates/mal2_users/data_table/users.html:10
+msgid "Users"
+msgstr "Benutzer"
+
+#: mal2_db/templates/mal2_db/data_table/all_websites.html:6
+#: mal2_db/templates/mal2_db/data_table/all_websites.html:10
+msgid "All websites"
+msgstr "Alle Webseiten"
+
+#: mal2_db/templates/mal2_db/data_table/check_websites.html:6
+#: mal2_db/templates/mal2_db/data_table/check_websites.html:10
+msgid "Websites to check"
+msgstr "Zu überprüfende Websites"
+
+#: mal2_db/templates/mal2_db/data_table/counterfeiter.html:6
+#: mal2_db/templates/mal2_db/data_table/counterfeiter.html:10
+msgid "Brand counterfeiter"
+msgstr "Markenfälscher"
+
+#: mal2_db/templates/mal2_db/data_table/db_url.html:11
+#: mal2_db/templates/mal2_db/data_table/db_url.html:15
+#: mal2_db/templates/mal2_db/data_table/url.html:11
+#: mal2_db/templates/mal2_db/data_table/url.html:15
+msgid "Show screenshot"
+msgstr "Bildschirmfoto ansehen"
+
+#: mal2_db/templates/mal2_db/data_table/disagreement_websites.html:6
+#: mal2_db/templates/mal2_db/data_table/disagreement_websites.html:10
+msgid "Websites (Disagreement)"
+msgstr "Webseiten (Unstimmigkeit)"
+
+#: mal2_db/templates/mal2_db/data_table/no_fake_websites.html:6
+#: mal2_db/templates/mal2_db/data_table/no_fake_websites.html:10
+msgid "Websites (checked - no fake)"
+msgstr "Überprüft Websiten (Nicht Fake) "
+
+#: mal2_db/templates/mal2_db/data_table/online_shop.html:6
+#, fuzzy
+#| msgid "Fake shops"
+msgid "Online shops"
+msgstr "Fake-Shops"
+
+#: mal2_db/templates/mal2_db/data_table/online_shop.html:10
+msgid "Online Shops"
+msgstr ""
+
+#: mal2_db/templates/mal2_db/data_table/other_websites.html:6
+#: mal2_db/templates/mal2_db/data_table/other_websites.html:10
+#, fuzzy
+#| msgid "Website types"
+msgid "Websites (others)"
+msgstr "Webseiten-Typen"
+
+#: mal2_db/templates/mal2_db/data_table/safe_websites.html:6
+#: mal2_db/templates/mal2_db/data_table/safe_websites.html:10
+msgid "Websites (no verification necessary)"
+msgstr "Webseiten (keine Überprüfung erforderlich)"
+
+#: mal2_db/templates/mal2_db/data_table/unsure_websites.html:6
+#: mal2_db/templates/mal2_db/data_table/unsure_websites.html:10
+msgid "Websites (Unsure)"
+msgstr "Webseiten (Unsicher)"
+
+#: mal2_db/templates/mal2_db/dialog/add_counterfeiter.html:6
+#: mal2_db/templates/mal2_db/dialog/add_counterfeiter.html:10
+#: mal2_db/views/base.py:1582
+msgid "Add brand counterfeiter"
+msgstr "Markenfälscher hinzufügen"
+
+#: mal2_db/templates/mal2_db/dialog/add_fake_shop.html:6
+#: mal2_db/templates/mal2_db/dialog/add_fake_shop.html:10
+#: mal2_db/views/base.py:1093
+msgid "Add fake shop"
+msgstr "Fake-Shop hinzufügen"
+
+#: mal2_db/templates/mal2_db/dialog/add_website.html:6
+#: mal2_db/templates/mal2_db/dialog/add_website.html:10
+#: mal2_db/views/base.py:138 mal2_db/views/base.py:334
+msgid "Add website"
+msgstr "Webseite hinzufügen"
+
+#: mal2_db/templates/mal2_db/dialog/delete_counterfeiter.html:6
+#: mal2_db/views/base.py:1623
+msgid "Delete brand counterfeiter"
+msgstr "Markenfälscher löschen"
+
+#: mal2_db/templates/mal2_db/dialog/delete_counterfeiter.html:10
+#, python-format
+msgid ""
+"Do you want to delete the brand counterfeiter <strong>%(website)s</strong>?"
+msgstr "Möchten Sie den Markenfälscher <strong>%(website)s</strong löschen?"
+
+#: mal2_db/templates/mal2_db/dialog/delete_fake_shop.html:6
+#: mal2_db/views/base.py:1134
+msgid "Delete fake shop"
+msgstr "Fake-Shop löschen"
+
+#: mal2_db/templates/mal2_db/dialog/delete_fake_shop.html:10
+#, python-format
+msgid "Do you want to delete the fake shop <strong>%(website)s</strong>?"
+msgstr "Möchten Sie den Fake Shop <strong>%(website)s</strong> löschen?"
+
+#: mal2_db/templates/mal2_db/dialog/delete_website.html:6
+#: mal2_db/views/base.py:179 mal2_db/views/base.py:375
+#: mal2_db/views/base.py:551 mal2_db/views/base.py:705
+#: mal2_db/views/base.py:885 mal2_db/views/base.py:1927
+#: mal2_db/views/base.py:2090 mal2_db/views/base.py:2254
+msgid "Delete website"
+msgstr "Webseite löschen"
+
+#: mal2_db/templates/mal2_db/dialog/delete_website.html:10
+#, python-format
+msgid "Do you want to delete the website <strong>%(website)s</strong>?"
+msgstr "Möchten Sie die Website <strong>%(website)s</strong> löschen?"
+
+#: mal2_db/templates/mal2_db/dialog/edit_counterfeiter.html:6
+#: mal2_db/views/base.py:1610
+msgid "Edit brand counterfeiter"
+msgstr "Markenfälscher bearbeiten"
+
+#: mal2_db/templates/mal2_db/dialog/edit_counterfeiter.html:10
+#: mal2_db/templates/mal2_db/dialog/edit_fake_shop.html:10
+#: mal2_db/templates/mal2_db/dialog/edit_website.html:10
+#: mal2_db/templates/mal2_users/dialog/edit_user.html:12
+#: mal2_db/templates/mal2_users/dialog/set_user_password.html:10
+msgid "Update"
+msgstr "Aktualisieren"
+
+#: mal2_db/templates/mal2_db/dialog/edit_fake_shop.html:6
+#: mal2_db/views/base.py:1121
+msgid "Edit fake shop"
+msgstr "Fake-Shop bearbeiten"
+
+#: mal2_db/templates/mal2_db/dialog/edit_website.html:6
+#: mal2_db/views/base.py:166 mal2_db/views/base.py:362
+#: mal2_db/views/base.py:538 mal2_db/views/base.py:692
+#: mal2_db/views/base.py:872 mal2_db/views/base.py:1914
+#: mal2_db/views/base.py:2077 mal2_db/views/base.py:2241
+msgid "Edit website"
+msgstr "Webseite bearbeiten"
+
+#: mal2_db/templates/mal2_users/dialog/add_user.html:8 mal2_db/views/user.py:71
+msgid "Add user"
+msgstr "Benutzer hinzufügen"
+
+#: mal2_db/templates/mal2_users/dialog/delete_user.html:6
+msgid "Delete user"
+msgstr "Benutzer löschen"
+
+#: mal2_db/templates/mal2_users/dialog/delete_user.html:10
+#, python-format
+msgid "Do you want to delete the user <strong>%(user)s</strong>?"
+msgstr "Möchten Sie den Benutzer <strong>%(user)s</strong> löschen?"
+
+#: mal2_db/templates/mal2_users/dialog/edit_user.html:8
+msgid "Edit user"
+msgstr "Benutzer bearbeiten"
+
+#: mal2_db/templates/mal2_users/dialog/set_user_password.html:6
+#: mal2_db/views/user.py:94
+msgid "Set password"
+msgstr "Passwort festlegen"
+
+#: mal2_db/templates/mal2_users/registration/dialog/password_change.html:10
+msgid "Change"
+msgstr "Ändern"
+
+#: mal2_db/templates/mal2_users/registration/email/password_reset.html:6
+#: mal2_db/templates/mal2_users/registration/email/password_reset.html:17
+#: mal2_db/templates/mal2_users/registration/email/password_reset_subject.txt:1
+#: mal2_db/templates/mal2_users/registration/password_reset.html:6
+#: mal2_db/templates/mal2_users/registration/password_reset.html:10
+#: mal2_db/templates/mal2_users/registration/password_reset.html:21
+#: mal2_db/templates/mal2_users/registration/password_reset_done.html:6
+#: mal2_db/templates/mal2_users/registration/password_reset_done.html:10
+msgid "Reset password"
+msgstr "Passwort zurücksetzen"
+
+#: mal2_db/templates/mal2_users/registration/email/password_reset.html:9
+msgid ""
+"You recently requested to reset your password for your account. Click the "
+"link below to initiate the password reset process:"
+msgstr ""
+"Sie haben kürzlich darum gebeten Ihr Passwort für Ihren Benutzer "
+"zurückzusetzen. Klicken Sie auf den folgenden Link um den Prozess der "
+"Passwortzurücksetzung einzuleiten:"
+
+#: mal2_db/templates/mal2_users/registration/email/password_reset.html:23
+msgid "The link will be valid for 24 hours!"
+msgstr "Der Link ist 24 Stunden gültig!"
+
+#: mal2_db/templates/mal2_users/registration/email/signup.html:6
+msgid "Thank you for signing up"
+msgstr "Danke für Ihre Anmeldung"
+
+#: mal2_db/templates/mal2_users/registration/email/signup.html:9
+msgid "Please confirm your e-mail to activate your user account."
+msgstr "Bitte bestätigen Sie Ihre E-Mail um Ihr Benutzerkonto zu aktivieren."
+
+#: mal2_db/templates/mal2_users/registration/email/signup.html:17
+#: mal2_db/templates/mal2_users/registration/email_verification.html:10
+#: mal2_db/templates/mal2_users/registration/email_verification.html:38
+#: mal2_db/templates/mal2_users/registration/signup_done.html:10
+msgid "Activate user account"
+msgstr "Benutzerkonto aktivieren"
+
+#: mal2_db/templates/mal2_users/registration/email/signup_subject.txt:1
+msgid "Your user account has been created"
+msgstr "Ihr Benutzerkonto wurde erstellt"
+
+#: mal2_db/templates/mal2_users/registration/email_verification.html:16
+msgid "Your user account has been activated."
+msgstr "Ihr Benutzerkonto wurde erstellt"
+
+#: mal2_db/templates/mal2_users/registration/email_verification.html:24
+#: mal2_db/templates/mal2_users/registration/email_verification.html:50
+#: mal2_db/templates/mal2_users/registration/password_reset_complete.html:24
+#: mal2_db/templates/mal2_users/registration/password_reset_done.html:26
+#: mal2_db/templates/mal2_users/registration/signin.html:6
+#: mal2_db/templates/mal2_users/registration/signin.html:10
+#: mal2_db/templates/mal2_users/registration/signin.html:34
+#: mal2_db/templates/mal2_users/registration/signup.html:6
+#: mal2_db/templates/mal2_users/registration/signup_done.html:6
+#: mal2_db/templates/mal2_users/registration/signup_done.html:24
+msgid "Sign in"
+msgstr "Anmelden"
+
+#: mal2_db/templates/mal2_users/registration/email_verification.html:30
+msgid ""
+"To activate the user account, click on <strong>\"Activate user account\"</"
+"strong>."
+msgstr ""
+"Zum aktivieren des Benutzerkonto auf <strong>„Benutzerkonto aktivieren“</"
+"strong> klicken."
+
+#: mal2_db/templates/mal2_users/registration/email_verification.html:44
+msgid "The link was invalid, possibly because it has already been used."
+msgstr "Der Link ist ungültig, wahrscheinlich wurde er schon benutzt."
+
+#: mal2_db/templates/mal2_users/registration/password_reset.html:21
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+#: mal2_db/templates/mal2_users/registration/password_reset.html:25
+#: mal2_db/templates/mal2_users/registration/password_reset_confirm.html:32
+#: mal2_db/templates/mal2_users/registration/password_reset_confirm.html:45
+msgid "Back to sign in"
+msgstr "Zurück zur Anmeldung"
+
+#: mal2_db/templates/mal2_users/registration/password_reset_complete.html:6
+#: mal2_db/templates/mal2_users/registration/password_reset_complete.html:10
+msgid "Password set"
+msgstr "Passwort gesetzt"
+
+#: mal2_db/templates/mal2_users/registration/password_reset_complete.html:15
+msgid "Your password has been set. Feel free to sign in into your account."
+msgstr ""
+"Ihr Passwort wurde gesetzt. Sie können sich nun mit Ihren Benutzer anmelden."
+
+#: mal2_db/templates/mal2_users/registration/password_reset_confirm.html:21
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+"Bitte geben Sie Ihr neues Passwort zweimal ein, damit wir überprüfen können, "
+"ob Sie es richtig eingegeben haben."
+
+#: mal2_db/templates/mal2_users/registration/password_reset_confirm.html:39
+msgid ""
+"The link was invalid, possibly because it has already been used. Please "
+"request a new password reset."
+msgstr ""
+"Der Link ist ungültig, wahrscheinlich wurde er schon benutzt. Bitte fordern "
+"Sie eine neue Passwortrücksetzung an."
+
+#: mal2_db/templates/mal2_users/registration/password_reset_done.html:15
+msgid ""
+"<strong>We've emailed you instructions for setting your password.</strong> "
+"If you <strong>don't</strong> receive an email, please make sure you've "
+"entered the address you registered with, and check your spam folder."
+msgstr ""
+"<strong>Wir haben Ihnen eine E-Mail mit Anweisungen zum Aktivieren Ihres "
+"Benutzerkontos gesendet. </strong>Wenn Sie <strong>keine</strong> E-Mail "
+"erhalten haben, überprüfen Sie bitte Ihren Spam-Ordner."
+
+#: mal2_db/templates/mal2_users/registration/signin.html:23
+#, python-format
+msgid ""
+"You are authenticated as %(username)s, but are not authorized to access this "
+"page. Would you like to sign in to a different account?"
+msgstr ""
+"Sie sind als %(username)s angemeldet, Sie sind nicht berechtigt diese Seite "
+"aufzurufen. Wollen Sie sich mit einem anderen User anmelden?"
+
+#: mal2_db/templates/mal2_users/registration/signin.html:41
+#: mal2_db/templates/mal2_users/registration/signup.html:12
+msgid "Create account"
+msgstr "Konto erstellen"
+
+#: mal2_db/templates/mal2_users/registration/signin.html:47
+msgid "Forgot password?"
+msgstr "Passwort vergessen?"
+
+#: mal2_db/templates/mal2_users/registration/signup.html:23
+msgid "Sign up"
+msgstr "Registrieren"
+
+#: mal2_db/templates/mal2_users/registration/signup.html:27
+msgid "Sign in instead"
+msgstr "Stattdessen anmelden"
+
+#: mal2_db/templates/mal2_users/registration/signup_done.html:15
+msgid ""
+"<strong>We've emailed you instructions to activate your user account.</"
+"strong> If you <strong>have not yet</strong> received an email, please check "
+"your spam folder."
+msgstr ""
+"<strong>Wir haben Ihnen eine E-Mail mit Anweisungen zum Aktivieren Ihres "
+"Benutzerkontos gesendet. </strong>Wenn Sie <strong>keine</strong> E-Mail "
+"erhalten haben, überprüfen Sie bitte Ihren Spam-Ordner."
+
+#: mal2_db/views/auth.py:228
+msgid "Password change successful"
+msgstr "Passwortänderung erfolgreich"
+
+#: mal2_db/views/base.py:151 mal2_db/views/base.py:347
+msgid "Check website"
+msgstr "Webseite überprüfen"
+
+#: mal2_db/views/base.py:206 mal2_db/views/base.py:402
+#: mal2_db/views/base.py:574 mal2_db/views/base.py:728
+#: mal2_db/views/base.py:908 mal2_db/views/base.py:1952
+#: mal2_db/views/base.py:2115 mal2_db/views/base.py:2279
+msgid "Reported at"
+msgstr "Gemeldet am"
+
+#: mal2_db/views/base.py:1106
+msgid "Fake shop details"
+msgstr "Fake-Shop-Details"
+
+#: mal2_db/views/base.py:1166
+msgid "Company data"
+msgstr "Firmendaten"
+
+#: mal2_db/views/base.py:1171
+msgid "Quality mark"
+msgstr "Gütezeichen"
+
+#: mal2_db/views/base.py:1173 mal2_db/views/base.py:1649
+msgid "Checked by"
+msgstr "Geprüft von"
+
+#: mal2_db/views/base.py:1595
+msgid "Brand counterfeiter details"
+msgstr "Markenfälscher-Details"
+
+#: mal2_db/views/user.py:83
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: mal2_db/views/user.py:117
+msgid "Admin"
+msgstr "Admin"
+
+#: mal2_db/views/user.py:282
+#, python-format
+msgid "Password for %(verbose_name)s \"%(name)s\" was set."
+msgstr "Passwort für %(verbose_name)s \"%(name)s\" wurde gesetzt."
+
+#: templates/django/forms/widgets/clearable_file_input.html:8
+msgid "Open file"
+msgstr "Datei öffnen"

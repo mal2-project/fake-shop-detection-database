@@ -1,0 +1,21 @@
+//------------------------------------------------------------------------------
+// RESETS
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+img {
+  border-style: none;
+  vertical-align: middle;
+}
+
+
+//------------------------------------------------------------------------------
+// RESPONSIVE
+
+.img-fluid {
+  height: auto;
+  max-width: 100%;
+}

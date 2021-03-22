@@ -1,0 +1,134 @@
+//------------------------------------------------------------------------------
+// RANGE
+
+.custom-range {
+  appearance: none;
+  background-color: transparent;
+  height: calc(#{rem($custom-range-thumb-height)} + #{rem($input-border-width * 2)});
+  padding: 0;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+
+    &::-webkit-slider-thumb,
+    &::-moz-range-thumb,
+    &::-ms-thumb {
+      box-shadow: 0 0 0 rem(1) $body-bg, $input-focus-box-shadow;
+    }
+  }
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    background-color: $primary;
+    border: 0;
+    border-radius: rem(16);
+    height: rem($custom-range-thumb-height);
+    margin-top: rem(($custom-range-track-height - $custom-range-thumb-height) / 2);
+    transition: background-color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+    width: rem($custom-range-thumb-width);
+
+    &:active {
+      background-color: lighten($primary, 35%);
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    background-color: $custom-range-track-bg;
+    border-color: transparent;
+    border-radius: rem(16);
+    color: transparent;
+    cursor: pointer;
+    height: rem($custom-range-track-height);
+    width: rem($custom-range-track-width);
+  }
+
+  &::-moz-range-thumb {
+    appearance: none;
+    background-color: $primary;
+    border: 0;
+    border-radius: rem(16);
+    height: rem($custom-range-thumb-height);
+    transition: background-color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+    width: rem($custom-range-thumb-width);
+
+    &:active {
+      background-color: lighten($primary, 35%);
+    }
+  }
+
+  &::-moz-range-track {
+    background-color: $custom-range-track-bg;
+    border-color: transparent;
+    border-radius: rem(16);
+    color: transparent;
+    cursor: pointer;
+    height: rem($custom-range-track-height);
+    width: 100%;
+  }
+
+  &::-ms-thumb {
+    appearance: none;
+    background-color: $primary;
+    border: 0;
+    border-radius: rem(16);
+    box-shadow: 0 rem(2) rem(4) rgba($black, 0.1);
+    height: rem($custom-range-thumb-height);
+    margin-left: rem($input-border-width); // Workaround that overflowed box-shadow is hidden.
+    margin-right: rem($input-border-width); // Workaround that overflowed box-shadow is hidden.
+    margin-top: 0;
+    transition: background-color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+    width: rem($custom-range-thumb-width);
+
+    &:active {
+      background-color: lighten($primary, 35%);
+    }
+  }
+
+  &::-ms-track {
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: rem(16);
+    border-width: rem($custom-range-thumb-height / 2);
+    color: transparent;
+    cursor: pointer;
+    height: rem($custom-range-track-height);
+    width: rem($custom-range-track-width);
+  }
+
+  &::-ms-fill-lower {
+    background-color: $custom-range-track-bg;
+    border-radius: rem(16);
+  }
+
+  &::-ms-fill-upper {
+    background-color: $custom-range-track-bg;
+    border-radius: rem(16);
+  }
+
+  &:disabled {
+    &::-webkit-slider-thumb {
+      background-color: $custom-range-thumb-disabled-bg;
+    }
+
+    &::-webkit-slider-runnable-track {
+      cursor: default;
+    }
+
+    &::-moz-range-thumb {
+      background-color: $custom-range-thumb-disabled-bg;
+    }
+
+    &::-moz-range-track {
+      cursor: default;
+    }
+
+    &::-ms-thumb {
+      background-color: $custom-range-thumb-disabled-bg;
+    }
+  }
+}

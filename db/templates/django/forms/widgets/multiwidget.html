@@ -1,0 +1,15 @@
+{% load form_tags %}
+
+{% spaceless %}
+  <div class="input-wrapper">
+    <div class="sm-gutters row">
+      {% with widget_name=widget.name %}
+        {% for widget in widget.subwidgets %}
+          <div class="{{ widget.attrs|get_col_class }}">
+           {% include widget.template_name %}
+          </div>
+        {% endfor %}
+      {% endwith %}
+    </div>
+  </div>
+{% endspaceless %}

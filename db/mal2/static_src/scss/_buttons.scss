@@ -1,0 +1,95 @@
+// stylelint-disable declaration-no-important
+
+// ------------------------------------------------------------------------------
+// BASE STYLES
+
+.btn {
+  background-color: transparent;
+  border: rem($border-width) solid transparent;
+  border-radius: rem($border-radius);
+  color: $body-color;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: rem($input-font-size);
+  line-height: $line-height-base;
+  padding: rem($input-btn-padding-y) rem($input-btn-padding-x);
+  text-align: center;
+  transition: background-color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &.disabled,
+  &:disabled {
+    box-shadow: none;
+    opacity: 0.65;
+    pointer-events: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+  }
+
+  &:hover {
+    color: $body-color;
+    text-decoration: none;
+  }
+}
+
+.btn-sm {
+  font-size: rem($input-font-size-sm);
+  height: rem(32);
+  line-height: rem(30);
+  padding: 0 rem(10);
+}
+
+
+//------------------------------------------------------------------------------
+// ALTERNATE BUTTONS
+
+@each $color, $value in $colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// LOADER
+
+@keyframes btn-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-loader {
+  color: transparent !important;
+  cursor: default;
+  fill: transparent !important;
+  pointer-events: none;
+  position: relative;
+
+  &:after {
+    animation: btn-loader 300ms linear infinite;
+    border: rem(2) solid transparentize($white, 0.5);
+    border-radius: 100%;
+    border-top-color: $white;
+    content: "";
+    display: block;
+    height: rem(24);
+    left: 50%;
+    margin-left: rem(-12);
+    margin-top: rem(-12);
+    position: absolute;
+    top: 50%;
+    transition: opacity;
+    width: rem(24);
+  }
+}

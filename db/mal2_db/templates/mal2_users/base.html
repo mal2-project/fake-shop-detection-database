@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load i18n static %}
+
+{% block title %}
+{% endblock %}
+
+{% block main %}
+  <main class="align-items-center d-flex login py-2 py-lg-3">
+    <div class="container-max-fluid">
+      <div class="row">
+        <div class="{% block card_classes %}col-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3{% endblock %}">
+          <div class="card">
+            <div class="card-header bg-white no-border pt-2">
+              <div class="align-items-center row sm-gutters">
+                <div class="col-auto mx-auto mx-md-0">
+                  <img alt="mal2" height="70" src="{% static "img/logo_login.svg" %}" width="70">
+                </div>
+                <div class="col-12 col-md text-center text-md-right">
+                  <h1 class="h3 mb-0 mt-1 mt-md-0">
+                    {% block card_header %}{% endblock card_header %}<br>
+                    <small>
+                      <span class="text-normal">mal2DB</span>
+                      {% if settings.DEBUG %}
+                        <span class="text-danger">DEV</span>
+                      {% endif %}
+                    </small>
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div class="card-body pb-2">
+              {% block card_body %}{% endblock card_body %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

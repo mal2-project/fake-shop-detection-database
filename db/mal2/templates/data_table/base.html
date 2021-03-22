@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% load base_tags data_table_tags i18n static %}
+
+{% block title %}
+  {% trans "Data table" %}
+{% endblock %}
+
+{% block stylesheet %}
+{% endblock stylesheet %}
+
+{% block main %}
+  <main class="py-2 py-lg-3">
+    <div class="container-max-fluid">
+      <div class="align-items-center row mb-1 mb-sm-0 mb-lg-2">
+        <div class="col-12 col-md">
+          <h1 class="mb-1 mt-0">
+            {% block site_title %}
+              {% trans "Data table" %}
+            {% endblock %}
+          </h1>
+        </div>
+        <div class="col-12 col-sm-auto mb-1 ml-auto d-flex">
+
+          <div class="row sm-gutters">
+            {% if data_table.options|get_item:"data-export-csv" %}
+              <div class="col-12 col-sm">
+                {% include "data_table/export_csv_button.html" %}
+              </div>
+            {% endif %}
+            <div class="col-12 col-sm">
+              {% include "data_table/reset_filters_button.html" %}
+            </div>
+            {% if data_table.field_filters.type != "collapse" and data_table.field_filters.regex_enabled %}
+              <div class="col-12 col-sm">
+                {% include "data_table/regex_filters_button.html" %}
+              </div>
+            {% endif %}
+            {% if data_table.field_filters.type == "collapse" %}
+              <div class="col-12 col-sm">
+                {% include "data_table/filters_button.html" %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% if data_table.field_filters.type != "collapse" and data_table.field_filters.regex_enabled %}
+        <div class="collapse" id="{{ data_table.table }}_search_filters">
+          <div class="card mb-2 mb-lg-3">
+            <div class="card-body">
+              {% include "data_table/regex_filters_info.html" %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if data_table.field_filters.type == "collapse" %}
+        {% include "data_table/filters_collapse.html" %}
+      {% endif %}
+
+      {% include "data_table/table.html" %}
+    </div>
+  </main>
+{% endblock main %}
+
+{% block javascript %}
+  {% if data_table.DEBUG %}
+    <script defer src="{% static "/js/datatables/datatables.js" %}"></script>
+  {% else %}
+    <script defer src="{% static "/js/datatables/datatables.min.js" %}"></script>
+  {% endif %}
+{% endblock javascript %}

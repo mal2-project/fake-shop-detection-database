@@ -1,0 +1,65 @@
+//------------------------------------------------------------------------------
+// LIST GROUPS
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.list-group-item {
+  background-color: $white;
+  border: rem($border-width) solid $gray-400;
+  display: block;
+  margin-bottom: rem(-1);
+  padding: rem(8) rem(20);
+  position: relative;
+
+  &:first-child {
+    border-radius: rem($border-radius) rem($border-radius) 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 rem($border-radius) rem($border-radius);
+    margin-bottom: 0;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $gray-600;
+    pointer-events: none;
+  }
+
+  &.active {
+    background-color: $secondary;
+    border-color: $secondary;
+    color: color-yiq($secondary);
+    z-index: 2;
+  }
+}
+
+.list-group-flush {
+  .list-group-item {
+    border-left: 0;
+    border-radius: 0;
+    border-right: 0;
+
+    &:last-child {
+      margin-bottom: rem(-1);
+    }
+  }
+
+  &:first-child {
+    .list-group-item:first-child {
+      border-top: 0;
+    }
+  }
+
+  &:last-child {
+    .list-group-item:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+}

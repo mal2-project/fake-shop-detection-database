@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load i18n static %}
+
+{% block title %}
+  {% trans "Internal server error" %}
+{% endblock %}
+
+{% block main %}
+  <main class="align-items-center d-flex py-2 py-lg-3">
+    <div class="container text-center">
+      {% now "SHORT_DATETIME_FORMAT" as current_datetime %}
+
+      <h1>{% trans "Internal server error" %}</h1>
+
+      {% blocktrans trimmed with subject=settings.EMAIL_SUBJECT_PREFIX datetime=current_datetime %}
+        <p>
+          In order to fix this, we ask for your help:<br>
+          Please take a screenshot of this page and send it to <a href="mailto:support-software@x-net.at?subject={{ subject }} Server error">support-software@x-net.at</a>.
+        </p>
+      {% endblocktrans %}
+
+      <p>{% trans "Current date/time:" %} {{ current_datetime }}</p>
+    </div>
+  </main>
+{% endblock %}

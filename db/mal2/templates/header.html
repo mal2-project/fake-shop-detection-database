@@ -1,0 +1,8 @@
+<header class="bg-white{% if user.is_authenticated %} navbar-header-lg{% endif %} sticky-top">
+  <div class="color-header"></div>
+  {% if user.is_authenticated %}
+    <div class="container-fluid container-max-fluid">
+      {% include "navbar/navbar.html" %}
+    </div>
+  {% endif %}
+</header>

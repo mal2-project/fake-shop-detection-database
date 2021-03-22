@@ -1,0 +1,8 @@
+{% load static %}
+
+<a class="d-block ml-auto" href="{{ href }}" title="{{ text }}">
+  <svg class="icon icon-dark" role="presentation">
+    <use xlink:href="{% static "img/sprite.symbol.svg" %}#file-download-outline"></use>
+  </svg>
+  <span class="sr-only">{{ text }}</span>
+</a>

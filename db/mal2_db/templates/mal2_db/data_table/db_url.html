@@ -1,0 +1,21 @@
+{% load base_tags i18n static %}
+
+{% remove_url_protocol field_value as visible_field_value %}
+
+{% if website__screenshot %}
+  <span class="align-items-center row sm-gutters">
+    <span class="col">
+      <a href="//{{ visible_field_value }}" target="_blank">{{ visible_field_value |truncatechars:40 }}</a>
+    </span>
+    <span class="col-auto ml-auto">
+      <a class="d-block" data-fancybox="fancybox" href="{{ MEDIA_URL }}websites/screenshots/{{ website__screenshot }}" title="{% trans "Show screenshot" %}">
+        <svg class="icon icon-dark" role="presentation">
+          <use xlink:href="{% static "img/sprite.symbol.svg" %}#monitor-screenshot"></use>
+        </svg>
+        <span class="sr-only">{% trans "Show screenshot" %}</span>
+      </a>
+    </span>
+  </span>
+{% else %}
+  <a href="//{{ visible_field_value }}" target="_blank">{{ visible_field_value |truncatechars:40 }}</a>
+{% endif %}

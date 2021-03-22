@@ -1,0 +1,8 @@
+{% load i18n static %}
+
+<a aria-controls="search_filters" aria-expanded="false" class="btn btn-gray-300 d-flex justify-content-center mt-1 mt-sm-0" data-toggle="collapse" data-target="#{{ data_table.table }}_search_filters" href="#">
+  <svg class="icon icon-dark mr-1" role="presentation">
+    <use xlink:href="{% static "img/sprite.symbol.svg" %}#help-box"></use>
+  </svg>
+  {% trans "Search filters" %}
+</a>

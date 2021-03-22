@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+
+{% load i18n %}
+
+<!DOCTYPE document SYSTEM "rml.dtd">
+  <document author="{{ request.user.get_full_name }}" creator="mal2DB" subject="" title="{{ title }}" xmlns:doc="http://namespaces.zope.org/rml/doc">
+    <docinit centerWindow="True" fitWindow="True" hideMenubar="True" hideToolbar="true">
+      <registerTTFont faceName="Ubuntu-300" fileName="[mal2]/static/fonts/ubuntu/ubuntu-v14-latin-300.ttf"/>
+      <registerTTFont faceName="Ubuntu-300italic" fileName="[mal2]/static/fonts/ubuntu/ubuntu-v14-latin-300italic.ttf"/>
+      <registerTTFont faceName="Ubuntu-400" fileName="[mal2]/static/fonts/ubuntu/ubuntu-v14-latin-regular.ttf"/>
+      <registerTTFont faceName="Ubuntu-400italic" fileName="[mal2]/static/fonts/ubuntu/ubuntu-v14-latin-italic.ttf"/>
+      <registerTTFont faceName="Ubuntu-500" fileName="[mal2]/static/fonts/ubuntu/ubuntu-v14-latin-500.ttf"/>
+      <registerTTFont faceName="Ubuntu-500italic" fileName="[mal2]/static/fonts/ubuntu/ubuntu-v14-latin-500italic.ttf"/>
+      <registerTTFont faceName="Ubuntu-700" fileName="[mal2]/static/fonts/ubuntu/ubuntu-v14-latin-700.ttf"/>
+      <registerTTFont faceName="Ubuntu-700italic" fileName="[mal2]/static/fonts/ubuntu/ubuntu-v14-latin-700italic.ttf"/>
+      <registerTTFont faceName="Ubuntu-Condensed-400" fileName="[mal2]/static/fonts/ubuntu/ubuntu-condensed-v10-latin-regular.ttf"/>
+      <registerTTFont faceName="Ubuntu-Mono-400" fileName="[mal2]/static/fonts/ubuntu/ubuntu-mono-v9-latin-regular.ttf"/>
+    </docinit>
+
+    <stylesheet>
+      <blockTableStyle id="table">
+        <blockBottomPadding start="0,0" stop="-1,-1" length="3mm"/>
+        <blockLeftPadding start="0,0" stop="-1,-1" length="0"/>
+        <blockRightPadding start="0,0" stop="-1,-1" length="5mm"/>
+        <blockTopPadding start="0,0" stop="-1,-1" length="0"/>
+        <blockValign start="0,0" stop="-1,-1" value="top"/>
+      </blockTableStyle>
+
+      <paraStyle fontName="Ubuntu-400" fontSize="20" name="h1" spaceAfter="6mm" spaceBefore="6mm" textColor="#000"/>
+      <paraStyle fontName="Ubuntu-400" fontSize="16" name="h2" spaceAfter="6mm" spaceBefore="6mm" textColor="#000"/>
+      <paraStyle fontName="Ubuntu-400" fontSize="12" name="h3" spaceAfter="6mm" spaceBefore="6mm" textColor="#000"/>
+      <paraStyle fontName="Ubuntu-500" fontSize="10" name="h4" spaceAfter="6mm" spaceBefore="6mm" textColor="#000"/>
+      <paraStyle fontName="Ubuntu-500" fontSize="10" name="h5" spaceAfter="6mm" spaceBefore="6mm" textColor="#000"/>
+      <paraStyle fontName="Ubuntu-400" fontSize="10" leading="13" name="p" spaceAfter="3mm" spaceBefore="6mm" textColor="#212529"/>
+
+      <listStyle bulletFontSize="8" bulletOffsetY="-1" leftIndent="5mm" name="ul" bulletColor="#EE7F01"/>
+      <listStyle name="ol" parent="ul"/>
+
+      <spanStyle fontName="Ubuntu-700" name="strong"/>
+
+      <paraStyle fontName="Ubuntu-Condensed-400" fontSize="10" name="header-info" textColor="#212529"/>
+      <paraStyle alignment="right" fontName="Ubuntu-Condensed-400" fontSize="10" name="header-title" textColor="#212529"/>
+
+      <paraStyle fontName="Ubuntu-Condensed-400" fontSize="10" name="footer-info" textColor="#212529"/>
+      <paraStyle alignment="right" fontName="Ubuntu-Condensed-400" fontSize="10" textColor="#212529" name="footer-pagination"/>
+    </stylesheet>
+
+  <template>
+    <pageTemplate id="main" pagesize="(210mm, 297mm)">
+      {% block header %}
+        {% include "pdf/header.rml" %}
+      {% endblock header %}
+
+      {% block footer %}
+        {% include "pdf/footer.rml" %}
+      {% endblock footer %}
+
+      <frame height="253mm" id="main" width="190mm" x1="10mm" y1="20mm"/>
+    </pageTemplate>
+  </template>
+
+  <story>
+    {% block content %}
+      <h2 style="h2">{{ pdf_data.headline }}</h2>
+      <para style="p">{{ pdf_data.text }}</para>
+    {% endblock content %}
+  </story>
+</document>

@@ -1,0 +1,43 @@
+{% load form_tags i18n static %}
+
+{% get_formset formsets_data field as formsets %}
+
+{% for formset in formsets %}
+  <div class="col-12">
+    <fieldset class="mb-2" data-form-set="{{ formset.prefix }}">
+      <legend class="form-set-label label my-0" data-form-set-label>
+        <span class="align-items-end no-gutters d-flex">
+          <span class="mr-auto">
+            {{ formset|get_formset_title }}
+          </span>
+          <a class="d-block{% if formset|length >= formset.max_num %} disabled{% endif %} ml-1" data-form-set-add href="#">
+            <svg class="icon icon-dark" role="presentation">
+              <use xlink:href="{% static "img/sprite.symbol.svg" %}#plus-box"></use>
+            </svg>
+            <span class="sr-only">{% trans "Add" %}</span>
+          </a>
+        </span>
+      </legend>
+
+      {% if formset.help_text %}
+        <small class="form-text text-muted">
+          {{ formset.help_text|safe }}
+        </small>
+      {% endif %}
+
+      <a aria-hidden="true" id="{{ formset.prefix }}_error" class="small invalid-feedback" data-form-set-error tabindex="-1"></a>
+
+      {{ formset.management_form }}
+
+      <div data-form-set-empty-item hidden>
+        {% include "form/formset/item.html" with form=formset.empty_form %}
+      </div>
+
+      <div class="border-gray-300 border-top mt-1" data-form-set-body>
+        {% for form in formset %}
+          {% include "form/formset/item.html" %}
+        {% endfor %}
+      </div>
+    </fieldset>
+  </div>
+{% endfor %}

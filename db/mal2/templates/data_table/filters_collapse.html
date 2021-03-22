@@ -1,0 +1,49 @@
+{% load data_table_tags i18n %}
+
+<div class="collapse" id="{{ data_table.table }}_filters">
+  <div class="card mb-2 mb-lg-3">
+    <div class="card-body">
+      <div class="row" data-filter="{{ data_table.table }}_table">
+        {% for field_name in data_table.field_names %}
+          {% with data_table|get_input_type:field_name as input_type %}
+            {% if not data_table|is_filter_excluded:field_name %}
+              <div class="{{ data_table|get_field_class:field_name }}">
+                <div class="form-group">
+                  <label class="label" for="{{ data_table.table }}_{{ field_name }}">
+                    {{ data_table|get_label:field_name }}
+                  </label>
+                  {% if input_type == "select" %}
+                    {% for option in data_table|get_select_options:field_name %}
+                      {% if forloop.first %}
+                        <select class="custom-select" data-column="{{ forloop.parentloop.counter }}" data-field-name="{{ field_name }}" data-select id="{{ data_table.table }}_{{ field_name }}">
+                          <option value="">{% trans "All" %}</option>
+                            {% if data_table|has_regex_enabled:field_name %}
+                              <option value="*">{% trans "All WITH" %}</option>
+                              <option value="!">{% trans "NOT" %}</option>
+                            {% endif %}
+                      {% endif %}
+
+                      <option value="{{ option.0 }}">{{ option.1 }}</option>
+
+                      {% if forloop.last %}
+                        </select>
+                      {% endif %}
+                    {% endfor %}
+                  {% else %}
+                    <input autocomplete="off" class="custom-{{ input_type }} form-control" data-column="{{ forloop.counter }}" data-field-name="{{ field_name }}" data-input id="{{ data_table.table }}_{{ field_name }}" type="{{ input_type }}">
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endwith %}
+        {% endfor %}
+      </div>
+      {% if data_table.field_filters.regex_enabled %}
+        <hr>
+        <div class="my-1">
+          {% include "data_table/regex_filters_info.html" %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

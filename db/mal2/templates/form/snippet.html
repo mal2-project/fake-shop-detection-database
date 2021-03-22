@@ -1,0 +1,27 @@
+{% load form_tags static i18n %}
+
+{% for field in form.hidden_fields %}
+  {{ field }}
+{% endfor %}
+
+{% if form.wizard %}
+  {% for step in form.wizard %}
+    <div aria-labelledby="{% if form.prefix %}{{ form.prefix }}-{% endif %}step-{{ forloop.counter }}-tab" class="{% for class in step.classes %}{{ class }} {% endfor %}{% if forloop.first %}active {% endif %}tab-pane" data-tab id="{% if form.prefix %}{{ form.prefix }}-{% endif %}step-{{ forloop.counter }}" role="tabpanel">
+    {% include "form/fieldsets.html" with fieldsets=step.fieldsets %}
+    </div>
+  {% endfor %}
+{% elif form.fieldsets %}
+  {% include "form/fieldsets.html" with fieldsets=form.fieldsets %}
+{% else %}
+  {% for field in form.visible_fields %}
+    {% if forloop.first and form.grid %}
+      <div class="row sm-gutters">
+    {% endif %}
+
+    {% include "form/field.html" %}
+
+    {% if forloop.last and form.grid %}
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}

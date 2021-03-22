@@ -1,0 +1,8 @@
+{% load i18n static %}
+
+<a aria-label="{% trans "Next step" %}" class="btn btn-primary d-flex ml-1 mr-0" data-validate data-next href="#" role="button">
+  <span class="d-none d-md-inline mr-1">{% trans "Next step" %}</span>
+  <svg class="icon" role="presentation">
+    <use xlink:href="{% static "img/sprite.symbol.svg" %}#chevron-right"></use>
+  </svg>
+</a>

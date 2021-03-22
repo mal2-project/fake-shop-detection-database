@@ -1,0 +1,29 @@
+{% load navbar_tags i18n static %}
+
+<nav class="navbar navbar-expand-{% django_navbar_expand %} navbar-x-net">
+  <a class="navbar-brand text-uppercase" href="/">
+    <div class="align-items-center row sm-gutters">
+      <div class="col-auto">
+        <img alt="mal2" height="36" src="{% static "img/logo_header.svg" %}" width="36">
+      </div>
+      <div class="col">
+        mal2DB
+        {% if settings.DEBUG %}
+          <span class="font-ubuntu-medium text-danger">DEV</span>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+
+  <button aria-controls="navbar" aria-expanded="false" aria-label="{% trans "Toggle navigation" %}" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" tabindex="0">
+    <span class="navbar-toggler-icon">
+      <span class="navbar-toggler-icon-top"></span>
+      <span class="navbar-toggler-icon-middle"></span>
+      <span class="navbar-toggler-icon-bottom"></span>
+    </span>
+  </button>
+
+  <div class="collapse mt-1 mt-{% django_navbar_expand %}-0 navbar-collapse" id="navbar">
+    {% django_navbar request %}
+  </div>
+</nav>

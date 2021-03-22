@@ -1,0 +1,94 @@
+//------------------------------------------------------------------------------
+// UNITS
+
+@function rem($px) {
+  @return #{$px / 16}rem;
+}
+
+@function rem-unitless($px) {
+  @return #{$px / 16};
+}
+
+@function em($px) {
+  @return #{$px / 16}em;
+}
+
+
+//------------------------------------------------------------------------------
+// REPLACE
+
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+
+//------------------------------------------------------------------------------
+// COLOR CONTRAST
+
+@function color-yiq($color) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+
+  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+  @return if($yiq >= $yiq-contrasted-threshold, $yiq-text-dark, $yiq-text-light);
+}
+
+
+//------------------------------------------------------------------------------
+// BREAKPOINTS
+
+@function breakpoint-next($breakpoint) {
+  $breakpoints: map-keys($grid-breakpoints);
+  $n: index($breakpoints, $breakpoint);
+
+  @return if($n < length($breakpoints), nth($breakpoints, $n + 1), null);
+}
+
+@function breakpoint-min($breakpoint) {
+  $min: map-get($grid-breakpoints, $breakpoint);
+
+  @return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($breakpoint) {
+  $next: breakpoint-next($breakpoint);
+
+  @return if($next, breakpoint-min($next) - 1px, null);
+}
+
+@function breakpoint-infix($breakpoint) {
+  @return if(breakpoint-min($breakpoint) == null, "", "-#{$breakpoint}");
+}
+
+
+//------------------------------------------------------------------------------
+// COLOR LEVEL
+
+@function color-level($color, $level: 0) {
+  $color-base: if($level > 0, $black, $white);
+  $level: abs($level);
+
+  @return mix($color-base, $color, $level * $color-interval);
+}
+
+
+//------------------------------------------------------------------------------
+// ESCAPE SVG
+
+@function escape-svg($string) {
+  @if str-index($string, "data:image/svg+xml") {
+    @each $char, $encoded in $escaped-characters {
+      $string: str-replace($string, $char, $encoded);
+    }
+  }
+
+  @return $string;
+}

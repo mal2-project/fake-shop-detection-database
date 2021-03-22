@@ -1,0 +1,11 @@
+{% load i18n static %}
+
+<div class="alert alert-dismissible{% if status == 'error' %} alert-danger{% elif status == 'success' %} alert-success{% endif %}" role="alert">
+  {{ text|safe }}
+
+  <a aria-label="{% trans "Close" %}" class="close" data-dismiss="alert" href="#" role="button">
+    <svg class="icon icon-sm" role="presentation">
+      <use xlink:href="{% static "img/sprite.symbol.svg" %}#close"></use>
+    </svg>
+  </a>
+</div>

@@ -1,0 +1,28 @@
+{% load data_table_tags i18n %}
+
+<th class="bg-gray-300" data-filter="{{ data_table.table }}_table">
+  {% with data_table|get_input_type:field_name as input_type %}
+    {% if not data_table|is_filter_excluded:field_name %}
+      {% if input_type == "select" %}
+          {% for option in data_table|get_select_options:field_name %}
+            {% if forloop.first %}
+              <select aria-label="{{ data_table|get_label:field_name }}" class="custom-select" data-column="{{ forloop.parentloop.counter }}" data-field-name="{{ field_name }}" data-select>
+              <option value="">{% trans "All" %}</option>
+                {% if data_table|has_regex_enabled:field_name %}
+                  <option value="*">{% trans "All WITH" %}</option>
+                  <option value="!">{% trans "NOT" %}</option>
+                {% endif %}
+            {% endif %}
+
+            <option value="{{ option.0 }}">{{ option.1 }}</option>
+
+            {% if forloop.last %}
+              </select>
+            {% endif %}
+          {% endfor %}
+      {% else %}
+        <input aria-label="{{ data_table|get_label:field_name }}" autocomplete="off" class="custom-{{ input_type }} form-control" data-column="{{ forloop.counter }}" data-field-name="{{ field_name }}" data-input type="{{ input_type }}">
+      {% endif %}
+    {% endif %}
+  {% endwith %}
+</th>

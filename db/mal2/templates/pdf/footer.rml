@@ -1,0 +1,20 @@
+{% load i18n %}
+
+<footer height="6mm" width="190mm" x="10mm" y="10mm">
+  <blockTable colWidths="50% 50%" rowHeights="6mm">
+    <tr>
+      <td bottomPadding="0" leftPadding="0" rightPadding="0" topPadding="0">
+        <para style="footer-info">
+          {% blocktrans trimmed with date=current_date user=request.user %}
+            Created on {{ date }} by {{ user }}
+          {% endblocktrans %}
+        </para>
+      </td>
+      <td bottomPadding="0" leftPadding="0" rightPadding="0" topPadding="0">
+        <para style="footer-pagination">
+          <pageNumber/>
+        </para>
+      </td>
+    </tr>
+  </blockTable>
+</footer>

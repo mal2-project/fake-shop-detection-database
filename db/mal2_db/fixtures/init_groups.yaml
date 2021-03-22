@@ -1,0 +1,107 @@
+- model: auth.group
+  pk: 1
+  fields:
+    name: "ReadOnlyUser"
+- model: auth.group_permissions
+  pk: 2
+  fields:
+    group_id: 1
+    permission_id: 64
+- model: auth.group_permissions
+  pk: 3
+  fields:
+    group_id: 1
+    permission_id: 48
+- model: auth.group_permissions
+  pk: 3
+  fields:
+    group_id: 1
+    permission_id: 68
+- model: auth.group
+  pk: 2
+  fields:
+    name: "Reviewer"
+- model: auth.group_permissions
+  pk: 4
+  fields:
+    group_id: 2
+    permission_id: 64
+- model: auth.group_permissions
+  pk: 5
+  fields:
+    group_id: 2
+    permission_id: 65
+- model: auth.group_permissions
+  pk: 6
+  fields:
+    group_id: 2
+    permission_id: 66
+- model: auth.group_permissions
+  pk: 7
+  fields:
+    group_id: 2
+    permission_id: 67
+- model: auth.group_permissions
+  pk: 8
+  fields:
+    group_id: 2
+    permission_id: 68
+- model: auth.group_permissions
+  pk: 9
+  fields:
+    group_id: 2
+    permission_id: 45
+- model: auth.group_permissions
+  pk: 10
+  fields:
+    group_id: 2
+    permission_id: 46
+- model: auth.group_permissions
+  pk: 11
+  fields:
+    group_id: 2
+    permission_id: 47
+- model: auth.group_permissions
+  pk: 12
+  fields:
+    group_id: 2
+    permission_id: 48
+- model: auth.group_permissions
+  pk: 13
+  fields:
+    group_id: 2
+    permission_id: 89
+- model: auth.group_permissions
+  pk: 14
+  fields:
+    group_id: 2
+    permission_id: 61
+- model: auth.group_permissions
+  pk: 15
+  fields:
+    group_id: 2
+    permission_id: 62
+- model: auth.group_permissions
+  pk: 16
+  fields:
+    group_id: 2
+    permission_id: 63
+- model: auth.group
+  pk: 3
+  fields:
+    name: "Trusted Software Tools"
+- model: auth.group_permissions
+  pk: 1
+  fields:
+    group_id: 3
+    permission_id: 64
+- model: auth.group_permissions
+  pk: 2
+  fields:
+    group_id: 3
+    permission_id: 48
+- model: auth.group_permissions
+  pk: 3
+  fields:
+    group_id: 3
+    permission_id: 68

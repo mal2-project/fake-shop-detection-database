@@ -1,0 +1,38 @@
+{% load base_tags form_tags static i18n %}
+
+{% for fieldset in fieldsets %}
+  {% classes fieldset.classes as fieldset_classes %}
+
+  {% if fieldset.title %}
+    <fieldset{% if fieldset_classes %} class="{{ fieldset_classes }}"{% endif %}{% attrs fieldset.attrs %}>
+      <legend class="legend">{{ fieldset.title }}</legend>
+  {% else %}
+    <div{% if fieldset_classes %} class="{{ fieldset_classes }}"{% endif %}{% attrs fieldset.attrs %}>
+  {% endif %}
+
+  {% if fieldset.text %}
+    {{ fieldset.text|safe }}
+  {% endif %}
+
+  {% for field in fieldset.fields %}
+    {% if forloop.first and form.grid %}
+      <div class="row sm-gutters">
+    {% endif %}
+
+    {% include "form/field.html" %}
+
+    {% if forloop.last and form.grid %}
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  {% if fieldset.fieldsets %}
+    {% include "form/fieldsets.html" with fieldsets=fieldset.fieldsets %}
+  {% endif %}
+
+  {% if fieldset.title %}
+    </fieldset>
+  {% else %}
+    </div>
+  {% endif %}
+{% endfor %}

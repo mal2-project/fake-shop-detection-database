@@ -1,0 +1,20 @@
+{% load static i18n %}
+
+<div class="border-gray-300 border-bottom pt-1" data-form-set-item>
+  <div class="sm-gutters row">
+    <div class="col">
+      {% include "form/snippet.html" with form=form is_formset=True %}
+    </div>
+
+    {% if formset.can_delete %}
+        <div class="col-auto">
+          <a class="d-block{% if forloop.counter <= formset.min_num and formset.extra == 0 %} disabled{% endif %} mt-1" data-form-set-delete="{{ form.prefix }}" href="#">
+            <svg class="icon icon-danger" role="presentation">
+              <use xlink:href="{% static "img/sprite.symbol.svg" %}#minus-box"></use>
+            </svg>
+            <span class="sr-only">{% trans "Delete" %}</span>
+          </a>
+        </div>
+    {% endif %}
+  </div>
+</div>

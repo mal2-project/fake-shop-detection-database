@@ -1,0 +1,660 @@
+// stylelint-disable declaration-no-important
+
+//------------------------------------------------------------------------------
+// ALIGN
+
+.align-baseline {
+  vertical-align: baseline !important; // Browser default
+}
+
+.align-top {
+  vertical-align: top !important;
+}
+
+.align-middle {
+  vertical-align: middle !important;
+}
+
+.align-bottom {
+  vertical-align: bottom !important;
+}
+
+.align-text-bottom {
+  vertical-align: text-bottom !important;
+}
+
+.align-text-top {
+  vertical-align: text-top !important;
+}
+
+
+//------------------------------------------------------------------------------
+// BACKGROUND
+
+@each $color, $value in $colors {
+  @include bg-variant(".bg-#{$color}", $value);
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+
+//------------------------------------------------------------------------------
+// BORDER
+
+.no-border {
+  border: 0 !important;
+}
+
+.border {
+  border: rem($border-width) solid $gray-500 !important;
+}
+
+.border-top {
+  border-top: rem($border-width) solid $gray-500 !important;
+}
+
+.border-right {
+  border-right: rem($border-width) solid $gray-500 !important;
+}
+
+.border-bottom {
+  border-bottom: rem($border-width) solid $gray-500 !important;
+}
+
+.border-left {
+  border-left: rem($border-width) solid $gray-500 !important;
+}
+
+@each $color, $value in $colors {
+  .border-#{$color} {
+    border-color: $value !important;
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// BORDER RADIUS
+
+.rounded {
+  border-radius: rem($border-radius) !important;
+}
+
+.rounded-top {
+  border-top-left-radius: rem($border-radius) !important;
+  border-top-right-radius: rem($border-radius) !important;
+}
+
+.rounded-top-left {
+  border-top-left-radius: rem($border-radius) !important;
+}
+
+.rounded-top-right {
+  border-top-right-radius: rem($border-radius) !important;
+}
+
+.rounded-right {
+  border-bottom-right-radius: rem($border-radius) !important;
+  border-top-right-radius: rem($border-radius) !important;
+}
+
+.rounded-bottom {
+  border-bottom-left-radius: rem($border-radius) !important;
+  border-bottom-right-radius: rem($border-radius) !important;
+}
+
+.rounded-bottom-left {
+  border-bottom-left-radius: rem($border-radius) !important;
+}
+
+.rounded-bottom-right {
+  border-bottom-right-radius: rem($border-radius) !important;
+}
+
+.rounded-left {
+  border-bottom-left-radius: rem($border-radius) !important;
+  border-top-left-radius: rem($border-radius) !important;
+}
+
+.rounded-0 {
+  border-radius: 0 !important;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint);
+
+    .text#{$infix}-left {
+      text-align: left !important;
+    }
+
+    .rounded#{$infix} {
+      border-radius: rem($border-radius) !important;
+    }
+
+    .rounded#{$infix}-top {
+      border-top-left-radius: rem($border-radius) !important;
+      border-top-right-radius: rem($border-radius) !important;
+    }
+
+    .rounded#{$infix}top-left {
+      border-top-left-radius: rem($border-radius) !important;
+    }
+
+    .rounded#{$infix}-top-right {
+      border-top-right-radius: rem($border-radius) !important;
+    }
+
+    .rounded#{$infix}-right {
+      border-bottom-right-radius: rem($border-radius) !important;
+      border-top-right-radius: rem($border-radius) !important;
+    }
+
+    .rounded#{$infix}-bottom {
+      border-bottom-left-radius: rem($border-radius) !important;
+      border-bottom-right-radius: rem($border-radius) !important;
+    }
+
+    .rounded#{$infix}-bottom-left {
+      border-bottom-left-radius: rem($border-radius) !important;
+    }
+
+    .rounded#{$infix}-bottom-right {
+      border-bottom-right-radius: rem($border-radius) !important;
+    }
+
+    .rounded#{$infix}-left {
+      border-bottom-left-radius: rem($border-radius) !important;
+      border-top-left-radius: rem($border-radius) !important;
+    }
+
+    .rounded#{$infix}-0 {
+      border-radius: 0 !important;
+    }
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// DISPLAY
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint);
+
+    @each $value in $displays {
+      .d#{$infix}-#{$value} {
+        display: $value !important;
+      }
+    }
+  }
+}
+
+@media print {
+  @each $value in $displays {
+    .d-print-#{$value} {
+      display: $value !important;
+    }
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// EMBED
+
+.embed-responsive {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  &:before {
+    content: "";
+    display: block;
+  }
+
+  .embed-responsive-item,
+  iframe,
+  embed,
+  object,
+  video {
+    border: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@each $embed-responsive-aspect-ratio in $embed-responsive-aspect-ratios {
+  $embed-responsive-aspect-ratio-x: nth($embed-responsive-aspect-ratio, 1);
+  $embed-responsive-aspect-ratio-y: nth($embed-responsive-aspect-ratio, 2);
+
+  .embed-responsive-#{$embed-responsive-aspect-ratio-x}by#{$embed-responsive-aspect-ratio-y} {
+    &:before {
+      padding-top: percentage($embed-responsive-aspect-ratio-y / $embed-responsive-aspect-ratio-x);
+    }
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// FLEX
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint);
+
+    .flex#{$infix}-row {
+      flex-direction: row !important;
+    }
+
+    .flex#{$infix}-column {
+      flex-direction: column !important;
+    }
+
+    .flex#{$infix}-row-reverse {
+      flex-direction: row-reverse !important;
+    }
+
+    .flex#{$infix}-column-reverse {
+      flex-direction: column-reverse !important;
+    }
+
+    .flex#{$infix}-wrap {
+      flex-wrap: wrap !important;
+    }
+
+    .flex#{$infix}-nowrap {
+      flex-wrap: nowrap !important;
+    }
+
+    .flex#{$infix}-wrap-reverse {
+      flex-wrap: wrap-reverse !important;
+    }
+
+    .justify-content#{$infix}-start {
+      justify-content: flex-start !important;
+    }
+
+    .justify-content#{$infix}-end {
+      justify-content: flex-end !important;
+    }
+
+    .justify-content#{$infix}-center {
+      justify-content: center !important;
+    }
+
+    .justify-content#{$infix}-between {
+      justify-content: space-between !important;
+    }
+
+    .justify-content#{$infix}-around {
+      justify-content: space-around !important;
+    }
+
+    .align-items#{$infix}-start {
+      align-items: flex-start !important;
+    }
+
+    .align-items#{$infix}-end {
+      align-items: flex-end !important;
+    }
+
+    .align-items#{$infix}-center {
+      align-items: center !important;
+    }
+
+    .align-items#{$infix}-baseline {
+      align-items: baseline !important;
+    }
+
+    .align-items#{$infix}-stretch {
+      align-items: stretch !important;
+    }
+
+    .align-content#{$infix}-start {
+      align-content: flex-start !important;
+    }
+
+    .align-content#{$infix}-end {
+      align-content: flex-end !important;
+    }
+
+    .align-content#{$infix}-center {
+      align-content: center !important;
+    }
+
+    .align-content#{$infix}-between {
+      align-content: space-between !important;
+    }
+
+    .align-content#{$infix}-around {
+      align-content: space-around !important;
+    }
+
+    .align-content#{$infix}-stretch {
+      align-content: stretch !important;
+    }
+
+    .align-self#{$infix}-auto {
+      align-self: auto !important;
+    }
+
+    .align-self#{$infix}-start {
+      align-self: flex-start !important;
+    }
+
+    .align-self#{$infix}-end {
+      align-self: flex-end !important;
+    }
+
+    .align-self#{$infix}-center {
+      align-self: center !important;
+    }
+
+    .align-self#{$infix}-baseline {
+      align-self: baseline !important;
+    }
+
+    .align-self#{$infix}-stretch {
+      align-self: stretch !important;
+    }
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// ICON
+
+.icon {
+  display: block;
+  height: rem(24);
+  width: rem(24);
+}
+
+.icon-sm {
+  height: rem(16);
+  width: rem(16);
+}
+
+.icon-table {
+  width: rem(24 + ($table-cell-padding-sm * 2));
+}
+
+@each $color, $value in $colors {
+  @include icon-variant(".icon-#{$color}", $value);
+}
+
+
+//------------------------------------------------------------------------------
+// POSITION
+
+.fixed-top {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 8030;
+}
+
+.fixed-bottom {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 8030;
+}
+
+.sticky-top {
+  @supports (position: sticky) {
+    position: sticky;
+    top: 0;
+    z-index: 8020;
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// SCREENREADERS
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(0, 0, 0, 0) !important;
+  height: rem(1) !important;
+  margin: rem(-1) !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: rem(1) !important;
+}
+
+
+//------------------------------------------------------------------------------
+// SPACING
+
+@each $prop, $abbrev in (top: t, right: r, bottom: b, left: l) {
+  .m#{$abbrev}-fluid {
+    margin-#{$prop}: rem($grid-min-gutter-width / 2);
+
+    @media (min-width: rem($break-sm)) {
+      margin-#{$prop}: calc(#{rem($grid-min-gutter-width / 2)} + #{($grid-max-gutter-width / 2 - $grid-min-gutter-width / 2) / 16} * (100vw - #{rem($break-sm)}) / (#{rem-unitless($break-xl)} - #{rem-unitless($break-sm)}));
+    }
+
+    @media (min-width: rem($break-xl)) {
+      margin-#{$prop}: rem($grid-max-gutter-width / 2);
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint);
+
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @each $size, $length in $spacers {
+        .#{$abbrev}#{$infix}-#{$size} {
+          #{$prop}: $length !important;
+        }
+
+        .#{$abbrev}t#{$infix}-#{$size},
+        .#{$abbrev}y#{$infix}-#{$size} {
+          #{$prop}-top: $length !important;
+        }
+
+        .#{$abbrev}r#{$infix}-#{$size},
+        .#{$abbrev}x#{$infix}-#{$size} {
+          #{$prop}-right: $length !important;
+        }
+
+        .#{$abbrev}b#{$infix}-#{$size},
+        .#{$abbrev}y#{$infix}-#{$size} {
+          #{$prop}-bottom: $length !important;
+        }
+
+        .#{$abbrev}l#{$infix}-#{$size},
+        .#{$abbrev}x#{$infix}-#{$size} {
+          #{$prop}-left: $length !important;
+        }
+      }
+    }
+
+    .m#{$infix}-auto {
+      margin: auto !important;
+    }
+
+    .mt#{$infix}-auto,
+    .my#{$infix}-auto {
+      margin-top: auto !important;
+    }
+
+    .mr#{$infix}-auto,
+    .mx#{$infix}-auto {
+      margin-right: auto !important;
+    }
+
+    .mb#{$infix}-auto,
+    .my#{$infix}-auto {
+      margin-bottom: auto !important;
+    }
+
+    .ml#{$infix}-auto,
+    .mx#{$infix}-auto {
+      margin-left: auto !important;
+    }
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// SIZING
+
+@each $prop, $abbrev in (width: w, height: h) {
+  @each $size, $length in $sizes {
+    .#{$abbrev}-#{$size} {
+      #{$prop}: $length !important;
+    }
+  }
+}
+
+.mw-100 {
+  max-width: 100% !important;
+}
+
+.mh-100 {
+  max-height: 100% !important;
+}
+
+.min-vw-100 {
+  min-width: 100vw !important;
+}
+
+.min-vh-100 {
+  min-height: 100vh !important;
+}
+
+.vw-100 {
+  width: 100vw !important;
+}
+
+.vh-100 {
+  height: 100vh !important;
+}
+
+
+//------------------------------------------------------------------------------
+// TEXT
+
+@mixin text-emphasis-variant($parent, $color) {
+  #{$parent} {
+    color: $color !important;
+  }
+}
+
+@each $color, $value in $colors {
+  @include text-emphasis-variant(".text-#{$color}", $value);
+}
+
+.text-noselect {
+  user-select: none;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-wrap {
+  white-space: normal !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-normal {
+  text-transform: none !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.text-muted {
+  color: $gray-600 !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-break {
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint);
+
+    .text#{$infix}-left {
+      text-align: left !important;
+    }
+
+    .text#{$infix}-center {
+      text-align: center !important;
+    }
+
+    .text#{$infix}-right {
+      text-align: right !important;
+    }
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// VISIBILITY
+
+.visible {
+  visibility: visible !important;
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+
+//------------------------------------------------------------------------------
+// OVERFLOW
+
+@each $value in $overflows {
+  .overflow-#{$value} {
+    overflow: $value !important;
+
+    @if $value == auto {
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}

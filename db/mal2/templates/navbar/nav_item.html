@@ -1,0 +1,16 @@
+{% load i18n static %}
+
+{% if is_dropdown and dropdown_menu or not is_dropdown %}
+  <li class="{% if is_active %}active {% endif %}dropdown nav-item{% if classes %} {{ classes }}{% endif %}">
+    <a{% if is_dropdown %} aria-expanded="false" aria-haspopup="true"{% endif %} class="{% if is_dropdown %}dropdown-toggle {% endif %}nav-link"{% if is_dropdown %} data-toggle="dropdown"{% endif %} href="{{ href }}" id="{{ id }}" role="button"{% for name, value in attrs.items %}{% if value is not False and name != "class" %} {{ name }}{% if value %}="{{ value }}"{% endif %}{% endif %}{% endfor %}>
+      {% if icon %}
+        <svg class="icon mr-1" role="presentation">
+          <use xlink:href="{% static "img/sprite.symbol.svg" %}#{{ icon }}"></use>
+        </svg>
+      {% endif %}
+      {{ title }}{% if is_active %} <span class="sr-only">({% trans "Current" %})</span>{% endif %}
+    </a>
+
+    {{ dropdown_menu }}
+  </li>
+{% endif %}

@@ -1,0 +1,26 @@
+{% extends "pdf/base.rml" %}
+
+{% load i18n %}
+
+{% block content %}
+  {% for data in pdf_data %}
+    {% if data.legend %}
+      <h2 style="h2">{{ data.legend }}</h2>
+    {% endif %}
+
+    {% for field in data.fields %}
+      {% if field.value is not None %}
+        <para style="p">
+          <span style="strong">{{ field.label }}</span><br/>
+          {% if field.value is True %}
+            {% trans "Yes" %}
+          {% elif field.value is False %}
+            {% trans "No" %}
+          {% else %}
+            {{ field.value }}
+          {% endif %}
+        </para>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endblock content %}

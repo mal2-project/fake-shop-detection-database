@@ -1,0 +1,97 @@
+//------------------------------------------------------------------------------
+// IMPORTS
+
+@import "functions";
+@import "mixins";
+@import "variables";
+
+@import "alert";
+@import "badge";
+@import "buttons";
+@import "card";
+@import "columns";
+@import "dropdown";
+@import "forms";
+@import "grid";
+@import "images";
+@import "list-group";
+@import "modal";
+@import "nav";
+@import "navbar";
+@import "pagination";
+@import "progress";
+@import "tables";
+@import "toasts";
+@import "tooltip";
+@import "transitions";
+@import "type";
+@import "utilities";
+
+@import "data-table";
+@import "fancybox";
+@import "file-tree";
+
+
+//------------------------------------------------------------------------------
+// DEFAULTS
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+//------------------------------------------------------------------------------
+// HEADER
+
+@keyframes color-animation {
+  0% {
+    background-position: 22% 0%;
+  }
+
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+.color-animation {
+  //animation: color-animation 8s linear infinite;
+  background: linear-gradient(90deg, $secondary, transparentize($secondary, 0.25), $secondary, transparentize($secondary, 0.5), $secondary, transparentize($secondary, 0.25), $secondary, transparentize($secondary, 0.5), $secondary);
+  background-position: 22% 0;
+  background-size: 300% 100%;
+}
+
+.color-header {
+  @extend .color-animation;
+  height: rem(14);
+}
+
+
+//------------------------------------------------------------------------------
+// MAIN
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  display: block;
+  flex: 1 0 auto;
+}
+
+
+//------------------------------------------------------------------------------
+// LOGIN
+
+@include media-breakpoint-up(lg) {
+  .login {
+    min-height: 100vh;
+  }
+}

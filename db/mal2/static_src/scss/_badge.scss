@@ -1,0 +1,35 @@
+//------------------------------------------------------------------------------
+// BADGE
+
+.badge {
+  border-radius: rem($border-radius);
+  display: inline-block;
+  font-size: 75%;
+  line-height: 1;
+  padding: rem(4) rem(6);
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+
+  @at-root a#{&} {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+.badge-pill {
+  border-radius: rem(10);
+  padding-left: rem(10);
+  padding-right: rem(10);
+}
+
+@each $color, $value in $colors {
+  .badge-#{$color} {
+    @include badge-variant($value);
+  }
+}

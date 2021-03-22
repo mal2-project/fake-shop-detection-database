@@ -1,0 +1,245 @@
+//------------------------------------------------------------------------------
+// RESETS
+
+input {
+  border-radius: 0;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  overflow: visible;
+
+  &[type="search"] {
+    appearance: none;
+    outline-offset: rem(-2);
+
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+  }
+
+  &[type="date"],
+  &[type="datetime-local"],
+  &[type="time"],
+  &[type="month"] {
+    cursor: text;
+    min-width: 100%; // iOS-Bugfix
+  }
+
+  &::-webkit-contacts-auto-fill-button,
+  &::-webkit-credentials-auto-fill-button {
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  &::-webkit-clear-button,
+  &::-ms-clear {
+    display: none;
+  }
+}
+
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  overflow: auto;
+  resize: vertical;
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  &.form-control {
+    height: auto;
+  }
+}
+
+button {
+  border-radius: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  overflow: hidden;
+  text-transform: none;
+  user-select: none;
+
+  &:focus {
+    outline: rem(1) dotted;
+  }
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button,
+[type="reset"],
+[type="submit"] {
+  appearance: button;
+}
+
+
+//------------------------------------------------------------------------------
+// INPUTS
+
+.form-group {
+  margin-bottom: rem(16);
+}
+
+%custom-control {
+  background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='#{$gray-800}' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>"));
+  background-position: right rem(12) center;
+  background-repeat: no-repeat;
+  background-size: rem(8) rem(10);
+}
+
+.form-control-sm {
+  font-size: rem($input-font-size-sm);
+  height: rem(32);
+  padding: rem(2) rem(6);
+}
+
+.custom-date {
+  @extend %custom-control;
+}
+
+.custom-date {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    visibility: hidden;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0;
+  }
+}
+
+.custom-number {
+  -moz-appearance: textfield;
+}
+
+.custom-number,
+.custom-time {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    display: none;
+  }
+}
+
+.custom-select-sm {
+  background-position: right rem(8) center;
+  font-size: rem($input-font-size-sm);
+  height: rem(32);
+  line-height: rem(26);
+  padding: rem(2) rem(22) rem(2) rem(6);
+}
+
+.form-text {
+  display: block;
+  margin-top: rem($form-text-margin-top);
+
+  ~ .invalid-feedback {
+    margin: 0;
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// VALIDATION
+
+.errorlist {
+  @extend .list-unstyled;
+  margin-bottom: 0;
+}
+
+.invalid-feedback {
+  color: $danger;
+  display: none;
+  margin-top: rem($form-feedback-margin-top);
+  width: 100%;
+
+  &:hover {
+    color: $danger;
+    text-decoration: none;
+  }
+}
+
+.form-control,
+.custom-select,
+.input-wrapper,
+.form-set-label {
+  &.is-invalid {
+    border-color: $danger;
+
+    &:focus {
+      border-color: $danger;
+      box-shadow: 0 0 0 rem(3) rgba($danger, 0.25);
+    }
+
+    ~ .invalid-feedback {
+      display: block;
+    }
+  }
+}
+
+.custom-control-input {
+  .was-validated &:invalid,
+  &.is-invalid {
+    ~ .custom-control-label {
+      color: $danger;
+
+      &:before {
+        border-color: $danger;
+      }
+    }
+
+    ~ .invalid-feedback {
+      display: block;
+    }
+
+    &:checked {
+      ~ .custom-control-label:before {
+        border-color: lighten($danger, 10%);
+      }
+    }
+
+    &:focus {
+      ~ .custom-control-label:before {
+        box-shadow: 0 0 0 rem(3) rgba($danger, 0.25);
+      }
+
+      &:not(:checked) ~ .custom-control-label:before {
+        border-color: $danger;
+      }
+    }
+  }
+}
+
+.custom-file-input {
+  &.is-invalid {
+    ~ .custom-file-label {
+      border-color: $danger;
+    }
+
+    ~ .invalid-feedback {
+      display: block;
+    }
+
+    &:focus {
+      ~ .custom-file-label {
+        border-color: $danger;
+        box-shadow: 0 0 0 rem(3) rgba($danger, 0.25);
+      }
+    }
+  }
+}

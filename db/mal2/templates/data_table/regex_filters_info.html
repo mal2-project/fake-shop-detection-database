@@ -1,0 +1,16 @@
+{% load i18n %}
+
+<ul class="column-1 column-md-2 column-lg-3 list-styled mb-0">
+  <li><small><strong>{% trans "Search values are case insensitive" %}</strong></small></li>
+  <li><small><strong>*</strong> | {% trans "Finds all entries that have saved ONE value" %}</small></li>
+  <li><small><strong>!</strong> | {%  trans "Finds all entries that have NO value saved" %}</small></li>
+  <li><small><strong>!{% trans "Value" %}</strong> | {% trans "Finds all entries that have NOT saved this value" %}</small></li>
+  <li><small><strong>[{% trans "Value" %}, {% trans "Value" %}]</strong> | {% trans "Finds all entries that have saved ONE of these values" %}</small></li>
+  <li><small><strong>![{% trans "Value" %}, {% trans "Value" %}]</strong> | {% trans "Finds all entries that have NOT saved any of these values" %}</small></li>
+  <li><small><strong>[{% trans "Start value" %} - {% trans "End value" %}]</strong> | {% trans "Finds all entries that have values saved between a specific range [Start value - End value]. Only possible for number- and ID-fields." %}</small></li>
+  <li><small><strong>{% trans "Value" %}*</strong> | {% trans "Finds all entries that starts with specific value" %}</small></li>
+  <li><small><strong>*{% trans "Value" %}</strong> | {% trans "Finds all entries that end with specific value" %}</small></li>
+  <li><small><strong>*{% trans "Value" %}*</strong> | {% trans "Finds all entries that contains specific value" %}</small></li>
+  <li><small><strong>{% trans "Val?e" %}</strong> | {% trans 'Text and ? operator can be exchanged by one random character for example: "ValUe", "ValOe" or "Val9e" could be some results' %}</small></li>
+  <li><small><strong>{% trans "Val*e" %}</strong> | {% trans 'Text and * operator can be exchanged by any number of random character for example: "Value", "Valuueueuue" or "Val e" could be some results' %}</small></li>
+</ul>

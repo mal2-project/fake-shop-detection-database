@@ -1,0 +1,68 @@
+//------------------------------------------------------------------------------
+// PAGINATION
+
+.pagination {
+  @include list-unstyled();
+  border-radius: rem($border-radius);
+  display: flex;
+}
+
+.page-link {
+  background-color: $pagination-bg;
+  border: rem($border-width) solid $pagination-border-color;
+  color: $pagination-color;
+  cursor: pointer;
+  display: block;
+  line-height: $pagination-line-height;
+  margin-left: rem(-$border-width);
+  padding: rem($pagination-padding-y) rem($pagination-padding-x);
+  position: relative;
+  user-select: none;
+
+  &:hover {
+    background-color: $pagination-hover-bg;
+    border-color: $pagination-hover-border-color;
+    color: $pagination-hover-color;
+    text-decoration: none;
+    z-index: 2;
+  }
+
+  &:focus {
+    border-color: $pagination-focus-border-color;
+    box-shadow: 0 0 0 rem(3) rgba($primary, 0.5);
+    outline: 0;
+    z-index: 3;
+  }
+}
+
+.page-item {
+  &:first-child {
+    .page-link {
+      border-bottom-left-radius: rem(4);
+      border-top-left-radius: rem(4);
+      margin-left: 0;
+    }
+  }
+
+  &:last-child {
+    .page-link {
+      border-bottom-right-radius: rem(4);
+      border-top-right-radius: rem(4);
+    }
+  }
+
+  &.active .page-link {
+    background-color: $pagination-active-bg;
+    border-color: $pagination-active-border-color;
+    color: $pagination-active-color;
+    z-index: 3;
+  }
+
+  &.disabled .page-link {
+    background-color: $pagination-disabled-bg;
+    border-color: $pagination-disabled-border-color;
+    color: $pagination-disabled-color;
+    cursor: auto;
+    pointer-events: none;
+  }
+}

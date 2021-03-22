@@ -1,0 +1,30 @@
+//------------------------------------------------------------------------------
+// ALERT
+
+.alert {
+  border: rem($border-width) solid transparent;
+  border-radius: rem($border-radius);
+  margin-bottom: rem($alert-margin-bottom);
+  padding: rem($alert-padding-y) rem($alert-padding-x);
+  position: relative;
+}
+
+.alert-heading {
+  color: inherit;
+}
+
+.alert-dismissible {
+  .close {
+    color: inherit;
+    padding: rem($alert-padding-y) rem($alert-padding-x);
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+@each $color, $value in $colors {
+  .alert-#{$color} {
+    @include alert-variant(color-level($value, $alert-bg-level), color-level($value, $alert-border-level), color-level($value, $alert-color-level));
+  }
+}

@@ -1,0 +1,11 @@
+{% load static i18n %}
+
+<fieldset>
+  <legend class="label">
+    {{ field.label }}
+    {% include "form/field/required.html" %}
+  </legend>
+
+  {{ field }}
+  {% include "form/help_text.html" %}
+</fieldset>

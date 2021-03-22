@@ -1,0 +1,27 @@
+{% load i18n thumbnail catch_client_tags %}
+
+{% if widget.is_initial %}
+  <div class="row no-gutters">
+    <div class="col-auto">
+      {% thumbnail widget.value "fancybox" as image %}
+
+      <a class="field-file-preview"{% if image or "image" in widget.value|ge_content_type or "pdf" in widget.value|ge_content_type %} data-fancybox{% endif %}{% if image %} data-srcset="{{ image.url }} 1x, {{ image.high_resolution.url }} 2x"{% endif %} href="{{ widget.value.url }}" target="_blank">{% trans "Open file" %}</a>
+    </div>
+    {% if not widget.required and not widget.attrs.disabled %}
+      <div class="col-auto">
+        <div class="field-file-clear">
+          <label class="field-checkbox" for="{{ widget.checkbox_id }}">
+            <input type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}">
+            <span class="field-checkbox-indicator"></span>
+            <span class="field-checkbox-title" title="{{ widget.file_name }} {{ widget.clear_checkbox_label }}">
+              <span class="sr-only">{{ widget.file_name }}</span>
+              {{ widget.clear_checkbox_label }}
+            </span>
+          </label>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
+
+<input class="field-file" type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>

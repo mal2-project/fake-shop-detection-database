@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load i18n static %}
+
+{% block title %}
+  {% trans "Page not found" %}
+{% endblock %}
+
+{% block main %}
+  <main class="align-items-center d-flex py-2 py-lg-3">
+    <div class="container text-center">
+      <h1>{% trans "Page not found" %}</h1>
+
+      <p>
+        {% trans "Looks like the page or file you where searching for has disappeared." %}
+      </p>
+    </div>
+  </main>
+{% endblock %}
+

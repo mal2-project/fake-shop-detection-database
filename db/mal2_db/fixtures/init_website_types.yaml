@@ -1,0 +1,66 @@
+- model: mal2_db.websitetype
+  pk: 1
+  fields:
+    type_de: "keine Überprüfung notwendig"
+    type_en_GB: "no verification necessary"
+    default_category: 3
+- model: mal2_db.websitetype
+  pk: 2
+  fields:
+    type_de: "Fake-Shop"
+    type_en_GB: "Fake shop"
+    default_category: 2
+- model: mal2_db.websitetype
+  pk: 3
+  fields:
+    type_de: "Markenfälscher"
+    type_en_GB: "Counterfeite"
+    default_category: 2
+- model: mal2_db.websitetype
+  pk: 4
+  fields:
+    type_de: "Überprüft - Nicht Fake"
+    type_en_GB: "Verified - No Fake"
+    default_category: 2
+- model: mal2_db.websitetype
+  pk: 5
+  fields:
+    type_de: "Unsicher"
+    type_en_GB: "Unsure"
+    default_category: 2
+- model: mal2_db.websitetype
+  pk: 6
+  fields:
+    type_de: "Streaming-Plattform"
+    type_en_GB: "Streaming platform"
+    default_category: 3
+- model: mal2_db.websitetype
+  pk: 6
+  fields:
+    type_de: "Immobilienagentur"
+    type_en_GB: "Real estate agency"
+    default_category: 3
+- model: mal2_db.websitetype
+  pk: 7
+  fields:
+    type_de: "Urlaubsbuchung"
+    type_en_GB: "Vacation booking"
+    default_category: 3
+- model: mal2_db.websitetype
+  pk: 8
+  fields:
+    type_de: "Handwerkerdienste"
+    type_en_GB: "Craftsman services"
+    default_category: 3
+- model: mal2_db.websitetype
+  pk: 9
+  fields:
+    type_de: "Spedition"
+    type_en_GB: "Carrier"
+    default_category: 3
+- model: mal2_db.websitetype
+  pk: 10
+  fields:
+    type_de: "Umfrageplattformen"
+    type_en_GB: "Survey platforms"
+    default_category: 3

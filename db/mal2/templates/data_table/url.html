@@ -1,0 +1,5 @@
+{% load base_tags %}
+
+{% remove_url_protocol field_value as visible_field_value %}
+
+<a href="//{{ visible_field_value }}" target="_blank">{{ visible_field_value |truncatechars:40 }}</a>

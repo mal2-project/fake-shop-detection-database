@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load i18n static %}
+
+{% block title %}
+  {% trans "No Permission" %}
+{% endblock title %}
+
+{% block main %}
+  <main class="align-items-center d-flex py-2 py-lg-3">
+    <div class="container text-center">
+      <h1>{% trans "No Permission" %}</h1>
+
+      <p>
+        {% trans "We're sorry, but you have not permission to view this page." %}
+      </p>
+
+      <a class="btn btn-secondary" href="{% url "mal2_db:signout" %}?next={{ request.path }}">
+        <span class="text">{% trans "Change user" %}</span>
+      </a>
+    </div>
+  </main>
+{% endblock main %}

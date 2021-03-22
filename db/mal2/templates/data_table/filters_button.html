@@ -1,0 +1,8 @@
+{% load i18n static %}
+
+<a aria-controls="{{ data_table.table }}_filters" aria-expanded="false" class="align-items-center btn btn-gray-300 d-flex justify-content-center mt-1 mt-sm-0" data-target="#{{ data_table.table }}_filters" data-toggle="collapse" href="#">
+  <svg class="icon" role="presentation">
+    <use xlink:href="{% static "img/sprite.symbol.svg" %}#filter"></use>
+  </svg>
+  {% trans "Filters" %} <span data-filter-counter="{{ data_table.table }}_table" class="badge badge-primary ml-1"></span>
+</a>

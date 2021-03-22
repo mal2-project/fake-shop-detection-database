@@ -1,0 +1,8 @@
+{% load base_tags static %}
+
+<a class="d-block ml-auto" href="{{ href }}" title="{{ text }}"{% attrs attrs %}>
+  <svg class="icon icon-{{ icon_color|default:"dark" }}" role="presentation">
+    <use xlink:href="{% static "img/sprite.symbol.svg" %}#{{ svg }}"></use>
+  </svg>
+  <span class="sr-only">{{ text }}</span>
+</a>

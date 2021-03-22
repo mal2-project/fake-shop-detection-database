@@ -1,0 +1,108 @@
+//------------------------------------------------------------------------------
+// GENERAL
+
+.custom-control {
+  display: block;
+  min-height: rem($input-font-size * $line-height-base);
+  padding-left: rem($custom-control-gutter + $custom-control-indicator-size);
+  position: relative;
+}
+
+.custom-control-label {
+  margin-bottom: 0;
+  margin-top: calc(#{rem($input-padding-y)} + #{rem($input-border-width)});
+  position: relative;
+  vertical-align: top;
+
+  // Input
+
+  &:before {
+    background-color: $white;
+    border: rem($border-width) solid $input-border-color;
+    content: "";
+    display: block;
+    height: rem($custom-control-indicator-size);
+    left: rem(-($custom-control-indicator-size + $custom-control-gutter));
+    pointer-events: none;
+    position: absolute;
+    top: rem(($input-font-size * $line-height-base - $custom-control-indicator-size) / 3);
+    transition: border-color ease-in-out 150ms, box-shadow ease-in-out 150ms;
+    width: rem($custom-control-indicator-size);
+  }
+
+  // Indicator
+
+  &:after {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    content: "";
+    display: block;
+    height: rem($custom-control-indicator-size);
+    left: rem(-($custom-control-indicator-size + $custom-control-gutter));
+    position: absolute;
+    top: rem(($input-font-size * $line-height-base - $custom-control-indicator-size) / 3);
+    width: rem($custom-control-indicator-size);
+  }
+}
+
+.custom-control-input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+
+  &:checked ~ .custom-control-label:before {
+    background: $input-border-focus;
+    border-color: $input-border-focus;
+  }
+
+  &:focus ~ .custom-control-label:before {
+    border-color: $input-border-focus;
+    box-shadow: 0 0 0 rem(3) rgba($input-border-focus, 0.5);
+  }
+
+  &[disabled] ~ .custom-control-label {
+    color: $gray-600;
+
+    &:before {
+      background-color: $gray-200;
+    }
+  }
+}
+
+.custom-control-inline {
+  display: inline-flex;
+  margin-right: rem(16);
+}
+
+
+//------------------------------------------------------------------------------
+// CHECKBOX
+
+.custom-checkbox {
+  .custom-control-label:before {
+    border-radius: rem($border-radius);
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &:after {
+      background-image: escape-svg(url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='#{$white}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/></svg>"));
+    }
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// RADIO
+
+.custom-radio {
+  .custom-control-label:before {
+    border-radius: 50%;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &:after {
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$white}'/></svg>"));
+    }
+  }
+}

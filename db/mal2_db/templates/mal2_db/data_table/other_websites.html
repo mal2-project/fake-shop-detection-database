@@ -1,0 +1,21 @@
+{% extends "data_table/base.html" %}
+
+{% load i18n static %}
+
+{% block title %}
+  {% trans "Websites (others)" %}
+{% endblock %}
+
+{% block site_title %}
+  {% trans "Websites (others)" %}
+{% endblock %}
+
+{% block javascript %}
+  <script defer src="{% static "js/fancybox/jquery.fancybox.min.js" %}"></script>
+
+  {% if data_table.DEBUG %}
+    <script defer src="{% static "/js/datatables/datatables.js" %}"></script>
+  {% else %}
+    <script defer src="{% static "/js/datatables/datatables.min.js" %}"></script>
+  {% endif %}
+{% endblock javascript %}

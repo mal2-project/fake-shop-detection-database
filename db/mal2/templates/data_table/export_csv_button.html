@@ -1,0 +1,8 @@
+{% load i18n static %}
+
+<a class="btn btn-gray-300 d-flex mb-1 mb-md 0 justify-content-center" href="#" data-button-action="buttons-csv" data-button="{{ data_table.table }}_table" role="button">
+  <svg class="icon mr-1" role="presentation">
+    <use xlink:href="{% static "img/sprite.symbol.svg" %}#table-arrow-right"></use>
+  </svg>
+  {% trans "Export CSV" %}
+</a>

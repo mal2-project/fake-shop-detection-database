@@ -1,0 +1,41 @@
+//------------------------------------------------------------------------------
+// PROGRESS
+
+@keyframes progress-bar-stripes {
+  0% {
+    background-position-x: rem($progress-height);
+  }
+}
+
+.progress {
+  background-color: $progress-bg;
+  border-radius: rem($border-radius);
+  display: flex;
+  font-size: rem(12);
+  height: rem($progress-height);
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: $progress-bar-bg;
+  color: $progress-bar-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: width 600ms ease;
+  white-space: nowrap;
+}
+
+.progress-bar-striped {
+  background-image: linear-gradient(45deg, rgba($white, 0.15) 25%, transparent 25%, transparent 50%, rgba($white, 0.15) 50%, rgba($white, 0.15) 75%, transparent 75%, transparent);
+  background-size: rem($progress-height) rem($progress-height);
+}
+
+.progress-bar-animated {
+  animation: progress-bar-stripes $progress-bar-animation-timing;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}

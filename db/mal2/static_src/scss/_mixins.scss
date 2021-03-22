@@ -1,0 +1,384 @@
+// stylelint-disable declaration-no-important
+
+
+// ------------------------------------------------------------------------------
+// ALERT
+
+@mixin alert-variant($background, $border, $color) {
+  background-color: $background;
+  border-color: $border;
+  color: $color;
+
+  hr {
+    border-top-color: darken($border, 5%);
+  }
+
+  .alert-link {
+    color: darken($color, 10%);
+  }
+
+  &.alert-dismissible {
+    .close {
+      fill: darken($color, 10%);
+    }
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// BACKGROUND
+
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color !important;
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// BADGE
+
+@mixin badge-variant($bg) {
+  background-color: $bg;
+  color: color-yiq($bg);
+
+  @at-root a#{&} {
+    &:hover {
+      background-color: darken($bg, 10%);
+      color: color-yiq($bg);
+    }
+
+    &:focus,
+    &.focus {
+      box-shadow: 0 0 0 rem(3) rgba($bg, 0.5);
+      outline: 0;
+    }
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// BREAKPOINTS
+
+@mixin media-breakpoint-up($breakpoint) {
+  $min: breakpoint-min($breakpoint);
+
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+  $max: breakpoint-max($breakpoint);
+
+  @if $max {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// BUTTONS
+
+@mixin button-variant($background, $border) {
+  $hover-background: darken($background, 5%);
+  $hover-border: darken($border, 10%);
+  background-color: $background;
+  border-color: $border;
+  color: color-yiq($background);
+  fill: color-yiq($background);
+
+  &:focus,
+  &.focus {
+    background-color: $hover-background;
+    border-color: $hover-border;
+    box-shadow: 0 0 0 rem(3) rgba($hover-border, 0.5);
+    color: color-yiq($hover-background);
+    fill: color-yiq($hover-background);
+  }
+
+  &:hover {
+    background-color: $hover-background;
+    border-color: $hover-border;
+    color: color-yiq($hover-background);
+    fill: color-yiq($hover-background);
+  }
+
+  &.disabled,
+  &:disabled {
+    background-color: $gray-400;
+    border-color: $gray-400;
+    color: color-yiq($gray-100);
+    fill: color-yiq($gray-100);
+
+    &:focus,
+    &.focus {
+      background-color: $gray-400;
+      border-color: $hover-border;
+      box-shadow: 0 0 0 rem(3) rgba($hover-border, 0.5);
+      color: color-yiq($gray-100);
+      fill: color-yiq($gray-100);
+    }
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// DROPDOWN
+
+@mixin caret-down {
+  border-bottom: 0;
+  border-left: rem(4) solid transparent;
+  border-right: rem(4) solid transparent;
+  border-top: rem(4) solid;
+}
+
+@mixin caret-up {
+  border-bottom: rem(4) solid;
+  border-left: rem(4) solid transparent;
+  border-right: rem(4) solid transparent;
+  border-top: 0;
+}
+
+@mixin caret-right {
+  border-bottom: rem(4) solid transparent;
+  border-left: rem(4) solid;
+  border-right: 0;
+  border-top: rem(4) solid transparent;
+}
+
+@mixin caret-left {
+  border-bottom: rem(4) solid transparent;
+  border-right: rem(4) solid;
+  border-top: rem(4) solid transparent;
+}
+
+@mixin caret($direction: down) {
+  &:after {
+    content: "";
+    display: inline-block;
+    margin-left: rem(6);
+    vertical-align: rem(4);
+
+    @if $direction == down {
+      @include caret-down;
+    } @else if $direction == up {
+      @include caret-up;
+    } @else if $direction == right {
+      @include caret-right;
+    }
+  }
+
+  @if $direction == left {
+    &:after {
+      display: none;
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      margin-right: rem(4);
+      vertical-align: rem(4);
+      @include caret-left;
+    }
+  }
+
+  &:empty:after {
+    margin-left: 0;
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// FONT SIZE
+
+@mixin font-size($min-font-size, $max-font-size: 0) {
+  font-size: rem($min-font-size);
+
+  @if ($max-font-size != 0) {
+    @media (min-width: rem($break-sm)) {
+      font-size: calc(#{rem($min-font-size)} + #{($max-font-size - $min-font-size) / 16} * (100vw - #{rem($break-sm)}) / (#{rem-unitless($break-xl)} - #{rem-unitless($break-sm)}));
+    }
+
+    @media (min-width: rem($break-xl)) {
+      font-size: rem($max-font-size);
+    }
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// GRID
+
+@mixin make-container() {
+  margin: 0 auto;
+  min-width: $body-min-width;
+  padding-left: rem($grid-min-gutter-width / 2);
+  padding-right: rem($grid-min-gutter-width / 2);
+  width: 100%;
+
+  @media (min-width: rem($break-sm)) {
+    padding-left: calc(#{rem($grid-min-gutter-width)} + #{($grid-max-gutter-width - $grid-min-gutter-width) / 16} * (100vw - #{rem($break-sm)}) / (#{rem-unitless($break-xl)} - #{rem-unitless($break-sm)}));
+    padding-right: calc(#{rem($grid-min-gutter-width)} + #{($grid-max-gutter-width - $grid-min-gutter-width) / 16} * (100vw - #{rem($break-sm)}) / (#{rem-unitless($break-xl)} - #{rem-unitless($break-sm)}));
+  }
+
+  @media (min-width: rem($break-xl)) {
+    padding-left: rem($grid-max-gutter-width);
+    padding-right: rem($grid-max-gutter-width);
+  }
+}
+
+@mixin make-container-max-widths() {
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint) {
+      max-width: $container-max-width;
+    }
+  }
+}
+
+@mixin make-row() {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  margin-left: rem(-$grid-min-gutter-width / 2);
+  margin-right: rem(-$grid-min-gutter-width / 2);
+
+  @media (min-width: rem($break-sm)) {
+    margin-left: calc(#{rem(-$grid-min-gutter-width / 2)} - #{($grid-max-gutter-width / 2 - $grid-min-gutter-width / 2) / 16} * (100vw - #{rem($break-sm)}) / (#{rem-unitless($break-xl)} - #{rem-unitless($break-sm)}));
+    margin-right: calc(#{rem(-$grid-min-gutter-width / 2)} - #{($grid-max-gutter-width / 2 - $grid-min-gutter-width / 2) / 16} * (100vw - #{rem($break-sm)}) / (#{rem-unitless($break-xl)} - #{rem-unitless($break-sm)}));
+  }
+
+  @media (min-width: rem($break-xl)) {
+    margin-left: rem(-$grid-max-gutter-width / 2);
+    margin-right: rem(-$grid-max-gutter-width / 2);
+  }
+}
+
+@mixin make-col($size) {
+  flex: 0 0 percentage($size / $grid-columns);
+  max-width: percentage($size / $grid-columns);
+}
+
+@mixin make-col-offset($size) {
+  $num: $size / $grid-columns;
+  margin-left: if($num == 0, 0, percentage($num));
+}
+
+@mixin make-grid-columns() {
+  %grid-column {
+    padding-left: rem($grid-min-gutter-width / 2);
+    padding-right: rem($grid-min-gutter-width / 2);
+    position: relative;
+    width: 100%;
+
+    @media (min-width: rem($break-sm)) {
+      padding-left: calc(#{rem($grid-min-gutter-width / 2)} + #{($grid-max-gutter-width / 2 - $grid-min-gutter-width / 2) / 16} * (100vw - #{rem($break-sm)}) / (#{rem-unitless($break-xl)} - #{rem-unitless($break-sm)}));
+      padding-right: calc(#{rem($grid-min-gutter-width / 2)} + #{($grid-max-gutter-width / 2 - $grid-min-gutter-width / 2) / 16} * (100vw - #{rem($break-sm)}) / (#{rem-unitless($break-xl)} - #{rem-unitless($break-sm)}));
+    }
+
+    @media (min-width: rem($break-xl)) {
+      padding-left: rem($grid-max-gutter-width / 2);
+      padding-right: rem($grid-max-gutter-width / 2);
+    }
+  }
+
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $infix: breakpoint-infix($breakpoint);
+
+    @for $i from 1 through $grid-columns {
+      .col#{$infix}-#{$i} {
+        @extend %grid-column;
+      }
+    }
+
+    .col#{$infix},
+    .col#{$infix}-auto {
+      @extend %grid-column;
+    }
+
+    @include media-breakpoint-up($breakpoint) {
+      .col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+
+      .col#{$infix}-auto {
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: auto;
+      }
+
+      @for $i from 1 through $grid-columns {
+        .col#{$infix}-#{$i} {
+          @include make-col($i);
+        }
+      }
+
+      @for $i from 0 through ($grid-columns - 1) {
+        @if not ($infix == "" and $i == 0) {
+          .offset#{$infix}-#{$i} {
+            @include make-col-offset($i);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// ------------------------------------------------------------------------------
+// ICON
+
+@mixin icon-variant($parent, $color) {
+  #{$parent} {
+    fill: $color !important;
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// LIST
+
+@mixin list-unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+//------------------------------------------------------------------------------
+// NAV DIVIDER
+
+@mixin nav-divider($color: $nav-divider-color, $margin-y: $nav-divider-margin-y) {
+  border-top: rem($border-width) solid $color;
+  height: 0;
+  margin: rem($margin-y) 0;
+  overflow: hidden;
+}
+
+
+//------------------------------------------------------------------------------
+// RESET TEXT
+
+@mixin reset-text {
+  font-style: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: $line-height-base;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+}
+

@@ -1,0 +1,42 @@
+{% load i18n static %}
+
+<div aria-labelledby="modal-title" aria-hidden="true" class="modal fade" data-modal id="modal" role="dialog" tabindex="-1">
+  <div class="modal-dialog{% block modal_class %} modal-dialog-centered modal-dialog-scrollable modal-xl{% endblock %}" role="document">
+    <form action="{{ request.get_full_path }}" class="modal-content" data-form="{{ form.prefix }}" data-form-wizard{% if form.is_multipart %} enctype="multipart/form-data"{% endif %} method="post" novalidate>
+      {% csrf_token %}
+
+      <div class="modal-header">
+        <h3 class="modal-title m-0" id="modal-title">
+          {% block title %}{% endblock %}<br>
+          {% include "form/wizard/steps.html" %}
+        </h3>
+        <a aria-label="{% trans "Close" %}" class="close" data-dismiss="modal" href="#">
+          <svg class="icon icon-dark" role="presentation">
+            <use xlink:href="{% static "img/sprite.symbol.svg" %}#close"></use>
+          </svg>
+        </a>
+      </div>
+
+      <div class="modal-body">
+        {% include "form/wizard/navigation.html" %}
+        {% include "form/errors.html" %}
+
+        {% block content %}
+          <div class="tab-content">
+            {% include "form/snippet.html" %}
+            {% include "form/wizard/summary.html" %}
+          </div>
+        {% endblock %}
+      </div>
+
+      <div class="modal-footer">
+        {% include "form/wizard/previous_step.html" %}
+        {% include "form/wizard/next_step.html" %}
+
+        <button class="btn{% block btn_class %} btn-secondary{% endblock %} d-none ml-1" data-submit type="submit">
+          {% block btn_text %}{% trans "Save" %}{% endblock %}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

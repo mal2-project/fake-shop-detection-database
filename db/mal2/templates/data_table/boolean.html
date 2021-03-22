@@ -1,0 +1,13 @@
+{% load static i18n %}
+
+{% if field_value %}
+  <svg class="icon-sm icon-success" aria-hidden="true" role="presentation">
+    <use xlink:href="{% static "img/sprite.symbol.svg" %}#check-circle"></use>
+  </svg>
+  <span class="sr-only">{% trans "Yes" %}</span>
+{% else %}
+  <svg class="icon-sm icon-danger" aria-hidden="true" role="presentation">
+    <use xlink:href="{% static "img/sprite.symbol.svg" %}#close-circle"></use>
+  </svg>
+  <span class="sr-only">{% trans "No" %}</span>
+{% endif %}

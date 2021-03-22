@@ -1,0 +1,29 @@
+{% load i18n %}
+
+<label class="label" for="{{ field.id_for_label }}">
+  {{ field.label }}
+  {% include "form/field/required.html" %}
+</label>
+
+{% if field.field.group_append or field.field.group_prepend %}
+  <div class="input-group input-wrapper">
+    {% if field.field.group_prepend %}
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="{{ field.name }}_group">{{ field.field.group_prepend|safe }}</span>
+      </div>
+    {% endif %}
+
+    {{ field }}
+
+    {% if field.field.group_append %}
+      <div class="input-group-append">
+        <span class="input-group-text" id="{{ field.name }}_group">{{ field.field.group_append|safe }}</span>
+      </div>
+    {% endif %}
+  </div>
+{% else %}
+  {{ field }}
+{% endif %}
+
+{% include "form/error_text.html" %}
+{% include "form/help_text.html" %}

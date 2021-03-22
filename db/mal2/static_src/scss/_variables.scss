@@ -1,0 +1,418 @@
+//------------------------------------------------------------------------------
+// COLORS
+
+$white: #FFF;
+$black: #000;
+
+$gray-100: #F8F9FA;
+$gray-200: #E9ECEF;
+$gray-300: #DEE2E6;
+$gray-400: #CED4DA;
+$gray-500: #ADB5BD;
+$gray-600: #868E96;
+$gray-700: #495057;
+$gray-800: #343A40;
+$gray-900: #212529;
+
+$body-bg: $white;
+$body-color: $gray-900;
+
+$mal2-ci-1: #042F51;
+$mal2-ci-2: #64BEE8;
+
+$primary: $mal2-ci-2;
+$secondary: $mal2-ci-1;
+$danger: #DC3545;
+$dark: $gray-900;
+$info: #17A2B8;
+$light: $gray-100;
+$success: #90AD25;
+$warning: #FFC107;
+
+// Risk score colors
+
+$risk-score-very-low: #0FF;
+$risk-score-low: #0F2;
+$risk-score-below-average: #FD0;
+$risk-score-above-average: #FF7A00;
+$risk-score-high: #F00;
+$risk-score-very-high: #E0F;
+$risk-score-unknown: $dark;
+
+// Colors
+
+$color-interval: 8%;
+
+$colors: (
+  "risk-score-very-low": $risk-score-very-low,
+  "risk-score-low": $risk-score-low,
+  "risk-score-below-average": $risk-score-below-average,
+  "risk-score-above-average": $risk-score-above-average,
+  "risk-score-high": $risk-score-high,
+  "risk-score-very-high": $risk-score-very-high,
+  "risk-score-unknown": $risk-score-unknown,
+  "black": $black,
+  "gray-200": $gray-200,
+  "gray-300": $gray-300,
+  "gray-400": $gray-400,
+  "danger": $danger,
+  "dark": $dark,
+  "info": $info,
+  "light": $light,
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "warning": $warning,
+  "white": $white,
+);
+
+// YIQ color contrast
+
+$yiq-contrasted-threshold: 150;
+$yiq-text-dark: $gray-900;
+$yiq-text-light: $white;
+
+
+//------------------------------------------------------------------------------
+// UTILITIES
+
+$displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex;
+$overflows: auto, hidden;
+
+$escaped-characters: (
+  ("<", "%3c"),
+  (">", "%3e"),
+  ("#", "%23"),
+);
+
+// Embed
+
+$embed-responsive-aspect-ratios: (
+  (21 9),
+  (16 9),
+  (4 3),
+  (1 1),
+);
+
+// Sizing
+
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  auto: auto,
+);
+
+// Spacing
+
+$spacer: 8;
+
+$spacers: (
+  0: 0,
+  1: rem($spacer),
+  2: rem($spacer * 2),
+  3: rem($spacer * 4),
+  4: rem($spacer * 6),
+  5: rem($spacer * 8),
+);
+
+
+//------------------------------------------------------------------------------
+// TYPE
+
+$small-font-size: 87.5%;
+
+$min-font-size: 14;
+$max-font-size: 15;
+
+$h1-min-font-size: 24;
+$h1-max-font-size: 29;
+$h2-min-font-size: 20;
+$h2-max-font-size: 24;
+$h3-min-font-size: 16;
+$h3-max-font-size: 21;
+$h4-min-font-size: 14;
+$h4-max-font-size: 16;
+$h5-min-font-size: 14;
+$h5-max-font-size: 16;
+
+$input-font-size-sm: 14;
+$input-font-size: 16;
+
+$line-height-base: 1.5;
+
+$sub-sup-font-size: 12;
+
+
+//------------------------------------------------------------------------------
+// FORMS
+
+// Fieldset / Legend
+
+$legend-margin-bottom: 8;
+$legend-min-font-size: 14;
+$legend-max-font-size: 16;
+
+$custom-control-indicator-size: 16;
+$custom-control-gutter: 8;
+
+$input-bg: $white;
+$input-border-color: $gray-500;
+$input-border-focus: $primary;
+$input-border-width: 1;
+$input-color: $gray-700;
+$input-disabled-bg: $gray-200;
+$input-focus-bg: $white;
+$input-focus-box-shadow: 0 0 0 rem(3) rgba($input-border-focus, 0.5);
+$input-focus-color: $gray-700;
+$input-height-border: $input-border-width * 2;
+$input-line-height: 1.5;
+$input-padding-x: 12;
+$input-padding-y: 6;
+$input-placeholder-color: $gray-600;
+$input-plaintext-color: $body-color;
+
+$input-height-inner: calc(#{$input-line-height * 1em} + #{rem($input-padding-y * 2)});
+$input-height: calc(#{$input-line-height * 1em} + #{rem($input-padding-y * 2)} + #{rem($input-height-border)});
+
+// Select
+
+$custom-select-indicator-padding: 16;
+
+// Text
+
+$form-text-margin-top: 4;
+$form-feedback-margin-top: 4;
+
+// Range
+
+$custom-range-thumb-disabled-bg: $gray-500;
+$custom-range-thumb-height: 16;
+$custom-range-thumb-width: 16;
+$custom-range-track-bg: $gray-400;
+$custom-range-track-height: 8;
+$custom-range-track-width: 8;
+
+$custom-file-text: (
+  de: "Durchsuchen",
+  en: "Browse",
+);
+
+// Button
+
+$input-btn-padding-y: 6;
+$input-btn-padding-x: 10;
+
+// Input group
+
+$input-group-addon-bg: $gray-200;
+$input-group-addon-border-color: $input-border-color;
+$input-group-addon-color: $input-color;
+
+
+//------------------------------------------------------------------------------
+// PAGINATION
+
+$pagination-active-bg: $dark;
+$pagination-active-border-color: darken($pagination-active-bg, 5%);
+$pagination-active-color: $white;
+$pagination-bg: $gray-100;
+$pagination-border-color: $gray-400;
+$pagination-color: $dark;
+$pagination-disabled-bg: $white;
+$pagination-disabled-border-color: $gray-700;
+$pagination-disabled-color: $gray-600;
+$pagination-disabled-color: $gray-600;
+$pagination-focus-border-color: $dark;
+$pagination-hover-bg: $gray-300;
+$pagination-hover-border-color: $gray-500;
+$pagination-hover-color: $dark;
+$pagination-line-height: 1.5;
+$pagination-padding-x: 12;
+$pagination-padding-y: 7;
+
+
+//------------------------------------------------------------------------------
+// TABLE
+
+$table-border-color: $gray-500;
+$table-border-width: 1;
+$table-cell-padding-sm: $spacer;
+$table-cell-padding: ($spacer * 2);
+$table-dark-accent-bg: rgba($white, 0.05);
+$table-dark-bg: $gray-800;
+$table-dark-border-color: lighten($table-dark-bg, 7.5%);
+$table-dark-color: $white;
+$table-dark-hover-bg: rgba($white, 0.075);
+$table-dark-hover-color: $white;
+$table-head-bg: $gray-200;
+$table-head-color: $gray-700;
+$table-hover-bg: $gray-100;
+$table-hover-color: $gray-900;
+
+
+//------------------------------------------------------------------------------
+// COLUMN
+
+$columns: 6;
+
+
+//------------------------------------------------------------------------------
+// BREAKPOINTS
+
+$body-min-width: rem(320);
+
+$break-sm: 480;
+$break-md: 768;
+$break-lg: 992;
+$break-xl: 1400;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: rem($break-sm),
+  md: rem($break-md),
+  lg: rem($break-lg),
+  xl: rem($break-xl),
+);
+
+
+//------------------------------------------------------------------------------
+// GRID
+
+$grid-columns: 12;
+$grid-gutter-width: 30;
+
+$grid-min-gutter-width: 15;
+$grid-max-gutter-width: 30;
+
+$container-sm-max-width: $break-sm;
+$container-md-max-width: $break-md;
+$container-lg-max-width: $break-lg;
+$container-xl-max-width: 1940;
+
+$container-max-widths: (
+  xs: 0,
+  sm: rem($container-sm-max-width),
+  md: rem($container-md-max-width),
+  lg: rem($container-lg-max-width),
+  xl: rem($container-xl-max-width),
+);
+
+
+//------------------------------------------------------------------------------
+// COMPONENTS
+
+$border-radius: 4;
+$border-width: 1;
+
+// Alert
+
+$alert-margin-bottom: 16;
+$alert-padding-x: 12;
+$alert-padding-y: 12;
+
+$alert-bg-level: -10;
+$alert-border-level: -10;
+$alert-color-level: 6;
+
+// Dropdowns
+
+$dropdown-bg: $white;
+$dropdown-border-color: $gray-400;
+$dropdown-color: $body-color;
+$dropdown-divider-bg: $gray-200;
+$dropdown-divider-margin-y: $spacer / 2;
+$dropdown-header-color: $gray-600;
+$dropdown-item-padding-x: 24;
+$dropdown-item-padding-y: 4;
+$dropdown-link-active-bg: $white;
+$dropdown-link-active-color: $body-color;
+$dropdown-link-color: $gray-900;
+$dropdown-link-disabled-color: $gray-600;
+$dropdown-link-hover-bg: $white;
+$dropdown-link-hover-color: darken($primary, 5%);
+$dropdown-padding-y: 8;
+
+// Card
+
+$card-bg: $white;
+$card-border-color: rgba($black, 0.125);
+$card-border-width: $border-width;
+$card-cap-bg: rgba($black, 0.03);
+$card-spacer-x: ($spacer * 2);
+$card-spacer-y: $spacer;
+
+// Tooltip
+
+$tooltip-arrow-color: $dark;
+$tooltip-arrow-height: 8;
+$tooltip-arrow-width: 12;
+$tooltip-padding-x: 6;
+$tooltip-padding-y: 3;
+$tooltip-margin: 0;
+
+// Progress bars
+
+$progress-bar-bg: $secondary;
+$progress-bar-color: $white;
+$progress-bg: $gray-200;
+$progress-height: 16;
+$progress-bar-animation-timing: 1s linear infinite;
+
+// Navs
+
+$nav-link-padding-x: 16;
+$nav-link-padding-y: 8;
+$nav-link-disabled-color: $gray-700;
+
+$nav-tabs-border-color: $gray-500;
+$nav-tabs-border-width: 1;
+$nav-tabs-border-radius: $border-radius;
+$nav-tabs-link-hover-border-color: $gray-400 $gray-400 $nav-tabs-border-color;
+$nav-tabs-link-active-color: $black;
+$nav-tabs-link-active-bg: $body-bg;
+$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-link-active-bg;
+
+// Navbar
+
+$nav-link-padding-x: 16;
+$nav-link-padding-y: 8;
+$navbar-nav-link-padding-x: 12;
+$navbar-padding-x: 0;
+$navbar-padding-y: 8;
+
+$navbar-active-color: $secondary;
+$navbar-brand-color: $black;
+$navbar-brand-hover-color: rgba($black, 0.9);
+$navbar-color: $black;
+$navbar-disabled-color: rgba($black, 0.3);
+$navbar-hover-color: darken($primary, 5%);
+$navbar-toggler-color: $dark;
+
+// Toasts
+
+$toast-font-size: 14;
+
+$toast-background-color: $white;
+$toast-border-color: $gray-400;
+$toast-border-width: 0;
+$toast-header-background-color: $gray-200;
+$toast-header-border-color: $gray-400;
+$toast-header-color: $gray-600;
+$toast-max-width: 350;
+$toast-padding-x: 8;
+$toast-padding-y: 4;
+
+// Popovers
+
+$popover-font-size: 14;
+
+$popover-bg: $white;
+$popover-border-color: $gray-400;
+$popover-border-width: 1;
+$popover-box-shadow: 0 rem(4) rem(7) rgba($black, 0.2);
+$popover-max-width: 276;
+$popover-arrow-color: $popover-bg;
+$popover-arrow-height: 8;
+$popover-arrow-width: 16;

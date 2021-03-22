@@ -1,0 +1,86 @@
+{% load base_tags data_table_tags i18n static %}
+
+{# @formatter:off #}
+
+{% update_from_defaults data_table.urls.defaults data_table.urls.add as add %}
+
+<table class="table table-hover table-sm" data-csrf-token="{{ csrf_token }}" data-fields="{{ data_table.fields }}" data-table="{{ data_table.urls.data }}"{% attrs data_table.options quotes="single" %} id="{{ data_table.table }}_table">
+  {% for field_name in data_table.field_names %}
+    {% if forloop.first %}
+      <colgroup>
+        <col/>
+    {% endif %}
+
+    {% with col=data_table.colgroup|get_item:field_name %}
+      <col{% for name, value in col.items %}{% if value is not False %} {{ name }}{% if value is not True %}="{{ value|stringformat:"s" }}"{% endif %}{% endif %}{% endfor %}/>
+    {% endwith %}
+
+    {% if forloop.last %}
+      {% for url in data_table|get_items:has_permission %}
+        <col/>
+      {% endfor %}
+      </colgroup>
+    {% endif %}
+  {% endfor %}
+
+  <thead>
+    <tr>
+      <th class="{% if data_table.field_filters.type == "collapse" %}bg-gray-200 {% endif %}no-export-csv no-sort pl-1 rounded-top-left">
+        {% if data_table.field_filters.type == "collapse" %}
+          {% if add and has_add_permission %}
+            {% include add.template %}
+          {% endif %}
+        {% endif %}
+      </th>
+
+      {% for label in data_table|get_labels %}
+        <th{% if data_table.field_filters.type == "collapse" %} class="bg-gray-200"{% endif %}>{% if label %}{{ label }}{% endif %}</th>
+      {% endfor %}
+
+      {% for url in data_table|get_items:has_permission %}
+        <th class="{% if data_table.field_filters.type == "collapse" %}bg-gray-200 {% endif %}no-export-csv no-sort{% if forloop.last %} rounded-top-right{% endif %}"></th>
+      {% endfor %}
+    </tr>
+    {% if has_autoreload %}
+      <tr class="d-none d-sm-table-row">
+        <th class="processing" colspan="{{ data_table|columns_counter:has_permission }}">
+          <div class="align-items-center row">
+            <div class="col">
+              {% include "data_table/loader.html" %}
+            </div>
+            <div class="col-auto ml-auto">
+              {% trans "Last updated" %} <span data-last-updated data-text="{% trans "[seconds] second ago" %}" data-text-plural="{% trans "[seconds] seconds ago" %}"></span>
+            </div>
+          </div>
+        </th>
+      </tr>
+    {% else %}
+      <tr data-processing>
+        <th class="processing text-center" colspan="{{ data_table|columns_counter:has_permission }}">
+          {% include "data_table/loader.html" %}
+        </th>
+      </tr>
+    {% endif %}
+  </thead>
+  {% if data_table.field_filters.type == "columns" or not data_table.field_filters.type %}
+    <tfoot>
+      <tr>
+        <th class="align-middle bg-gray-300">
+          {% if add and has_add_permission %}
+            {% include add.template %}
+          {% endif %}
+        </th>
+
+        {% for field_name in data_table.field_names %}
+          {% include "data_table/filters_columns.html" %}
+        {% endfor %}
+
+        {% for url in data_table|get_items:has_permission %}
+          <th class="bg-gray-300"></th>
+        {% endfor %}
+      </tr>
+    </tfoot>
+  {% endif %}
+</table>
+
+{# @formatter:on #}

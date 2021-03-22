@@ -1,0 +1,14 @@
+{% load static i18n %}
+
+<div class="input-wrapper">
+  <div class="custom-control custom-checkbox">
+    {{ field }}
+    <label class="custom-control-label" for="{{ field.id_for_label }}">
+      {{ field.label }}
+      {% include "form/field/required.html" %}
+    </label>
+  </div>
+</div>
+
+{% include "form/error_text.html" %}
+{% include "form/help_text.html" %}

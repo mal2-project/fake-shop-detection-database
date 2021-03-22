@@ -1,0 +1,11 @@
+//------------------------------------------------------------------------------
+// LABELS
+
+label,
+.label {
+  @include font-size($min-font-size, $max-font-size);
+  cursor: pointer;
+  display: inline-block;
+  line-height: $input-line-height;
+  margin-bottom: calc(#{rem($input-padding-y)} + #{rem($input-border-width)});
+}

@@ -1,0 +1,55 @@
+{% extends "mal2_users/base.html" %}
+
+{% load i18n static %}
+
+{% block title %}
+  {% trans "Change password" %}
+{% endblock %}
+
+{% block card_header %}
+  {% trans "Activate user account" %}
+{% endblock %}
+
+{% block card_body %}
+  {% if request.GET.verify == "1" %}
+    <p>
+      {% blocktrans trimmed %}
+        Your user account has been activated.
+      {% endblocktrans %}
+    </p>
+
+    <div class="align-items-center row mt-1 sm-gutters">
+      <div class="col-auto ml-auto">
+        <a class="btn btn-secondary" href="{% url "mal2_db:signin" %}">
+          {% trans "Sign in" %}
+        </a>
+      </div>
+    </div>
+  {% elif validlink %}
+    <p>
+      {% blocktrans trimmed %}
+        To activate the user account, click on <strong>"Activate user account"</strong>.
+      {% endblocktrans %}
+    </p>
+
+    <div class="align-items-center row mt-1 sm-gutters">
+      <div class="col-auto ml-auto">
+        <a class="btn btn-secondary" href="{% url "mal2_db:email_verification" uidb64=uid token=token %}?verify=1">
+          {% trans "Activate user account" %}
+        </a>
+      </div>
+    </div>
+  {% else %}
+    <p>
+      {% trans "The link was invalid, possibly because it has already been used." %}
+    </p>
+
+    <div class="align-items-center row mt-1 sm-gutters">
+      <div class="col-auto ml-auto">
+        <a class="btn btn-secondary" href="{% url "mal2_db:signin" %}">
+          {% trans "Sign in" %}
+        </a>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

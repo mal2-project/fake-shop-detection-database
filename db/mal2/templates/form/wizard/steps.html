@@ -1,0 +1,7 @@
+{% load i18n %}
+
+{% for item in form.steps_info.steps %}
+  <small class="{% if not forloop.first %}d-none {% endif %}text-normal" data-step>
+    {% blocktrans trimmed with step=item.step steps=item.steps %}Step {{ step }}{% endblocktrans %}{% if item.text %}: {{ item.text }}{% endif %}
+  </small>
+{% endfor %}

@@ -1,0 +1,72 @@
+//------------------------------------------------------------------------------
+// CONTAINER
+
+.container-fluid {
+  @include make-container();
+}
+
+.container-max-fluid {
+  @include make-container();
+  max-width: rem($container-xl-max-width);
+}
+
+.container {
+  @include make-container();
+  @include make-container-max-widths();
+}
+
+
+//------------------------------------------------------------------------------
+// ROW
+
+.row {
+  @include make-row();
+
+  &.sm-gutters {
+    margin-left: rem(-$grid-min-gutter-width / 4);
+    margin-right: rem(-$grid-min-gutter-width / 4);
+
+    @media (min-width: rem($break-sm)) {
+      margin-left: calc(#{rem(-$grid-min-gutter-width / 4)} - #{($grid-max-gutter-width / 4 - $grid-min-gutter-width / 4) / 16} * (100vw - #{rem($break-sm)}) / (#{rem-unitless($break-xl)} - #{rem-unitless($break-sm)}));
+      margin-right: calc(#{rem(-$grid-min-gutter-width / 4)} - #{($grid-max-gutter-width / 4 - $grid-min-gutter-width / 4) / 16} * (100vw - #{rem($break-sm)}) / (#{rem-unitless($break-xl)} - #{rem-unitless($break-sm)}));
+    }
+
+    @media (min-width: rem($break-xl)) {
+      margin-left: rem(-$grid-max-gutter-width / 4);
+      margin-right: rem(-$grid-max-gutter-width / 4);
+    }
+  }
+}
+
+.sm-gutters > .col,
+.sm-gutters > [class*="col-"] {
+  padding-left: rem($grid-min-gutter-width / 4);
+  padding-right: rem($grid-min-gutter-width / 4);
+
+  @media (min-width: rem($break-sm)) {
+    padding-left: calc(#{rem($grid-min-gutter-width / 4)} + #{($grid-max-gutter-width / 4 - $grid-min-gutter-width / 4) / 16} * (100vw - #{rem($break-sm)}) / (#{rem-unitless($break-xl)} - #{rem-unitless($break-sm)}));
+    padding-right: calc(#{rem($grid-min-gutter-width / 4)} + #{($grid-max-gutter-width / 4 - $grid-min-gutter-width / 4) / 16} * (100vw - #{rem($break-sm)}) / (#{rem-unitless($break-xl)} - #{rem-unitless($break-sm)}));
+  }
+
+  @media (min-width: rem($break-xl)) {
+    padding-left: rem($grid-max-gutter-width / 4);
+    padding-right: rem($grid-max-gutter-width / 4);
+  }
+}
+
+.no-gutters {
+  margin-left: 0;
+  margin-right: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// COLUMNS
+
+@include make-grid-columns();

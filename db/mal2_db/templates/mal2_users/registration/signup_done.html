@@ -1,0 +1,28 @@
+{% extends "mal2_users/base.html" %}
+
+{% load i18n static %}
+
+{% block title %}
+  {% trans "Sign in" %}
+{% endblock %}
+
+{% block card_header %}
+  {% trans "Activate user account" %}
+{% endblock %}
+
+{% block card_body %}
+  <p>
+    {% blocktrans trimmed %}
+      <strong>We've emailed you instructions to activate your user account.</strong>
+      If you <strong>have not yet</strong> received an email, please check your spam folder.
+    {% endblocktrans %}
+  </p>
+
+  <div class="align-items-center row mt-1 sm-gutters">
+    <div class="col-auto ml-auto">
+      <a class="btn btn-secondary" href="{% url "mal2_db:signin" %}">
+        {% trans "Sign in" %}
+      </a>
+    </div>
+  </div>
+{% endblock %}

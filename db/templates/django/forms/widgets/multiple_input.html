@@ -1,0 +1,16 @@
+{% with id=widget.attrs.id %}
+  {% for group, options, index in widget.optgroups %}
+    {% if forloop.first %}
+      <div class="input-wrapper">
+    {% endif %}
+
+    {% for widget in options %}
+      {% include widget.template_name %}
+    {% endfor %}
+
+    {% if forloop.last %}
+      </div>
+      <small class="invalid-feedback" id="id_{{ widget.name }}_error"></small>
+    {% endif %}
+  {% endfor %}
+{% endwith %}

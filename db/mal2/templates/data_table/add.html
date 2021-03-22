@@ -1,0 +1,8 @@
+{% load base_tags static %}
+
+<a class="d-block" href="{% url add.href %}" title="{{ add.text }}"{% attrs add.attrs %}>
+  <svg class="icon icon-dark" role="presentation">
+    <use xlink:href="{% static "img/sprite.symbol.svg" %}#plus-box"></use>
+  </svg>
+  <span class="sr-only">{{ add.text }}</span>
+</a>

@@ -1,0 +1,32 @@
+{% extends "mal2_users/base.html" %}
+
+{% load i18n static %}
+
+{% block title %}
+  {% trans "Sign in" %}
+{% endblock %}
+
+{% block card_classes %}col-12 col-md-10 col-lg-8 mx-auto{% endblock %}
+
+{% block card_header %}
+  {% trans "Create account" %}
+{% endblock %}
+
+{% block card_body %}
+  <form action="{{ request.get_full_path }}" data-form method="post" novalidate>
+    {% csrf_token %}
+
+    {% include "form/snippet.html" %}
+
+    <div class="align-items-center flex-row-reverse row mt-1 sm-gutters">
+      <div class="col-auto ml-auto">
+        <button class="btn btn-secondary">{% trans "Sign up" %}</button>
+      </div>
+      <div class="col">
+        <a href="{% url "mal2_db:signin" %}">
+          {% trans "Sign in instead" %}
+        </a>
+      </div>
+    </div>
+  </form>
+{% endblock %}

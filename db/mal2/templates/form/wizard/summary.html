@@ -1,0 +1,23 @@
+<div aria-labelledby="{% if form.prefix %}{{ form.prefix }}-{% endif %}step-{{ form.steps_info.steps_counter|add:1 }}-tab" class="tab-pane" data-summary data-tab hidden id="{% if form.prefix %}{{ form.prefix }}-{% endif %}step-{{ form.steps_info.steps_counter|add:1 }}" role="tabpanel">
+  <table class="table table-layout-fixed table-sm mb-2" data-summary-step="%step_index">
+    <colgroup>
+      <col style="width: 40%;">
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="bg-gray-400 border-bottom rounded-top" colspan="2">%step</th>
+      </tr>
+    </thead>
+    <tbody data-summary-items>
+      <tr data-summary-item>
+        <th data-summary-name="%name" scope="row">
+          %label
+        </th>
+        <td class="text-break">
+          %value
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

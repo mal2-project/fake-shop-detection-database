@@ -1,0 +1,118 @@
+//------------------------------------------------------------------------------
+// TOOLTIP
+
+.tooltip {
+  @include reset-text();
+  display: block;
+  font-size: rem(14);
+  margin: rem($tooltip-margin);
+  opacity: 0;
+  position: absolute;
+  word-wrap: break-word;
+  z-index: 9000;
+
+  &.show {
+    opacity: 1;
+  }
+
+  .tooltip-arrow {
+    display: block;
+    height: rem($tooltip-arrow-height);
+    position: absolute;
+    width: rem($tooltip-arrow-width);
+
+    &:before {
+      border-color: transparent;
+      border-style: solid;
+      content: "";
+      position: absolute;
+    }
+  }
+}
+
+.bs-tooltip-top {
+  padding: rem($tooltip-arrow-height) 0;
+
+  .tooltip-arrow {
+    bottom: 0;
+
+    &:before {
+      border-top-color: $tooltip-arrow-color;
+      border-width: rem($tooltip-arrow-height) rem($tooltip-arrow-width / 2) 0;
+      top: 0;
+    }
+  }
+}
+
+.bs-tooltip-right {
+  padding: 0 rem($tooltip-arrow-height);
+
+  .tooltip-arrow {
+    height: rem($tooltip-arrow-width);
+    left: 0;
+    width: rem($tooltip-arrow-height);
+
+    &:before {
+      border-right-color: $tooltip-arrow-color;
+      border-width: rem($tooltip-arrow-width / 2) rem($tooltip-arrow-height) rem($tooltip-arrow-width / 2) 0;
+      right: 0;
+    }
+  }
+}
+
+.bs-tooltip-bottom {
+  padding: rem($tooltip-arrow-height) 0;
+
+  .tooltip-arrow {
+    top: 0;
+
+    &:before {
+      border-bottom-color: $tooltip-arrow-color;
+      border-width: 0 rem($tooltip-arrow-width / 2) rem($tooltip-arrow-height);
+      bottom: 0;
+    }
+  }
+}
+
+.bs-tooltip-left {
+  padding: 0 rem($tooltip-arrow-height);
+
+  .tooltip-arrow {
+    height: rem($tooltip-arrow-width);
+    right: 0;
+    top: rem($tooltip-arrow-height);
+
+    &:before {
+      border-left-color: $tooltip-arrow-color;
+      border-width: rem($tooltip-arrow-width / 2) 0 rem($tooltip-arrow-width / 2) rem($tooltip-arrow-height);
+      left: 0;
+    }
+  }
+}
+
+.bs-tooltip-auto {
+  &[x-placement^="top"] {
+    @extend .bs-tooltip-top;
+  }
+
+  &[x-placement^="right"] {
+    @extend .bs-tooltip-right;
+  }
+
+  &[x-placement^="bottom"] {
+    @extend .bs-tooltip-bottom;
+  }
+
+  &[x-placement^="left"] {
+    @extend .bs-tooltip-left;
+  }
+}
+
+.tooltip-inner {
+  background-color: $tooltip-arrow-color;
+  border-radius: rem($border-radius);
+  color: color-yiq($tooltip-arrow-color);
+  max-width: rem(200);
+  padding: rem($tooltip-padding-y) rem($tooltip-padding-x);
+  text-align: center;
+}

@@ -1,0 +1,8 @@
+{% load i18n static %}
+
+<a class="btn btn-primary d-flex disabled justify-content-center" href="#" data-reset="{{ data_table.table }}_table" role="button">
+  <svg class="icon mr-1" role="presentation">
+    <use xlink:href="{% static "img/sprite.symbol.svg" %}#filter-remove"></use>
+  </svg>
+  {% trans "Reset filters" %}
+</a>

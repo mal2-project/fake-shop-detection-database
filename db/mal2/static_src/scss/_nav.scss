@@ -1,0 +1,99 @@
+//------------------------------------------------------------------------------
+// NAV
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: rem(6) rem(10);
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &.disabled {
+    color: $gray-600;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.nav-pills {
+  .nav-link {
+    border-radius: rem($border-radius);
+  }
+
+  .nav-link.active {
+    background-color: $primary;
+    color: $white;
+    fill: $white;
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// TABS
+
+.nav-tabs {
+  border-bottom: rem($nav-tabs-border-width) solid $nav-tabs-border-color;
+
+  .nav-item {
+    margin-bottom: rem(-$nav-tabs-border-width);
+    margin-left: rem($spacer / 4);
+    margin-right: rem($spacer / 4);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .nav-link {
+    border: rem($nav-tabs-border-width) solid transparent;
+    border-top-left-radius: rem($nav-tabs-border-radius);
+    border-top-right-radius: rem($nav-tabs-border-radius);
+
+    &:hover {
+      border-color: $nav-tabs-link-hover-border-color;
+    }
+
+    &.disabled {
+      background-color: transparent;
+      border-color: transparent;
+      color: $nav-link-disabled-color;
+    }
+  }
+
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    background-color: $nav-tabs-link-active-bg;
+    border-color: $nav-tabs-link-active-border-color;
+    color: $nav-tabs-link-active-color;
+  }
+
+  .dropdown-menu {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-top: rem(-$nav-tabs-border-width);
+  }
+}
+
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+
+  > .active {
+    display: block;
+  }
+}

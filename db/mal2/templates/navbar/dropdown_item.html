@@ -1,0 +1,5 @@
+{% load i18n %}
+
+<a class="{% if is_active %}active {% endif %}dropdown-item" href="{{ href }}"{% for name, value in attrs.items %}{% if value is not False and name != "class" %} {{ name }}{% if value %}="{{ value }}"{% endif %}{% endif %}{% endfor %}>
+  {{ title }}
+</a>

@@ -1,0 +1,8 @@
+{% load i18n static %}
+
+<a class="align-items-center d-flex" data-clipboard data-clipboard-text="{{ field_value }}" data-toaster="{% url "toaster" %}" data-toaster-text="{% trans "Copied token to clipboard." %}" href="#" title="{% trans "Copy token to clipboard" %}">
+  <svg class="mr-1 icon icon-dark" role="presentation">
+    <use xlink:href="{% static "img/sprite.symbol.svg" %}#clipboard-arrow-up-outline"></use>
+  </svg>
+  {{ field_value }}
+</a>

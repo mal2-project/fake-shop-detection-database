@@ -1,0 +1,16 @@
+- model: mal2_db.websitecategory
+  pk: 1
+  fields:
+    category_de: "Unbekannt"
+    category_en_GB: "Unknown"
+- model: mal2_db.websitecategory
+  pk: 2
+  fields:
+    category_de: "Online-shop"
+    category_en_GB: "Online-shop"
+- model: mal2_db.websitecategory
+  pk: 3
+  fields:
+    category_de: "Sonstiges"
+    category_en_GB: "Other"
+

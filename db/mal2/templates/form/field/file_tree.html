@@ -1,0 +1,15 @@
+{% load i18n %}
+
+<label class="label" for="{{ field.id_for_label }}">
+    {{ field.label }}
+    {% include "form/field/required.html" %}
+</label>
+
+{{ field }}
+
+<div class="file-tree">
+  <div{% if field.field.accept_extensions %} data-accept-extensions="{{ field.field.accept_extensions }}"{% endif %}{% if field.field.accept_folder %} data-accept-folder="{{ field.field.accept_folder }}"{% endif %} data-file-tree="{{ field.field.view }}" data-root="{{ field.field.root }}"></div>
+</div>
+
+{% include "form/error_text.html" %}
+{% include "form/help_text.html" %}

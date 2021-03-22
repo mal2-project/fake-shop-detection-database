@@ -1,0 +1,33 @@
+{% load base_tags form_tags static i18n %}
+
+{% with grid=field.field.grid sub_grid=field.field.sub_grid %}
+  {% if grid %}
+    <div class="{{ grid }}">
+  {% endif %}
+
+  <div class="{% if field.name == "DELETE" %}d-none {% else %}{% classes field.field.classes extra_classes="form-group" %}{% endif %}"{% attrs field.field.attrs %}>
+    {% if field|is_checkbox %}
+      {% include "form/field/checkbox.html" %}
+    {% elif field|is_multiple_checkbox %}
+      {% include "form/field/multiple_checkbox.html" %}
+    {% elif field|is_radio %}
+        {% include "form/field/radio.html" %}
+    {% elif field|is_file %}
+      {% include "form/field/file.html" %}
+    {% elif field|is_range %}
+      {% include "form/field/range.html" %}
+    {% elif field|is_file_tree %}
+        {% include "form/field/file_tree.html" %}
+    {% else %}
+      {% include "form/field/default.html" %}
+    {% endif %}
+  </div>
+
+  {% if grid %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+{% if not is_formset %}
+  {% include "form/formset/snippet.html" %}
+{% endif %}

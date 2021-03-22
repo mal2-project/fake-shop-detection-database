@@ -1,0 +1,23 @@
+{% load i18n %}
+
+<header height="20mm" width="190mm" x="10mm" y="267mm">
+  <blockTable colWidths="50% 50%">
+    <tr>
+      <td bottomPadding="0" leftPadding="0" rightPadding="0" topPadding="0">
+          <para style="header-info">
+            {% block title %}
+              mal2DB
+            {% endblock title %}
+          </para>
+      </td>
+      <td bottomPadding="0" leftPadding="0" rightPadding="0" topPadding="0">
+        <h1 style="header-title">
+          {{ title }}
+        </h1>
+      </td>
+    </tr>
+  </blockTable>
+
+  <spacer length="3mm"/>
+  <hr color="#212529" thickness="1" width="190mm"/>
+</header>
