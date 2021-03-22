@@ -4,7 +4,6 @@
 
 * Management for manually classifying reported websites (e.g. via fake shop detection REST API).
 * Project status: working/prototype
-* Contact andrew.lindley@ait.ac.at
 
 ## Table of contents
 
