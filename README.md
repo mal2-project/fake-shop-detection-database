@@ -1,4 +1,4 @@
-# Fake-Shop Detection Database (mal2DB) / fake-shop-detection_database
+# Fake-Shop Detection Database
 
 ## About / Synopsis
 
